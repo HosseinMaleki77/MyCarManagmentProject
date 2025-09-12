@@ -22,3 +22,5 @@ C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.CoreCompileInputs.cache
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmAdminMainPage.resources
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmUserMainPage.resources

@@ -16,6 +16,8 @@ namespace MyCarManagmentProject
         public frmRegisterNewPerson(List<Person> personList)
         {
             InitializeComponent();
+            MinimizeBox = false;
+            MaximizeBox = false;
             _NewPersons = personList;
 
         }
@@ -45,6 +47,11 @@ namespace MyCarManagmentProject
             }
         
           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

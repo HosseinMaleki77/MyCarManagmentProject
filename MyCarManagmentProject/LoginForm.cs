@@ -12,23 +12,25 @@ namespace MyCarManagmentProject
 {
     public partial class frmSignin : Form
     {
-       
-     
-  
 
-      public List<Person> personList = new List<Person>();
         public List<Admin> adminList = new List<Admin>();
 
-        Admin admin = new Admin("Hossein","123","Hossein","Maleki",0,"Hossein","123");
+        Admin admin = new Admin("Hossein", "123", "Hossein", "Maleki", 0);
+
+
+
+
+        public List<Person> personList = new List<Person>();
+
         Person person1 = new Person("Mamad", "Maleki",0, "mamad", "1234");
-        Person person2 = new Person("ali", "Maleki", 1, "ali", "12345");
+        Person person2 = new Person("ali", "Maleki", 0, "ali", "12345");
 
 
 
 
 
         public frmSignin()
-        {
+        {    
             InitializeComponent();
          
             
@@ -53,10 +55,20 @@ namespace MyCarManagmentProject
 
             foreach (var a in adminList)
             {
-                if (txtUserName.Text == a.UserName && txtPassword.Text == a.PassAdmin)
+                if (txtUserName.Text == a.UserAdmin && txtPassword.Text == a.PassAdmin)
                 {
                     MessageBox.Show("Hello Hossein (Admin)", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    this.DialogResult = DialogResult.OK;
+                    this.Hide();
+
+                    frmAdminMainPage frmAdmin = new frmAdminMainPage();
+                    frmAdmin.ShowDialog();
+                    this.Close();
+
                     flag = true;
+
+                    break;
                 }
             }
          
@@ -67,7 +79,15 @@ namespace MyCarManagmentProject
                     if (p.UserName == txtUserName.Text && p.Password == txtPassword.Text)
                     {
                         MessageBox.Show($"Welcome {p.Name}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        this.DialogResult = DialogResult.OK;
+                        this.Hide();
+                        
+                        frmUserMainPage frmUser = new frmUserMainPage();
+                        frmUser.ShowDialog();
+                        this.Close();
                         flag = true;
+
                         break;
                     }
 
@@ -76,20 +96,21 @@ namespace MyCarManagmentProject
         
            
      
-            if (!flag)
-            {
-                MessageBox.Show("Eror, Invalid Input", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
 
 
 
             if (txtUserName.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please Enter Your UserName Or Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+            else if(!flag)
+            {
+                MessageBox.Show("Your UserName Or Password Is Invalid! ,Please Try Again", "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Text = "";
             }
 
-           
+
 
 
         }
