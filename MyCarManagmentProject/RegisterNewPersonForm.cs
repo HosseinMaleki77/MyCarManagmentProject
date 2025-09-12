@@ -12,23 +12,38 @@ namespace MyCarManagmentProject
 {
     public partial class frmRegisterNewPerson : Form
     {
-        List<Person> list = new List<Person>();
-        public frmRegisterNewPerson()
+       private List<Person> _NewPersons;
+        public frmRegisterNewPerson(List<Person> personList)
         {
             InitializeComponent();
+            _NewPersons = personList;
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            foreach (var item in collection)
+            foreach (var p in _NewPersons)
             {
+                if(p.UserName == txtRUserName.Text)
+                {
+                    MessageBox.Show("Your UserName Is Taken by Someone else! Please Try Again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                }
+                else
+                {
+                    Person person = new Person(txtFirstName.Text,txtLastName.Text,0,txtRUserName.Text,txtRPassword.Text);
+                   
+                    _NewPersons.Add(person);
+                    MessageBox.Show("Hello Welcome!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+
+                    this.Close();
+                    break;
+
+                }
 
             }
-            Person person = new Person();
-            person.Name = txtFirstName.Text;
-            person.Family = txtLastName.Text;
-            person.UserName = txtRUserName.Text;
-            person.Password = txtRPassword.Text;
+        
           
         }
     }

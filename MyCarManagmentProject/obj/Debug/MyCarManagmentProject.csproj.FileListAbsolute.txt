@@ -10,3 +10,15 @@ E:\test c#\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentP
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmSignin.resources
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmRegisterNewPerson.resources
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe.config
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.pdb
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.AssemblyReference.cache
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe.config
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmSignin.resources
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Properties.Resources.resources
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmRegisterNewPerson.resources
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.GenerateResource.cache
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.CoreCompileInputs.cache
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe
+C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
