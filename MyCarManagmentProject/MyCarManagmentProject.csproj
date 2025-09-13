@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,38 +49,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Controls\MyCarsDetailsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MyCarsDetailsPanel.Designer.cs">
+      <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminMainPage.cs">
+    <Compile Include="Forms\AdminMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminMainPage.Designer.cs">
+    <Compile Include="Forms\AdminMainPage.Designer.cs">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyCars.Designer.cs">
+      <DependentUpon>MyCars.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterNewPersonForm.cs">
+    <Compile Include="Forms\RegisterNewPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterNewPersonForm.Designer.cs">
+    <Compile Include="Forms\RegisterNewPersonForm.Designer.cs">
       <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserMainPage.cs">
+    <Compile Include="Forms\UserMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserMainPage.Designer.cs">
+    <Compile Include="Forms\UserMainPage.Designer.cs">
       <DependentUpon>UserMainPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Controls\MyCarsDetailsPanel.resx">
+      <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminMainPage.resx">
+    <EmbeddedResource Include="Forms\AdminMainPage.resx">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyCars.resx">
+      <DependentUpon>MyCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,11 +108,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegisterNewPersonForm.resx">
+    <EmbeddedResource Include="Forms\RegisterNewPersonForm.resx">
       <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserMainPage.resx">
+    <EmbeddedResource Include="Forms\UserMainPage.resx">
       <DependentUpon>UserMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -106,6 +128,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\alex-richard-VRf8BUHXomA-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

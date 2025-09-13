@@ -37,7 +37,7 @@ namespace MyCarManagmentProject
                    
                     _NewPersons.Add(person);
                     MessageBox.Show("Hello Welcome!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
+                    
 
                     this.Close();
                     break;

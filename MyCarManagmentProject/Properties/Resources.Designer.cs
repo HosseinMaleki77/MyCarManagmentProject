@@ -63,6 +63,16 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alex_richard_VRf8BUHXomA_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("alex-richard-VRf8BUHXomA-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_icon_244496 {
             get {
                 object obj = ResourceManager.GetObject("menu_icon_244496", resourceCulture);

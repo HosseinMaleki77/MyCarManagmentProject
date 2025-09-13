@@ -15,10 +15,20 @@ namespace MyCarManagmentProject
         public frmAdminMainPage()
         {
             InitializeComponent();
-            this.Text = "Admin Main Page";
+            
         }
 
         private void frmAdminMainPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustomerAndOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMyCars_Click(object sender, EventArgs e)
         {
 
         }

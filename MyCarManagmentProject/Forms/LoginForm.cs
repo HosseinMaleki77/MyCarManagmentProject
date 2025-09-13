@@ -13,6 +13,8 @@ namespace MyCarManagmentProject
     public partial class frmSignin : Form
     {
 
+        public bool IsAdmin { get; set; }
+
         public List<Admin> adminList = new List<Admin>();
 
         Admin admin = new Admin("Hossein", "123", "Hossein", "Maleki", 0);
@@ -49,9 +51,10 @@ namespace MyCarManagmentProject
          
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             bool flag = false;
+            
 
             foreach (var a in adminList)
             {
@@ -60,12 +63,8 @@ namespace MyCarManagmentProject
                     MessageBox.Show("Hello Hossein (Admin)", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     this.DialogResult = DialogResult.OK;
-                    this.Hide();
-
-                    frmAdminMainPage frmAdmin = new frmAdminMainPage();
-                    frmAdmin.ShowDialog();
+                    this.IsAdmin = true;
                     this.Close();
-
                     flag = true;
 
                     break;
@@ -81,10 +80,7 @@ namespace MyCarManagmentProject
                         MessageBox.Show($"Welcome {p.Name}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                         this.DialogResult = DialogResult.OK;
-                        this.Hide();
-                        
-                        frmUserMainPage frmUser = new frmUserMainPage();
-                        frmUser.ShowDialog();
+                        this.IsAdmin = false;
                         this.Close();
                         flag = true;
 

@@ -16,10 +16,25 @@ namespace MyCarManagmentProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSignin());
 
-      
-            
+            frmSignin login = new frmSignin();
+
+            if (login.ShowDialog() == DialogResult.OK)   // مثلا بعد از لاگین موفق
+            {
+                // حالا برنامه با فرم جدید ادامه پیدا می‌کنه
+                if (login.IsAdmin)
+                {
+                    Application.Run(new frmAdminMainPage());
+                }
+                else
+                {
+                    Application.Run(new frmUserMainPage());
+
+                }
+
+
+            }
+
 
         }
     }

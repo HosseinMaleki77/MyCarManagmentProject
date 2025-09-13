@@ -8,19 +8,14 @@ namespace MyCarManagmentProject
 {
     public class Person
     {
-        private string _name;
-        private string _family;
- 
-        private int _walletBalance;
-        private string _userName;
-        private string _password;
+
         private static int _Counter = 0;
 
         public string Name { get; private set; }
         public string Family { get; private set; }
  
         public int WalletBalance { get; private set; }
-        public string UserName { get; private set; }
+        public string UserName { get; set; }
         public string Password { get; private set; }
         public int Id { get; private set; }
 
@@ -37,8 +32,8 @@ namespace MyCarManagmentProject
             Password = password;
 
         }
-        public bool CheckPassword(string password) => _password==password;
-        public string GetUserName() => _userName;
+        
+        
     }
     public class Admin : Person
     {
@@ -56,8 +51,6 @@ namespace MyCarManagmentProject
    
         }
 
-        public bool CheckAdminPassword(string password) => _passAdmin == password;
-        public string GetAdminUserName() => _userAdmin;
     }
 }
     

@@ -24,3 +24,17 @@ C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmAdminMainPage.resources
 C:\C# TESTS\CarManagement\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmUserMainPage.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe.config
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.pdb
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.AssemblyReference.cache
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.SuggestedBindingRedirects.cache
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmSignin.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmAdminMainPage.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Properties.Resources.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmRegisterNewPerson.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmUserMainPage.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.GenerateResource.cache
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.CoreCompileInputs.cache
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
