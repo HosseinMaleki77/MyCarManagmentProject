@@ -47,7 +47,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(725, 50);
+            this.menuStrip1.Size = new System.Drawing.Size(814, 50);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,21 +59,21 @@
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Image = global::MyCarManagmentProject.Properties.Resources.menu_icon_244496;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(52, 44);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(54, 44);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.logOutToolStripMenuItem.Text = "LogOut";
             // 
             // btnCustomerAndOrders
             // 
             this.btnCustomerAndOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCustomerAndOrders.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerAndOrders.Location = new System.Drawing.Point(201, 87);
+            this.btnCustomerAndOrders.Location = new System.Drawing.Point(246, 114);
             this.btnCustomerAndOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCustomerAndOrders.Name = "btnCustomerAndOrders";
             this.btnCustomerAndOrders.Size = new System.Drawing.Size(350, 84);
@@ -86,7 +86,7 @@
             // 
             this.BtnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnMyCars.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMyCars.Location = new System.Drawing.Point(201, 197);
+            this.BtnMyCars.Location = new System.Drawing.Point(246, 224);
             this.BtnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnMyCars.Name = "BtnMyCars";
             this.BtnMyCars.Size = new System.Drawing.Size(350, 88);
@@ -99,7 +99,7 @@
             // 
             this.btnAddNewCar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAddNewCar.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCar.Location = new System.Drawing.Point(201, 312);
+            this.btnAddNewCar.Location = new System.Drawing.Point(246, 339);
             this.btnAddNewCar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnAddNewCar.Name = "btnAddNewCar";
             this.btnAddNewCar.Size = new System.Drawing.Size(350, 90);
@@ -109,10 +109,10 @@
             // 
             // frmAdminMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
-            this.ClientSize = new System.Drawing.Size(725, 477);
+            this.ClientSize = new System.Drawing.Size(814, 530);
             this.Controls.Add(this.btnAddNewCar);
             this.Controls.Add(this.BtnMyCars);
             this.Controls.Add(this.btnCustomerAndOrders);
