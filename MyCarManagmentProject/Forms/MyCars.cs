@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCarManagmentProject.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace MyCarManagmentProject.Forms
 
         private void btnMercedesBenz_Click(object sender, EventArgs e)
         {
-            pnlCar.Controls.Add()
+            
         }
     }
 }
