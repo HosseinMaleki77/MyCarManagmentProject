@@ -49,11 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\CarTextDetails.cs">
+    <Compile Include="Cars.cs" />
+    <Compile Include="Controls\CartCarDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CarTextDetails.Designer.cs">
-      <DependentUpon>CarTextDetails.cs</DependentUpon>
+    <Compile Include="Controls\CartCarDetail.Designer.cs">
+      <DependentUpon>CartCarDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MyCarsDetailsPanel.cs">
       <SubType>UserControl</SubType>
@@ -94,8 +95,8 @@
     <Compile Include="Forms\UserMainPage.Designer.cs">
       <DependentUpon>UserMainPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\CarTextDetails.resx">
-      <DependentUpon>CarTextDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CartCarDetail.resx">
+      <DependentUpon>CartCarDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyCarsDetailsPanel.resx">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>

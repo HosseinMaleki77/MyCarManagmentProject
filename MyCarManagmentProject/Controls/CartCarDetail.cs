@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace MyCarManagmentProject.Controls
 {
-    public partial class CarTextDetails : UserControl
+    public partial class CartCarDetail : UserControl
     {
-        public CarTextDetails()
+        public CartCarDetail()
         {
             InitializeComponent();
         }
-
-    
-
-       
     }
 }

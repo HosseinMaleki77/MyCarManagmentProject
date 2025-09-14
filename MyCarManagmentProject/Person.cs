@@ -10,8 +10,9 @@ namespace MyCarManagmentProject
     {
 
         private static int _Counter = 0;
-
+      
         public string Name { get; private set; }
+       
         public string Family { get; private set; }
  
         public int WalletBalance { get; private set; }
@@ -37,8 +38,7 @@ namespace MyCarManagmentProject
     }
     public class Admin : Person
     {
-        private string _userAdmin;
-        private string _passAdmin;
+
         public string UserAdmin { get; private set; }
         public string PassAdmin { get; private set; }
 

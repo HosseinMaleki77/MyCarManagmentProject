@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MyCarManagmentProject.Controls.UC_MyCarsDetails;
 
 namespace MyCarManagmentProject.Forms
 {
@@ -21,8 +22,11 @@ namespace MyCarManagmentProject.Forms
 
         private void btnMercedesBenz_Click(object sender, EventArgs e)
         {
-               LoadUserControl(new UC_MyCarsDetails());
-            UC_MyCarsDetails carControl = new UC_MyCarsDetails();
+            pnlCar.Controls.Clear();
+
+
+            LoadUserControl(new UC_MyCarsDetails(CarModel.Benz));
+            UC_MyCarsDetails carControl = new UC_MyCarsDetails(CarModel.Benz);
 
     
 
@@ -38,6 +42,13 @@ namespace MyCarManagmentProject.Forms
 
             // اضافه کردن کنترل به پنل
             pnlCar.Controls.Add(uc);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pnlCar.Controls.Clear();
+
+         
         }
     }
 }

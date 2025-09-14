@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMainPage));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCustomerAndOrders = new System.Windows.Forms.Button();
             this.BtnMyCars = new System.Windows.Forms.Button();
             this.btnAddNewCar = new System.Windows.Forms.Button();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,44 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnCustomerAndOrders
+            // 
+            this.btnCustomerAndOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomerAndOrders.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerAndOrders.Location = new System.Drawing.Point(246, 114);
+            this.btnCustomerAndOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnCustomerAndOrders.Name = "btnCustomerAndOrders";
+            this.btnCustomerAndOrders.Size = new System.Drawing.Size(350, 84);
+            this.btnCustomerAndOrders.TabIndex = 1;
+            this.btnCustomerAndOrders.Text = "Customers And Orders";
+            this.btnCustomerAndOrders.UseVisualStyleBackColor = true;
+            this.btnCustomerAndOrders.Click += new System.EventHandler(this.btnCustomerAndOrders_Click);
+            // 
+            // BtnMyCars
+            // 
+            this.BtnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnMyCars.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMyCars.Location = new System.Drawing.Point(246, 224);
+            this.BtnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.BtnMyCars.Name = "BtnMyCars";
+            this.BtnMyCars.Size = new System.Drawing.Size(350, 88);
+            this.BtnMyCars.TabIndex = 2;
+            this.BtnMyCars.Text = "MyCars";
+            this.BtnMyCars.UseVisualStyleBackColor = true;
+            this.BtnMyCars.Click += new System.EventHandler(this.BtnMyCars_Click);
+            // 
+            // btnAddNewCar
+            // 
+            this.btnAddNewCar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNewCar.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewCar.Location = new System.Drawing.Point(246, 339);
+            this.btnAddNewCar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnAddNewCar.Name = "btnAddNewCar";
+            this.btnAddNewCar.Size = new System.Drawing.Size(350, 90);
+            this.btnAddNewCar.TabIndex = 3;
+            this.btnAddNewCar.Text = "Add New Car";
+            this.btnAddNewCar.UseVisualStyleBackColor = true;
+            // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -66,46 +104,8 @@
             // 
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logOutToolStripMenuItem.Text = "LogOut";
-            // 
-            // btnCustomerAndOrders
-            // 
-            this.btnCustomerAndOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCustomerAndOrders.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerAndOrders.Location = new System.Drawing.Point(246, 114);
-            this.btnCustomerAndOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnCustomerAndOrders.Name = "btnCustomerAndOrders";
-            this.btnCustomerAndOrders.Size = new System.Drawing.Size(350, 84);
-            this.btnCustomerAndOrders.TabIndex = 1;
-            this.btnCustomerAndOrders.Text = "Customers And Orders";
-            this.btnCustomerAndOrders.UseVisualStyleBackColor = true;
-            this.btnCustomerAndOrders.Click += new System.EventHandler(this.btnCustomerAndOrders_Click);
-            // 
-            // BtnMyCars
-            // 
-            this.BtnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnMyCars.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMyCars.Location = new System.Drawing.Point(246, 224);
-            this.BtnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.BtnMyCars.Name = "BtnMyCars";
-            this.BtnMyCars.Size = new System.Drawing.Size(350, 88);
-            this.BtnMyCars.TabIndex = 2;
-            this.BtnMyCars.Text = "MyCars";
-            this.BtnMyCars.UseVisualStyleBackColor = true;
-            this.BtnMyCars.Click += new System.EventHandler(this.BtnMyCars_Click);
-            // 
-            // btnAddNewCar
-            // 
-            this.btnAddNewCar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddNewCar.Font = new System.Drawing.Font("Segoe Print", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCar.Location = new System.Drawing.Point(246, 339);
-            this.btnAddNewCar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnAddNewCar.Name = "btnAddNewCar";
-            this.btnAddNewCar.Size = new System.Drawing.Size(350, 90);
-            this.btnAddNewCar.TabIndex = 3;
-            this.btnAddNewCar.Text = "Add New Car";
-            this.btnAddNewCar.UseVisualStyleBackColor = true;
             // 
             // frmAdminMainPage
             // 
