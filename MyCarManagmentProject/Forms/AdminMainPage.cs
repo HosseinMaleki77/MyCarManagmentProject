@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCarManagmentProject.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace MyCarManagmentProject
         public frmAdminMainPage()
         {
             InitializeComponent();
+
             
         }
 
@@ -30,7 +32,8 @@ namespace MyCarManagmentProject
 
         private void BtnMyCars_Click(object sender, EventArgs e)
         {
-
+            MyCars myCars = new MyCars();
+            myCars.ShowDialog();
         }
     }
 }

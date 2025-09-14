@@ -16,11 +16,28 @@ namespace MyCarManagmentProject.Forms
         public MyCars()
         {
             InitializeComponent();
+
         }
 
         private void btnMercedesBenz_Click(object sender, EventArgs e)
         {
-            
+               LoadUserControl(new UC_MyCarsDetails());
+            UC_MyCarsDetails carControl = new UC_MyCarsDetails();
+
+    
+
+        }
+
+        private void LoadUserControl(UserControl uc)
+        {
+            // پاک کردن کنترل‌های قبلی
+            pnlCar.Controls.Clear();
+
+            // پر کردن تمام پنل
+            uc.Dock = DockStyle.Fill;
+
+            // اضافه کردن کنترل به پنل
+            pnlCar.Controls.Add(uc);
         }
     }
 }
