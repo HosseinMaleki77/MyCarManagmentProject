@@ -17,7 +17,7 @@ namespace MyCarManagmentProject
 
         public List<Admin> adminList = new List<Admin>();
 
-        Admin admin = new Admin("Hossein", "123", "Hossein", "Maleki", 0);
+        Admin admin = new Admin("a", "123", "Hossein", "Maleki", 0);
 
 
 

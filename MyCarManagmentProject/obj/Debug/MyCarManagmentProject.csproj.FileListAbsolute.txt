@@ -57,3 +57,4 @@ C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe.config
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.pdb
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.CartCarDetail.resources

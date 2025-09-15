@@ -25,8 +25,8 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
 
-            LoadUserControl(new UC_MyCarsDetails(CarModel.Benz));
-            UC_MyCarsDetails carControl = new UC_MyCarsDetails(CarModel.Benz);
+            LoadUserControl(new UC_MyCarsDetails(Cars.CarModel.Benz));
+            UC_MyCarsDetails carControl = new UC_MyCarsDetails(Cars.CarModel.Benz);
 
     
 

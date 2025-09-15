@@ -68,7 +68,7 @@
             this.button7.Location = new System.Drawing.Point(0, 524);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(255, 84);
+            this.button7.Size = new System.Drawing.Size(255, 76);
             this.button7.TabIndex = 6;
             this.button7.Text = "button7";
             this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -180,16 +180,16 @@
             // 
             // pnlCar
             // 
-            this.pnlCar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlCar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCar.Location = new System.Drawing.Point(0, 0);
             this.pnlCar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCar.Name = "pnlCar";
-            this.pnlCar.Size = new System.Drawing.Size(936, 613);
+            this.pnlCar.Size = new System.Drawing.Size(945, 613);
             this.pnlCar.TabIndex = 1;
             // 
             // MyCars
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 613);
             this.Controls.Add(this.pnlCar);
@@ -197,6 +197,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MyCars";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyCars";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

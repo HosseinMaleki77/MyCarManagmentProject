@@ -12,53 +12,47 @@ namespace MyCarManagmentProject.Controls
 {
     public partial class UC_MyCarsDetails : UserControl
     {
-        Cars Benz1 = new Cars("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a","Benz");
-        Cars Benz2 = new Cars("b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "Benz");
-        Cars Benz3 = new Cars("c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c", "Benz");
-        
-        Dictionary<CarModel, List<Cars>> CarData = new Dictionary<CarModel, List<Cars>>();
-        
-        List<Cars> Benz = new List<Cars>();
-        List<Cars> BMW = new List<Cars>();
-        List<Cars> Ferrari = new List<Cars>();
-        List<Cars> Lexus = new List<Cars>();
-        List<Cars> Toyota = new List<Cars>();
-        List<Cars> Audi = new List<Cars>();
-        List<Cars> Ford = new List<Cars>();
+        List<Cars> allCars;
+        Cars.CarModel selectedModel;
 
-        
-        
-        
-        
-
-        CarModel selectedModel;
-        public enum CarModel 
-        {
-            Benz,
-            BMW,
-            Ferari
-        }
-
-        public UC_MyCarsDetails(CarModel carModel)
+        public UC_MyCarsDetails(Cars.CarModel carModel)
         {
             InitializeComponent();
-            this.selectedModel = CarModel.Benz;
+            this.selectedModel = carModel;
         }
       
 
         private void UC_MyCarsDetails_Load(object sender, EventArgs e)
         {
-            LoadCarList(selectedModel);
+            LoadCarList();
 
-            if(selectedModel == CarModel.Benz)
+            if(selectedModel == Cars.CarModel.Benz)
+            {
+                List<Cars> benzcars = new List<Cars>();
+
+                foreach (var car in allCars)
+                {
+                    if (car.Model== Cars.CarModel.Benz)
+                    {
+                        benzcars.Add(car);
+                    }
+                }
+                cartCarDetail1.SelectedCar = benzcars[0];
+                cartCarDetail1.SetDesigner();
+
+                cartCarDetail2.SelectedCar = benzcars[1];
+                cartCarDetail2.SetDesigner();
+
+                cartCarDetail3.SelectedCar = benzcars[2];
+                cartCarDetail3.SetDesigner();
+
+
+            }
+            else if (selectedModel == Cars.CarModel.BMW)
             {
                 
             }
-            else if (selectedModel == CarModel.BMW)
-            {
-                
-            }
-            else if(selectedModel == CarModel.Ferari)
+            else if(selectedModel == Cars.CarModel.Ferari)
             {
 
             }
@@ -69,12 +63,29 @@ namespace MyCarManagmentProject.Controls
 
         }
 
-        public void LoadCarList(CarModel model)
+        public void LoadCarList()
         {
-            Benz.Add(Benz1);
-            Benz.Add(Benz2);
-            Benz.Add(Benz3);
-            
+            allCars = new List<Cars>()
+            {
+                //new Cars(Cars.CarModel.Ferari,"F1_1"),
+                //new Cars(Cars.CarModel.Benz,"GClass_1"),
+                //new Cars(Cars.CarModel.BMW,"X4_1"),
+                //new Cars(Cars.CarModel.Ferari,"F1_2"),
+                //new Cars(Cars.CarModel.Benz,"GClass_2"),
+                //new Cars(Cars.CarModel.BMW,"X4_2"),
+                //new Cars(Cars.CarModel.Ferari,"F1_3"),
+                //new Cars(Cars.CarModel.Benz,"GClass_3"),
+                new Cars("a","b","c","d","e","f","g","h","i","j",Cars.CarModel.Benz,"m","Benzs"),
+                 new Cars("b", "b", "b", "b", "b", "b", "b", "b", "b", "b", Cars.CarModel.Benz, "b","Benze"),
+                 new Cars("v", "v", "v", "v", "v", "v", "v", "v", "v", "v", Cars.CarModel.Benz, "v","Benzb")
+
+
+            };
+
+        }
+
+        private void cartCarDetail1_Load(object sender, EventArgs e)
+        {
 
         }
     }
