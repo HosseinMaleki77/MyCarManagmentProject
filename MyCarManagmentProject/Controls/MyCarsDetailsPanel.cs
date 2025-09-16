@@ -20,34 +20,48 @@ namespace MyCarManagmentProject.Controls
             InitializeComponent();
             this.selectedModel = carModel;
         }
-      
+        
 
         private void UC_MyCarsDetails_Load(object sender, EventArgs e)
         {
             LoadCarList();
 
-            if(selectedModel == Cars.CarModel.Benz)
+            if (selectedModel == Cars.CarModel.Benz)
             {
                 List<Cars> benzcars = new List<Cars>();
 
                 foreach (var car in allCars)
                 {
-                    if (car.Model== Cars.CarModel.Benz)
+                    if (car.Model == Cars.CarModel.Benz)
                     {
                         benzcars.Add(car);
                     }
                 }
-                cartCarDetail1.SelectedCar = benzcars[0];
-                cartCarDetail1.SetDesigner();
+                panel1.Controls.Clear();
 
-                cartCarDetail2.SelectedCar = benzcars[1];
-                cartCarDetail2.SetDesigner();
+                int y = 10; // فاصله اولیه از بالا
+                foreach (var car in benzcars)
+                {
+                    CartCarDetail detail = new CartCarDetail();
+                    detail.SelectedCar = car;
+                    detail.SetDesigner();
 
-                cartCarDetail3.SelectedCar = benzcars[2];
-                cartCarDetail3.SetDesigner();
+                    // محل قرارگیری کنترل
+                    detail.Location = new Point(10, y);
+                    detail.Width = panel1.Width - 30;
+                    detail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
+                    panel1.Controls.Add(detail);
 
+                    y += detail.Height + 10; // فاصله بین کارت‌ها
+                }
             }
+
+        
+
+
+
+        
             else if (selectedModel == Cars.CarModel.BMW)
             {
                 
@@ -77,7 +91,8 @@ namespace MyCarManagmentProject.Controls
                 //new Cars(Cars.CarModel.Benz,"GClass_3"),
                 new Cars("a","b","c","d","e","f","g","h","i","j",Cars.CarModel.Benz,"m","Benzs"),
                  new Cars("b", "b", "b", "b", "b", "b", "b", "b", "b", "b", Cars.CarModel.Benz, "b","Benze"),
-                 new Cars("v", "v", "v", "v", "v", "v", "v", "v", "v", "v", Cars.CarModel.Benz, "v","Benzb")
+                 new Cars("v", "v", "v", "v", "v", "v", "v", "v", "v", "v", Cars.CarModel.Benz, "v","Benzb"),
+                  new Cars("v", "v", "v", "v", "v", "v", "v", "v", "v", "v", Cars.CarModel.Benz, "v","Benzc")
 
 
             };
