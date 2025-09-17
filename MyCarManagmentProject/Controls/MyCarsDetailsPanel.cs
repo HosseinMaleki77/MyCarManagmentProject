@@ -47,8 +47,8 @@ namespace MyCarManagmentProject.Controls
                     detail.SetDesigner();
 
                     // محل قرارگیری کنترل
-                    detail.Location = new Point(10, y);
-                    detail.Width = panel1.Width - 30;
+                    detail.Location = new Point(50, y);
+                    detail.Width = panel1.Width - 10;
                     detail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
                     panel1.Controls.Add(detail);
