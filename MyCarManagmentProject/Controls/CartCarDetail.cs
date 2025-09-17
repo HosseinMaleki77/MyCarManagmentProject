@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MyCarManagmentProject.Controls
 {
@@ -25,18 +26,19 @@ namespace MyCarManagmentProject.Controls
         }
         public void SetDesigner()
         {
-      
+
             lblName.Text = SelectedCar.Name;
             lblMaxPower.Text = SelectedCar.MaxPower;
             lblAcceleration.Text = SelectedCar.Acceleration;
             lblTransmission.Text = SelectedCar.Transmission;
             lblDoors.Text = SelectedCar.DoorCount;
             lblEngineDetails.Text = SelectedCar.Engine_Details;
-            lblEngine.Text = SelectedCar.Engine_Dis;
             lblPrice.Text = SelectedCar.Price;
             lblFuel.Text = SelectedCar.Fuel;
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
+            pictureBox1.Image = SelectedCar.CarImage;
         }
+        
     }
 }

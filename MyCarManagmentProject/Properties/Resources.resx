@@ -121,10 +121,28 @@
   <data name="menu_icon_244496" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu_icon_244496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alex-richard-VRf8BUHXomA-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alex-richard-VRf8BUHXomA-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FirstCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FirstCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hc06ed7ed3b6c3d6faacaf80e741ed33934" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hc06ed7ed3b6c3d6faacaf80e741ed33934.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MercedesSSaloon_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MercedesSSaloon_20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="S450" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S450.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AMG S 63 E PHEV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S63AMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2025_Mercedes_Benz_S_580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2025-Mercedes-Benz-S-580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="S 580 4MATIC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="S 500 4MATIC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mercedes S500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AMG E 53 PHEV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMG E 53 PHEV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

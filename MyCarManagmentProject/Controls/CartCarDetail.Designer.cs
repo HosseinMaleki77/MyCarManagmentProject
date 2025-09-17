@@ -39,7 +39,6 @@
             this.lblMaxTorque = new System.Windows.Forms.Label();
             this.lblMaxPower = new System.Windows.Forms.Label();
             this.lblEngineDetails = new System.Windows.Forms.Label();
-            this.lblEngine = new System.Windows.Forms.Label();
             this.lblFuel = new System.Windows.Forms.Label();
             this.lblED = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.lblT = new System.Windows.Forms.Label();
             this.lblMa = new System.Windows.Forms.Label();
             this.lblM = new System.Windows.Forms.Label();
-            this.lblE = new System.Windows.Forms.Label();
             this.lblF = new System.Windows.Forms.Label();
             this.lblP = new System.Windows.Forms.Label();
             this.lblD = new System.Windows.Forms.Label();
@@ -70,7 +68,6 @@
             this.panel1.Controls.Add(this.lblMaxTorque);
             this.panel1.Controls.Add(this.lblMaxPower);
             this.panel1.Controls.Add(this.lblEngineDetails);
-            this.panel1.Controls.Add(this.lblEngine);
             this.panel1.Controls.Add(this.lblFuel);
             this.panel1.Controls.Add(this.lblED);
             this.panel1.Controls.Add(this.lblTo);
@@ -78,7 +75,6 @@
             this.panel1.Controls.Add(this.lblT);
             this.panel1.Controls.Add(this.lblMa);
             this.panel1.Controls.Add(this.lblM);
-            this.panel1.Controls.Add(this.lblE);
             this.panel1.Controls.Add(this.lblF);
             this.panel1.Controls.Add(this.lblP);
             this.panel1.Controls.Add(this.lblD);
@@ -128,7 +124,7 @@
             // 
             this.lblDoors.AutoSize = true;
             this.lblDoors.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoors.Location = new System.Drawing.Point(340, 65);
+            this.lblDoors.Location = new System.Drawing.Point(353, 65);
             this.lblDoors.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDoors.Name = "lblDoors";
             this.lblDoors.Size = new System.Drawing.Size(35, 13);
@@ -139,7 +135,7 @@
             // 
             this.lblTopSpeed.AutoSize = true;
             this.lblTopSpeed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopSpeed.Location = new System.Drawing.Point(319, 41);
+            this.lblTopSpeed.Location = new System.Drawing.Point(332, 41);
             this.lblTopSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTopSpeed.Name = "lblTopSpeed";
             this.lblTopSpeed.Size = new System.Drawing.Size(35, 13);
@@ -150,7 +146,7 @@
             // 
             this.lblAcceleration.AutoSize = true;
             this.lblAcceleration.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcceleration.Location = new System.Drawing.Point(332, 18);
+            this.lblAcceleration.Location = new System.Drawing.Point(345, 18);
             this.lblAcceleration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcceleration.Name = "lblAcceleration";
             this.lblAcceleration.Size = new System.Drawing.Size(35, 13);
@@ -161,7 +157,7 @@
             // 
             this.lblTransmission.AutoSize = true;
             this.lblTransmission.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransmission.Location = new System.Drawing.Point(103, 133);
+            this.lblTransmission.Location = new System.Drawing.Point(103, 115);
             this.lblTransmission.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransmission.Name = "lblTransmission";
             this.lblTransmission.Size = new System.Drawing.Size(35, 13);
@@ -172,7 +168,7 @@
             // 
             this.lblMaxTorque.AutoSize = true;
             this.lblMaxTorque.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxTorque.Location = new System.Drawing.Point(127, 112);
+            this.lblMaxTorque.Location = new System.Drawing.Point(127, 89);
             this.lblMaxTorque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxTorque.Name = "lblMaxTorque";
             this.lblMaxTorque.Size = new System.Drawing.Size(35, 13);
@@ -183,7 +179,7 @@
             // 
             this.lblMaxPower.AutoSize = true;
             this.lblMaxPower.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxPower.Location = new System.Drawing.Point(124, 90);
+            this.lblMaxPower.Location = new System.Drawing.Point(124, 64);
             this.lblMaxPower.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxPower.Name = "lblMaxPower";
             this.lblMaxPower.Size = new System.Drawing.Size(35, 13);
@@ -194,29 +190,18 @@
             // 
             this.lblEngineDetails.AutoSize = true;
             this.lblEngineDetails.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngineDetails.Location = new System.Drawing.Point(109, 65);
+            this.lblEngineDetails.Location = new System.Drawing.Point(109, 43);
             this.lblEngineDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEngineDetails.Name = "lblEngineDetails";
             this.lblEngineDetails.Size = new System.Drawing.Size(35, 13);
             this.lblEngineDetails.TabIndex = 34;
             this.lblEngineDetails.Text = "label3";
             // 
-            // lblEngine
-            // 
-            this.lblEngine.AutoSize = true;
-            this.lblEngine.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngine.Location = new System.Drawing.Point(154, 41);
-            this.lblEngine.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEngine.Name = "lblEngine";
-            this.lblEngine.Size = new System.Drawing.Size(35, 13);
-            this.lblEngine.TabIndex = 33;
-            this.lblEngine.Text = "label2";
-            // 
             // lblFuel
             // 
             this.lblFuel.AutoSize = true;
             this.lblFuel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuel.Location = new System.Drawing.Point(280, 89);
+            this.lblFuel.Location = new System.Drawing.Point(293, 89);
             this.lblFuel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFuel.Name = "lblFuel";
             this.lblFuel.Size = new System.Drawing.Size(35, 13);
@@ -228,7 +213,7 @@
             this.lblED.AutoSize = true;
             this.lblED.BackColor = System.Drawing.SystemColors.Control;
             this.lblED.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblED.Location = new System.Drawing.Point(10, 64);
+            this.lblED.Location = new System.Drawing.Point(10, 42);
             this.lblED.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblED.Name = "lblED";
             this.lblED.Size = new System.Drawing.Size(97, 14);
@@ -240,7 +225,7 @@
             this.lblTo.AutoSize = true;
             this.lblTo.BackColor = System.Drawing.SystemColors.Control;
             this.lblTo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(242, 40);
+            this.lblTo.Location = new System.Drawing.Point(255, 40);
             this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(76, 14);
@@ -252,7 +237,7 @@
             this.lblA.AutoSize = true;
             this.lblA.BackColor = System.Drawing.SystemColors.Control;
             this.lblA.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(242, 16);
+            this.lblA.Location = new System.Drawing.Point(255, 16);
             this.lblA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(86, 14);
@@ -264,7 +249,7 @@
             this.lblT.AutoSize = true;
             this.lblT.BackColor = System.Drawing.SystemColors.Control;
             this.lblT.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblT.Location = new System.Drawing.Point(10, 132);
+            this.lblT.Location = new System.Drawing.Point(10, 114);
             this.lblT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblT.Name = "lblT";
             this.lblT.Size = new System.Drawing.Size(89, 14);
@@ -276,7 +261,7 @@
             this.lblMa.AutoSize = true;
             this.lblMa.BackColor = System.Drawing.SystemColors.Control;
             this.lblMa.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMa.Location = new System.Drawing.Point(10, 110);
+            this.lblMa.Location = new System.Drawing.Point(10, 90);
             this.lblMa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMa.Name = "lblMa";
             this.lblMa.Size = new System.Drawing.Size(116, 14);
@@ -288,31 +273,19 @@
             this.lblM.AutoSize = true;
             this.lblM.BackColor = System.Drawing.SystemColors.Control;
             this.lblM.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(10, 88);
+            this.lblM.Location = new System.Drawing.Point(10, 65);
             this.lblM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(112, 14);
             this.lblM.TabIndex = 24;
             this.lblM.Text = "Maximum Power:";
             // 
-            // lblE
-            // 
-            this.lblE.AutoSize = true;
-            this.lblE.BackColor = System.Drawing.SystemColors.Control;
-            this.lblE.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblE.Location = new System.Drawing.Point(10, 40);
-            this.lblE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblE.Name = "lblE";
-            this.lblE.Size = new System.Drawing.Size(141, 14);
-            this.lblE.TabIndex = 23;
-            this.lblE.Text = "Engine Displacement :";
-            // 
             // lblF
             // 
             this.lblF.AutoSize = true;
             this.lblF.BackColor = System.Drawing.SystemColors.Control;
             this.lblF.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblF.Location = new System.Drawing.Point(244, 88);
+            this.lblF.Location = new System.Drawing.Point(257, 88);
             this.lblF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblF.Name = "lblF";
             this.lblF.Size = new System.Drawing.Size(35, 14);
@@ -336,7 +309,7 @@
             this.lblD.AutoSize = true;
             this.lblD.BackColor = System.Drawing.SystemColors.Control;
             this.lblD.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblD.Location = new System.Drawing.Point(242, 64);
+            this.lblD.Location = new System.Drawing.Point(255, 64);
             this.lblD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(94, 14);
@@ -355,11 +328,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MyCarManagmentProject.Properties.Resources.hc06ed7ed3b6c3d6faacaf80e741ed33934;
-            this.pictureBox1.Location = new System.Drawing.Point(-18, -49);
+            this.pictureBox1.Image = global::MyCarManagmentProject.Properties.Resources.FirstCar;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -39);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 246);
+            this.pictureBox1.Size = new System.Drawing.Size(308, 228);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -394,7 +367,6 @@
         private System.Windows.Forms.Label lblMaxTorque;
         private System.Windows.Forms.Label lblMaxPower;
         private System.Windows.Forms.Label lblEngineDetails;
-        private System.Windows.Forms.Label lblEngine;
         private System.Windows.Forms.Label lblFuel;
         private System.Windows.Forms.Label lblED;
         private System.Windows.Forms.Label lblTo;
@@ -402,7 +374,6 @@
         private System.Windows.Forms.Label lblT;
         private System.Windows.Forms.Label lblMa;
         private System.Windows.Forms.Label lblM;
-        private System.Windows.Forms.Label lblE;
         private System.Windows.Forms.Label lblF;
         private System.Windows.Forms.Label lblP;
         private System.Windows.Forms.Label lblD;

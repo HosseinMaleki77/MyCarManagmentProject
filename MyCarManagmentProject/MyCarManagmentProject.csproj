@@ -37,6 +37,8 @@
     <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
     <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -112,14 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Forms\RegisterNewPersonForm.resx">
       <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +127,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -140,10 +142,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hc06ed7ed3b6c3d6faacaf80e741ed33934.png" />
+    <None Include="Resources\FirstCar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alex-richard-VRf8BUHXomA-unsplash.jpg" />
+    <None Include="Resources\MercedesSSaloon_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S63AMG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2025-Mercedes-Benz-S-580.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S580.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mercedes S500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AMG E 53 PHEV.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -121,7 +121,6 @@
             this.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_MyCarsDetails";
             this.Size = new System.Drawing.Size(875, 613);
-            this.Load += new System.EventHandler(this.UC_MyCarsDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -136,7 +135,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
         private CartCarDetail cartCarDetail3;
         private CartCarDetail cartCarDetail2;
         private CartCarDetail cartCarDetail1;
