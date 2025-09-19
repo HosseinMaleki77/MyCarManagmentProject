@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\controls\\mycarsdetailspanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\controls\\mycarsdetailspanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|c:\\c# tests\\carmanagementproject\\mycarmanagmentproject\\mycarmanagmentproject\\forms\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\controls\\cartcardetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\controls\\cartcardetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\forms\\adminmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\adminmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:MyCarManagmentProject\\Forms\\AdminMainPage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|c:\\c# tests\\carmanagementproject\\mycarmanagmentproject\\mycarmanagmentproject\\controls\\mycarsdetailspanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\controls\\mycarsdetailspanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\controls\\mycarsdetailspanel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\controls\\mycarsdetailspanel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\forms\\mycars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\mycars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|c:\\c# tests\\carmanagementproject\\mycarmanagmentproject\\mycarmanagmentproject\\forms\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\addnewcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\cars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,12 +19,8 @@
       "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\controls\\cartcardetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\forms\\mycars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\mycars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\forms\\adminmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|solutionrelative:mycarmanagmentproject\\forms\\adminmainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{886CE520-9049-428B-BFC5-F000501BE26E}|MyCarManagmentProject\\MyCarManagmentProject.csproj|C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\mycarmanagmentproject\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,155 +34,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MyCars.cs [Design]",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\MyCars.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\MyCars.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\MyCars.cs [Design]",
-              "RelativeToolTip": "MyCarManagmentProject\\Forms\\MyCars.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:15:11.458Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\LoginForm.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\LoginForm.cs [Design]",
-              "RelativeToolTip": "MyCarManagmentProject\\Forms\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:15:10.596Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AdminMainPage.cs [Design]",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs [Design]",
-              "RelativeToolTip": "MyCarManagmentProject\\Forms\\AdminMainPage.cs [Design]",
+              "Title": "Cars.cs",
+              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Cars.cs",
+              "RelativeDocumentMoniker": "MyCarManagmentProject\\Cars.cs",
+              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Cars.cs",
+              "RelativeToolTip": "MyCarManagmentProject\\Cars.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA3wCMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:15:08.85Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminMainPage.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Forms\\AdminMainPage.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAYwCIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:14:39.676Z",
+              "WhenOpened": "2025-09-14T15:58:14.108Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MyCarsDetailsPanel.cs [Design]",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs [Design]",
-              "RelativeToolTip": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:15:53.868Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CartCarDetail.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "CartCarDetail.cs",
               "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\CartCarDetail.cs",
               "RelativeDocumentMoniker": "MyCarManagmentProject\\Controls\\CartCarDetail.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\CartCarDetail.cs [Design]",
-              "RelativeToolTip": "MyCarManagmentProject\\Controls\\CartCarDetail.cs [Design]",
+              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\CartCarDetail.cs",
+              "RelativeToolTip": "MyCarManagmentProject\\Controls\\CartCarDetail.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T14:40:06.735Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MyCarsDetailsPanel.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDcAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T14:57:07.998Z",
+              "WhenOpened": "2025-09-16T14:53:44.574Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MyCarsDetailsPanel.Designer.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.Designer.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.Designer.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.Designer.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Controls\\MyCarsDetailsPanel.Designer.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAYwB8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T15:19:51.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CartCarDetail.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\CartCarDetail.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Controls\\CartCarDetail.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Controls\\CartCarDetail.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Controls\\CartCarDetail.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA4wCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T14:53:44.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Cars.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Cars.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Cars.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Cars.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Cars.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:58:14.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MyCars.cs",
-              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\MyCars.cs",
-              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\MyCars.cs",
-              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\MyCars.cs",
-              "RelativeToolTip": "MyCarManagmentProject\\Forms\\MyCars.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwDIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T16:19:26.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "Person.cs",
               "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Person.cs",
               "RelativeDocumentMoniker": "MyCarManagmentProject\\Person.cs",
@@ -214,7 +74,49 @@
               "RelativeToolTip": "MyCarManagmentProject\\Person.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:14:05.397Z"
+              "WhenOpened": "2025-09-14T15:14:05.397Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminMainPage.cs [Design]",
+              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs",
+              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\AdminMainPage.cs",
+              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AdminMainPage.cs [Design]",
+              "RelativeToolTip": "MyCarManagmentProject\\Forms\\AdminMainPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T10:20:35.83Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddNewCar.cs [Design]",
+              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AddNewCar.cs [Design]",
+              "RelativeToolTip": "MyCarManagmentProject\\Forms\\AddNewCar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T07:34:28.317Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddNewCar.cs",
+              "DocumentMoniker": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "RelativeDocumentMoniker": "MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "ToolTip": "C:\\C# TESTS\\CarManagementProject\\MyCarManagmentProject\\MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "RelativeToolTip": "MyCarManagmentProject\\Forms\\AddNewCar.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T08:10:34.586Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             }
           ]
         }

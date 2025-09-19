@@ -41,7 +41,6 @@ E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.UC_MyCarsDetails.resources
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.MyCars.resources
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.csproj.AssemblyReference.cache
-C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe.config
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.CartCarDetail.resources
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.UC_MyCarsDetails.resources
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.frmSignin.resources
@@ -58,3 +57,5 @@ C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.exe
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\bin\Debug\MyCarManagmentProject.pdb
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.CartCarDetail.resources
+C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe.config
+C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.AddNewCar.resources

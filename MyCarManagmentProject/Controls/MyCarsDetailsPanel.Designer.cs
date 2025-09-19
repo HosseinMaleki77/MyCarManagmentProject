@@ -121,6 +121,8 @@
             this.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_MyCarsDetails";
             this.Size = new System.Drawing.Size(875, 613);
+            this.Load += new System.EventHandler(this.UC_MyCarsDetails_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

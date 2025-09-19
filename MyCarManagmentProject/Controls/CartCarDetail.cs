@@ -38,6 +38,7 @@ namespace MyCarManagmentProject.Controls
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
+            
         }
         
     }

@@ -73,9 +73,9 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AMG_E_53_PHEV {
+        internal static System.Drawing.Bitmap Audi_Q5 {
             get {
-                object obj = ResourceManager.GetObject("AMG E 53 PHEV", resourceCulture);
+                object obj = ResourceManager.GetObject("Audi Q5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,109 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AMG_S_63_E_PHEV {
+        internal static System.Drawing.Bitmap Benz_AMGS63 {
             get {
-                object obj = ResourceManager.GetObject("AMG S 63 E PHEV", resourceCulture);
+                object obj = ResourceManager.GetObject("Benz AMGS63", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Benz_E350 {
+            get {
+                object obj = ResourceManager.GetObject("Benz E350", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Benz_S400_d {
+            get {
+                object obj = ResourceManager.GetObject("Benz S400 d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Benz_S580 {
+            get {
+                object obj = ResourceManager.GetObject("Benz S580", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BMW_i5_xDrive40 {
+            get {
+                object obj = ResourceManager.GetObject("BMW i5 xDrive40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BMW_M440i_Gran_Coupe {
+            get {
+                object obj = ResourceManager.GetObject("BMW M440i Gran Coupe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BMW_M5__G90_ {
+            get {
+                object obj = ResourceManager.GetObject("BMW M5 (G90)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BMW_X5_M60i {
+            get {
+                object obj = ResourceManager.GetObject("BMW X5 M60i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ferrari_296_Speciale {
+            get {
+                object obj = ResourceManager.GetObject("Ferrari 296 Speciale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ferrari_296_Speciale_Aperta_Spec {
+            get {
+                object obj = ResourceManager.GetObject("Ferrari 296 Speciale Aperta Spec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ferrari_849_Testarossa_Spec {
+            get {
+                object obj = ResourceManager.GetObject("Ferrari 849 Testarossa Spec", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +196,26 @@ namespace MyCarManagmentProject.Properties {
         internal static System.Drawing.Bitmap FirstCar {
             get {
                 object obj = ResourceManager.GetObject("FirstCar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ford_Mustang_Dark_Horse {
+            get {
+                object obj = ResourceManager.GetObject("Ford Mustang Dark Horse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lexus_LS {
+            get {
+                object obj = ResourceManager.GetObject("Lexus LS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,29 +243,19 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap S_500_4MATIC {
-            get {
-                object obj = ResourceManager.GetObject("S 500 4MATIC", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap S_580_4MATIC {
-            get {
-                object obj = ResourceManager.GetObject("S 580 4MATIC", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap S450 {
             get {
                 object obj = ResourceManager.GetObject("S450", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toyota_Land_Cruiser {
+            get {
+                object obj = ResourceManager.GetObject("Toyota Land Cruiser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

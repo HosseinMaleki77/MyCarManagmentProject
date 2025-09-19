@@ -59,14 +59,14 @@
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Image = global::MyCarManagmentProject.Properties.Resources.menu_icon_244496;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(52, 44);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(54, 44);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.logOutToolStripMenuItem.Text = "LogOut";
             // 
             // btnCustomerAndOrders
@@ -106,10 +106,11 @@
             this.btnAddNewCar.TabIndex = 3;
             this.btnAddNewCar.Text = "Add New Car";
             this.btnAddNewCar.UseVisualStyleBackColor = true;
+            this.btnAddNewCar.Click += new System.EventHandler(this.btnAddNewCar_Click);
             // 
             // frmAdminMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumPurple;
             this.ClientSize = new System.Drawing.Size(814, 530);

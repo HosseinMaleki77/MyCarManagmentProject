@@ -35,5 +35,11 @@ namespace MyCarManagmentProject
             MyCars myCars = new MyCars();
             myCars.ShowDialog();
         }
+
+        private void btnAddNewCar_Click(object sender, EventArgs e)
+        {
+            AddNewCar addNewCar = new AddNewCar();
+            addNewCar.ShowDialog();
+        }
     }
 }

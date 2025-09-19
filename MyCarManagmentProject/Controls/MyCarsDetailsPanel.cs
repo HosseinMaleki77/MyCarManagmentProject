@@ -17,71 +17,64 @@ namespace MyCarManagmentProject.Controls
     {
         //List<Cars> allCars;
         //Cars.CarModel selectedModel;
+        List<Cars> carsList = new List<Cars>();
+
+        public string FactoryFilter { get; set; }
 
         public UC_MyCarsDetails()
         {
             InitializeComponent();
-            DisplayCarsFromDatabase();
+         
 
-
-            //    this.selectedModel = carModel;
-            //}
-
-
-            //private void UC_MyCarsDetails_Load(object sender, EventArgs e)
-            //{
-            //    LoadCarList();
-
-            //    if (selectedModel == Cars.CarModel.Benz)
-            //    {
-            //        List<Cars> benzcars = new List<Cars>();
-
-            //        foreach (var car in allCars)
-            //        {
-            //            if (car.Model == Cars.CarModel.Benz)
-            //            {
-            //                benzcars.Add(car);
-            //            }
-            //        }
-            //        panel1.Controls.Clear();
-
-            //        int y = 10; // فاصله اولیه از بالا
-            //        foreach (var car in benzcars)
-            //        {
-            //            CartCarDetail detail = new CartCarDetail();
-            //            detail.SelectedCar = car;
-            //            detail.SetDesigner();
-
-            //            // محل قرارگیری کنترل
-            //            detail.Location = new Point(100, y);
-            //            detail.Width = panel1.Width - 10;
-            //            detail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-
-            //            panel1.Controls.Add(detail);
-
-            //            y += detail.Height + 70; // فاصله بین کارت‌ها
-            //        }
-            //    }
-
-
-
-
-
-
-            //    else if (selectedModel == Cars.CarModel.BMW)
-            //    {
-
-            //    }
-            //    else if(selectedModel == Cars.CarModel.Ferari)
-            //    {
-
-            //    }
-            //}
         }
-            private void panel7_Paint(object sender, PaintEventArgs e)
+        private void UC_MyCarsDetails_Load(object sender, EventArgs e)
+        {
+
+
+            LoadCarsFromDatabase();
+
+            panel1.Controls.Clear();
+            
+            int y = 10; // فاصله اولیه از بالا
+            foreach (var car in carsList)
             {
+                if (car.Factory==FactoryFilter)
+                {
+                    CartCarDetail detail = new CartCarDetail();
+                    detail.SelectedCar = car;
+                    detail.SetDesigner();
+
+                    // محل قرارگیری کنترل
+                    detail.Location = new Point(100, y);
+                    detail.Width = panel1.Width - 10;
+                    detail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+
+                    panel1.Controls.Add(detail);
+
+                    y += detail.Height + 70; // فاصله بین کارت‌ها
+
+                }
+
 
             }
+        }
+
+
+
+
+
+
+        //    else if (selectedModel == Cars.CarModel.BMW)
+        //    {
+
+        //    }
+        //    else if(selectedModel == Cars.CarModel.Ferari)
+        //    {
+
+        //    }
+        //}
+
+
 
         //public void LoadCarList()
         //{
@@ -111,14 +104,14 @@ namespace MyCarManagmentProject.Controls
         //}
         private List<Cars> LoadCarsFromDatabase()
         {
-            List<Cars> carsList = new List<Cars>();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MyShoppingCarProject"].ConnectionString;
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM dbo.CarDetails";
+                string query = "SELECT * FROM CarInfo";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -129,15 +122,15 @@ namespace MyCarManagmentProject.Controls
                         {
                             Id = Convert.ToInt32(reader["ID"]),
                             Name = reader["Name"].ToString(),
-                            MaxPower = reader["MaxPower"].ToString(),
+                            MaxPower = reader["MaximumPower"].ToString(),
                             Acceleration = reader["Acceleration"].ToString(),
                             Transmission = reader["Transmission"].ToString(),
-                            DoorCount = Convert.ToInt32(reader["DoorNumbers"]).ToString(),
-                            Engine_Details = reader["Engine_Details"].ToString(),
+                            DoorCount =(reader["DoorsNumber"]).ToString(),
+                            Engine_Details = reader["EngineDetails"].ToString(),
                             Price = reader["Price"].ToString(),
                             Fuel = reader["Fuel"].ToString(),
                             TopSpeed = reader["TopSpeed"].ToString(),
-                            MaxTorque = reader["MaxTorque"].ToString(),
+                            MaxTorque = reader["MaximumTorque"].ToString(),
                             Factory = reader["Factory"].ToString(),
 
                             CarImage = (Image)Properties.Resources.ResourceManager.GetObject(reader["Name"].ToString())
@@ -149,102 +142,9 @@ namespace MyCarManagmentProject.Controls
                 }
             }
             return carsList;
+
         }
-        private void DisplayCarsFromDatabase()
-        {
-            // گرفتن داده‌ها از دیتابیس
-            List<Cars> carsList = LoadCarsFromDatabase();
-
-            // ایجاد یک FlowLayoutPanel برای قرار دادن همه پنل‌ها
-            FlowLayoutPanel flowPanel = new FlowLayoutPanel
-            {
-                Top = 10,
-                Left = 10,
-                Width = 500,
-                Height = 500,
-                AutoScroll = true
-            };
-            this.Controls.Add(flowPanel);
-
-            // ایجاد یک ListBox برای خلاصه اطلاعات
-            ListBox listBoxCars = new ListBox
-            {
-                Top = 10,
-                Left = 520,
-                Width = 250,
-                Height = 500
-            };
-            this.Controls.Add(listBoxCars);
-
-            foreach (var car in carsList)
-            {
-                // پنل 1: مشخصات اصلی
-                Panel panel1 = new Panel
-                {
-                    Width = 480,
-                    Height = 100,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Margin = new Padding(5)
-                };
-                Label lblName = new Label { Text = "Name: " + car.Name, Top = 10, Left = 10, AutoSize = true };
-                Label lblFactory = new Label { Text = "Factory: " + car.Factory, Top = 35, Left = 10, AutoSize = true };
-                panel1.Controls.Add(lblName);
-                panel1.Controls.Add(lblFactory);
-
-                // پنل 2: مشخصات فنی
-                Panel panel2 = new Panel
-                {
-                    Width = 480,
-                    Height = 100,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Margin = new Padding(5)
-                };
-                Label lblMaxPower = new Label { Text = "Max Power: " + car.MaxPower, Top = 10, Left = 10, AutoSize = true };
-                Label lblAcceleration = new Label { Text = "Acceleration: " + car.Acceleration, Top = 35, Left = 10, AutoSize = true };
-                Label lblTransmission = new Label { Text = "Transmission: " + car.Transmission, Top = 60, Left = 10, AutoSize = true };
-                panel2.Controls.Add(lblMaxPower);
-                panel2.Controls.Add(lblAcceleration);
-                panel2.Controls.Add(lblTransmission);
-
-                // پنل 3: قیمت و سوخت
-                Panel panel3 = new Panel
-                {
-                    Width = 480,
-                    Height = 100,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Margin = new Padding(5)
-                };
-                Label lblPrice = new Label { Text = "Price: " + car.Price, Top = 10, Left = 10, AutoSize = true };
-                Label lblFuel = new Label { Text = "Fuel: " + car.Fuel, Top = 35, Left = 10, AutoSize = true };
-                Label lblTopSpeed = new Label { Text = "Top Speed: " + car.TopSpeed, Top = 60, Left = 10, AutoSize = true };
-                panel3.Controls.Add(lblPrice);
-                panel3.Controls.Add(lblFuel);
-                panel3.Controls.Add(lblTopSpeed);
-
-                // اضافه کردن تصویر ماشین در پنل اول
-                if (car.CarImage != null)
-                {
-                    PictureBox pb = new PictureBox
-                    {
-                        Image = car.CarImage,
-                        Top = 10,
-                        Left = 350,
-                        Width = 100,
-                        Height = 80,
-                        SizeMode = PictureBoxSizeMode.StretchImage
-                    };
-                    panel1.Controls.Add(pb);
-                }
-
-                // اضافه کردن پنل‌ها به FlowLayoutPanel
-                flowPanel.Controls.Add(panel1);
-                flowPanel.Controls.Add(panel2);
-                flowPanel.Controls.Add(panel3);
-
-                // اضافه کردن خلاصه اطلاعات به ListBox
-                listBoxCars.Items.Add($"{car.Name} - {car.MaxPower} - {car.Price}");
-            }
-        }
+        
     }
 }
 

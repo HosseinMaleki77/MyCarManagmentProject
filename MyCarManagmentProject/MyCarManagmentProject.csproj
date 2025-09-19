@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
-    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
-    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=28b1ccb943c3cd32" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -63,6 +60,12 @@
     </Compile>
     <Compile Include="Controls\MyCarsDetailsPanel.Designer.cs">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewCar.Designer.cs">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -102,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyCarsDetailsPanel.resx">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewCar.resx">
+      <DependentUpon>AddNewCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -164,6 +170,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AMG E 53 PHEV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMW X5 M60i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMW i5 xDrive40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMW M440i Gran Coupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BMW M5 %28G90%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ferrari 849 Testarossa Spec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ferrari 296 Speciale Aperta Spec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ferrari 296 Speciale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lexus LS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ford Mustang Dark Horse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Audi Q5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toyota Land Cruiser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

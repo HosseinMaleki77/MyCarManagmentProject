@@ -20,19 +20,84 @@ namespace MyCarManagmentProject.Forms
 
         }
 
-        private void btnMercedesBenz_Click(object sender, EventArgs e)
+        private void btnBENZ_Click(object sender, EventArgs e)
         {
             pnlCar.Controls.Clear();
 
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "BENZ";
 
-
-            LoadUserControl(new UC_MyCarsDetails());
+            LoadUserControl(uc);
 
 
 
 
         }
 
+
+
+        private void btnBMW_Click(object sender, EventArgs e)
+        {
+
+            pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "BMW";
+
+            LoadUserControl(uc);
+
+
+        }
+
+        private void btnFERRARI_Click(object sender, EventArgs e)
+        {
+             pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "FERRARI";
+
+            LoadUserControl(uc);
+        }
+
+        private void btnLEXUS_Click(object sender, EventArgs e)
+        {
+            pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "LEXUS";
+
+            LoadUserControl(uc);
+        }
+
+        private void btnTOYOTA_Click(object sender, EventArgs e)
+        {
+            pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "TOYOTA";
+
+            LoadUserControl(uc);
+        }
+
+        private void btnAUDI_Click(object sender, EventArgs e)
+        {
+            pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "AUDI";
+
+            LoadUserControl(uc);
+        }
+
+        private void btnFORD_Click(object sender, EventArgs e)
+        {
+            pnlCar.Controls.Clear();
+
+            var uc = new UC_MyCarsDetails();
+            uc.FactoryFilter = "FORD";
+
+            LoadUserControl(uc);
+        }
         private void LoadUserControl(UserControl uc)
         {
             // پاک کردن کنترل‌های قبلی
@@ -43,13 +108,6 @@ namespace MyCarManagmentProject.Forms
 
             // اضافه کردن کنترل به پنل
             pnlCar.Controls.Add(uc);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pnlCar.Controls.Clear();
-
-         
         }
     }
 }
