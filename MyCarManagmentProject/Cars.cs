@@ -9,12 +9,16 @@ namespace MyCarManagmentProject
 {
     public class Cars
     {
-        //public enum CarModel
-        //{
-        //    Benz,
-        //    BMW,
-        //    Ferari
-        //}
+        public enum CarModel
+        {
+            Benz,
+            BMW,
+            Ferari,
+            Audi,
+            Toyota,
+            Lexus,
+            Ford
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Fuel { get; set; }
@@ -26,9 +30,11 @@ namespace MyCarManagmentProject
         public string TopSpeed { get; set; }
         public string DoorCount { get; set; }
         public string Price { get; set; }
-        //public CarModel Model { get; set; }
+        public int CarCount { get; set; }
+        public bool MustSave { get; set; }
+        public CarModel Model { get; set; }
 
-        public string Factory { get; set; }
+        //public string Factory { get; set; }
 
         public Image CarImage { get; set; }
 

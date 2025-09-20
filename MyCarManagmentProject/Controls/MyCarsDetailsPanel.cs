@@ -16,10 +16,10 @@ namespace MyCarManagmentProject.Controls
     public partial class UC_MyCarsDetails : UserControl
     {
         //List<Cars> allCars;
-        //Cars.CarModel selectedModel;
+        public Cars.CarModel FactoryFilter;
         List<Cars> carsList = new List<Cars>();
 
-        public string FactoryFilter { get; set; }
+        //public string FactoryFilter { get; set; }
 
         public UC_MyCarsDetails()
         {
@@ -38,7 +38,7 @@ namespace MyCarManagmentProject.Controls
             int y = 10; // فاصله اولیه از بالا
             foreach (var car in carsList)
             {
-                if (car.Factory==FactoryFilter)
+                if (car.Model == FactoryFilter)
                 {
                     CartCarDetail detail = new CartCarDetail();
                     detail.SelectedCar = car;
@@ -115,6 +115,7 @@ namespace MyCarManagmentProject.Controls
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 using (SqlDataReader reader = cmd.ExecuteReader())
+                 
                 {
                     while (reader.Read())
                     {
@@ -125,13 +126,15 @@ namespace MyCarManagmentProject.Controls
                             MaxPower = reader["MaximumPower"].ToString(),
                             Acceleration = reader["Acceleration"].ToString(),
                             Transmission = reader["Transmission"].ToString(),
-                            DoorCount =(reader["DoorsNumber"]).ToString(),
+                            DoorCount = (reader["DoorsNumber"]).ToString(),
                             Engine_Details = reader["EngineDetails"].ToString(),
                             Price = reader["Price"].ToString(),
                             Fuel = reader["Fuel"].ToString(),
                             TopSpeed = reader["TopSpeed"].ToString(),
                             MaxTorque = reader["MaximumTorque"].ToString(),
-                            Factory = reader["Factory"].ToString(),
+                            CarCount = Convert.ToInt32(reader["Count"]),
+                            Model =(Cars.CarModel) reader["Factory"],
+                            
 
                             CarImage = (Image)Properties.Resources.ResourceManager.GetObject(reader["Name"].ToString())
 

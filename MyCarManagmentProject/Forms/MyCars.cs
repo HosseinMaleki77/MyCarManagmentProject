@@ -25,7 +25,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "BENZ";
+            uc.FactoryFilter = Cars.CarModel.Benz;
 
             LoadUserControl(uc);
 
@@ -42,7 +42,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "BMW";
+            uc.FactoryFilter = Cars.CarModel.BMW;
 
             LoadUserControl(uc);
 
@@ -54,7 +54,7 @@ namespace MyCarManagmentProject.Forms
              pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "FERRARI";
+            uc.FactoryFilter = Cars.CarModel.Ferari;
 
             LoadUserControl(uc);
         }
@@ -64,7 +64,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "LEXUS";
+            uc.FactoryFilter = Cars.CarModel.Lexus;
 
             LoadUserControl(uc);
         }
@@ -74,7 +74,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "TOYOTA";
+            uc.FactoryFilter = Cars.CarModel.Toyota;
 
             LoadUserControl(uc);
         }
@@ -84,7 +84,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "AUDI";
+            uc.FactoryFilter = Cars.CarModel.Audi;
 
             LoadUserControl(uc);
         }
@@ -94,7 +94,7 @@ namespace MyCarManagmentProject.Forms
             pnlCar.Controls.Clear();
 
             var uc = new UC_MyCarsDetails();
-            uc.FactoryFilter = "FORD";
+            uc.FactoryFilter = Cars.CarModel.Ford;
 
             LoadUserControl(uc);
         }
