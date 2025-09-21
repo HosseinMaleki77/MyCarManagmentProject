@@ -204,5 +204,23 @@
   <ItemGroup>
     <None Include="Resources\Toyota Land Cruiser.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wallet-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-image-icon-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-coin-wallet-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wallet-30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

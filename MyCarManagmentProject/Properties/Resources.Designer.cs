@@ -163,6 +163,16 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DefaultCarImage {
+            get {
+                object obj = ResourceManager.GetObject("DefaultCarImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ferrari_296_Speciale {
             get {
                 object obj = ResourceManager.GetObject("Ferrari 296 Speciale", resourceCulture);
@@ -213,6 +223,46 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_coin_wallet_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_coin_wallet_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_save_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_wallet_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_wallet_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_wallet_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_wallet_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lexus_LS {
             get {
                 object obj = ResourceManager.GetObject("Lexus LS", resourceCulture);
@@ -236,6 +286,16 @@ namespace MyCarManagmentProject.Properties {
         internal static System.Drawing.Bitmap MercedesSSaloon_20 {
             get {
                 object obj = ResourceManager.GetObject("MercedesSSaloon_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_image_icon_4 {
+            get {
+                object obj = ResourceManager.GetObject("no_image_icon_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

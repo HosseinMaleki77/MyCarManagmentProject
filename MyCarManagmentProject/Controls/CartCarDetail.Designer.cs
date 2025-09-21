@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nmCarCount = new System.Windows.Forms.NumericUpDown();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -50,16 +51,18 @@
             this.lblP = new System.Windows.Forms.Label();
             this.lblD = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nmCarCount = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.nmCarCount);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label2);
@@ -89,11 +92,18 @@
             this.panel1.Size = new System.Drawing.Size(538, 188);
             this.panel1.TabIndex = 0;
             // 
+            // nmCarCount
+            // 
+            this.nmCarCount.Location = new System.Drawing.Point(13, 152);
+            this.nmCarCount.Name = "nmCarCount";
+            this.nmCarCount.Size = new System.Drawing.Size(67, 22);
+            this.nmCarCount.TabIndex = 2;
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(53, 18);
+            this.lblName.Location = new System.Drawing.Point(50, 18);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(35, 13);
@@ -116,7 +126,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(293, 125);
+            this.lblPrice.Location = new System.Drawing.Point(293, 126);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(41, 13);
@@ -127,7 +137,7 @@
             // 
             this.lblDoors.AutoSize = true;
             this.lblDoors.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDoors.Location = new System.Drawing.Point(365, 65);
+            this.lblDoors.Location = new System.Drawing.Point(314, 66);
             this.lblDoors.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDoors.Name = "lblDoors";
             this.lblDoors.Size = new System.Drawing.Size(35, 13);
@@ -149,7 +159,7 @@
             // 
             this.lblAcceleration.AutoSize = true;
             this.lblAcceleration.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcceleration.Location = new System.Drawing.Point(358, 18);
+            this.lblAcceleration.Location = new System.Drawing.Point(352, 18);
             this.lblAcceleration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcceleration.Name = "lblAcceleration";
             this.lblAcceleration.Size = new System.Drawing.Size(35, 13);
@@ -160,7 +170,7 @@
             // 
             this.lblTransmission.AutoSize = true;
             this.lblTransmission.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransmission.Location = new System.Drawing.Point(98, 115);
+            this.lblTransmission.Location = new System.Drawing.Point(94, 115);
             this.lblTransmission.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransmission.Name = "lblTransmission";
             this.lblTransmission.Size = new System.Drawing.Size(35, 13);
@@ -171,7 +181,7 @@
             // 
             this.lblMaxTorque.AutoSize = true;
             this.lblMaxTorque.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxTorque.Location = new System.Drawing.Point(131, 89);
+            this.lblMaxTorque.Location = new System.Drawing.Point(122, 91);
             this.lblMaxTorque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxTorque.Name = "lblMaxTorque";
             this.lblMaxTorque.Size = new System.Drawing.Size(35, 13);
@@ -182,7 +192,7 @@
             // 
             this.lblMaxPower.AutoSize = true;
             this.lblMaxPower.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxPower.Location = new System.Drawing.Point(125, 64);
+            this.lblMaxPower.Location = new System.Drawing.Point(118, 66);
             this.lblMaxPower.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxPower.Name = "lblMaxPower";
             this.lblMaxPower.Size = new System.Drawing.Size(35, 13);
@@ -204,7 +214,7 @@
             // 
             this.lblFuel.AutoSize = true;
             this.lblFuel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuel.Location = new System.Drawing.Point(306, 88);
+            this.lblFuel.Location = new System.Drawing.Point(306, 89);
             this.lblFuel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFuel.Name = "lblFuel";
             this.lblFuel.Size = new System.Drawing.Size(35, 13);
@@ -315,9 +325,9 @@
             this.lblD.Location = new System.Drawing.Point(271, 64);
             this.lblD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(94, 14);
+            this.lblD.Size = new System.Drawing.Size(47, 14);
             this.lblD.TabIndex = 29;
-            this.lblD.Text = "DoorsNumber:";
+            this.lblD.Text = "Doors:";
             // 
             // panel4
             // 
@@ -329,6 +339,17 @@
             this.panel4.Size = new System.Drawing.Size(294, 188);
             this.panel4.TabIndex = 2;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.Image = global::MyCarManagmentProject.Properties.Resources.icons8_save_48;
+            this.btnSave.Location = new System.Drawing.Point(97, 140);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(43, 43);
+            this.btnSave.TabIndex = 44;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MyCarManagmentProject.Properties.Resources.FirstCar;
@@ -339,14 +360,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // nmCarCount
-            // 
-            this.nmCarCount.Location = new System.Drawing.Point(21, 151);
-            this.nmCarCount.Name = "nmCarCount";
-            this.nmCarCount.Size = new System.Drawing.Size(67, 22);
-            this.nmCarCount.TabIndex = 2;
-            this.nmCarCount.ValueChanged += new System.EventHandler(this.nmCarCount_ValueChanged);
             // 
             // CartCarDetail
             // 
@@ -360,9 +373,9 @@
             this.Size = new System.Drawing.Size(832, 188);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +406,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nmCarCount;
+        private System.Windows.Forms.Button btnSave;
     }
 }

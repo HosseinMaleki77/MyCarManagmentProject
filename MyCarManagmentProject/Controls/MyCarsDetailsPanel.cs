@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,6 +120,25 @@ namespace MyCarManagmentProject.Controls
                 {
                     while (reader.Read())
                     {
+                        string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
+                        string imageName = reader["IMAGEPATH"].ToString(); // نام عکس از دیتابیس
+                        string imagePath = Path.Combine(folderPath, imageName);
+                       
+
+                        Image carImage = null;
+                        if (File.Exists(imagePath))
+                        {
+                            // اینطوری فایل آزاد می‌ماند و بعداً قابل جایگزینی است
+                            using (var temp = Image.FromFile(imagePath))
+                            {
+                                carImage = new Bitmap(temp);
+                            }
+                        }
+                        else
+                        {
+                            carImage = Properties.Resources.no_image_icon_4;
+                        }
+
                         Cars car = new Cars
                         {
                             Id = Convert.ToInt32(reader["ID"]),
@@ -133,16 +153,16 @@ namespace MyCarManagmentProject.Controls
                             TopSpeed = reader["TopSpeed"].ToString(),
                             MaxTorque = reader["MaximumTorque"].ToString(),
                             CarCount = Convert.ToInt32(reader["Count"]),
-                            Model =(Cars.CarModel) reader["Factory"],
-                            
+                            Model = (Cars.CarModel)reader["Factory"],
 
-                            CarImage = (Image)Properties.Resources.ResourceManager.GetObject(reader["Name"].ToString())
-
+                            // اینجا عکس از فولدر دیسک بارگذاری می‌شود
+                            CarImage = carImage
                         };
 
                         carsList.Add(car);
                     }
                 }
+                
             }
             return carsList;
 

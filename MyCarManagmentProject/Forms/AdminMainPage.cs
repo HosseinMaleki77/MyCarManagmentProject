@@ -22,7 +22,8 @@ namespace MyCarManagmentProject
 
         private void frmAdminMainPage_Load(object sender, EventArgs e)
         {
-
+            int balance = 250000; // مثلا از دیتابیس گرفتید
+            tsWallet.Text = " $" + balance.ToString("N0") + " ";
         }
 
         private void btnCustomerAndOrders_Click(object sender, EventArgs e)

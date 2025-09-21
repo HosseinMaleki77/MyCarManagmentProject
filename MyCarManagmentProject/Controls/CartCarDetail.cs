@@ -44,10 +44,6 @@ namespace MyCarManagmentProject.Controls
             nmCarCount.Value = (int)SelectedCar.CarCount;
         }
 
-        private void nmCarCount_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void UpdateCount()
         {
@@ -67,6 +63,21 @@ namespace MyCarManagmentProject.Controls
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateCount();
+                MessageBox.Show(" Save SuccessFully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch 
+            {
+                MessageBox.Show("Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
     }
 }
