@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartCarDetail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.nmCarCount = new System.Windows.Forms.NumericUpDown();
             this.lblName = new System.Windows.Forms.Label();
@@ -51,8 +53,11 @@
             this.lblP = new System.Windows.Forms.Label();
             this.lblD = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRent = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).BeginInit();
             this.panel4.SuspendLayout();
@@ -62,6 +67,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnBuy);
+            this.panel1.Controls.Add(this.btnRent);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.nmCarCount);
             this.panel1.Controls.Add(this.lblName);
@@ -339,16 +346,35 @@
             this.panel4.Size = new System.Drawing.Size(294, 188);
             this.panel4.TabIndex = 2;
             // 
-            // btnSave
+            // btnRent
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Image = global::MyCarManagmentProject.Properties.Resources.icons8_save_48;
-            this.btnSave.Location = new System.Drawing.Point(97, 140);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(43, 43);
-            this.btnSave.TabIndex = 44;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnRent.BackColor = System.Drawing.Color.White;
+            this.btnRent.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRent.ImageKey = "icons8-lease-40.png";
+            this.btnRent.ImageList = this.imageList1;
+            this.btnRent.Location = new System.Drawing.Point(284, 152);
+            this.btnRent.Name = "btnRent";
+            this.btnRent.Size = new System.Drawing.Size(75, 31);
+            this.btnRent.TabIndex = 45;
+            this.btnRent.Text = "Rent";
+            this.btnRent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRent.UseVisualStyleBackColor = false;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.White;
+            this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuy.ImageIndex = 1;
+            this.btnBuy.ImageList = this.imageList1;
+            this.btnBuy.Location = new System.Drawing.Point(365, 152);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(75, 31);
+            this.btnBuy.TabIndex = 46;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuy.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -360,6 +386,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.Image = global::MyCarManagmentProject.Properties.Resources.icons8_save_48;
+            this.btnSave.Location = new System.Drawing.Point(97, 140);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(43, 43);
+            this.btnSave.TabIndex = 44;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-lease-40.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-buy-48.png");
             // 
             // CartCarDetail
             // 
@@ -407,5 +451,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nmCarCount;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.Button btnRent;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -9,26 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using MyCarManagmentProject.Controls;
 
 namespace MyCarManagmentProject.Controls
 {
     public partial class CartCarDetail : UserControl
     {
+       
+
+        // سازنده پیش‌فرض (ضروری برای Designer)
         public CartCarDetail()
         {
             InitializeComponent();
-
         }
 
         public Cars SelectedCar { get; set; }
 
+        // متد برای ست کردن نقش
+        
 
-        private void CartCarDetail_Load(object sender, EventArgs e)
-        {
-
-        }
         public void SetDesigner()
         {
+            if (SelectedCar == null) return;
 
             lblName.Text = SelectedCar.Name;
             lblMaxPower.Text = SelectedCar.MaxPower;
@@ -44,21 +46,18 @@ namespace MyCarManagmentProject.Controls
             nmCarCount.Value = (int)SelectedCar.CarCount;
         }
 
-
         private void UpdateCount()
         {
-
             int carCount = (int)nmCarCount.Value;
-
-            // اتصال به دیتابیس
             string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE CarInfo SET COUNT=" + carCount + " WHERE ID=" + SelectedCar.Id;
+                string query = "UPDATE CarInfo SET COUNT=@Count WHERE ID=@Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@Count", carCount);
+                cmd.Parameters.AddWithValue("@Id", SelectedCar.Id);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -70,14 +69,12 @@ namespace MyCarManagmentProject.Controls
             try
             {
                 UpdateCount();
-                MessageBox.Show(" Save SuccessFully ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Save Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
         }
     }
 }

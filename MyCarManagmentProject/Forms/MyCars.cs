@@ -14,6 +14,7 @@ namespace MyCarManagmentProject.Forms
 {
     public partial class MyCars : Form
     {
+        bool isadmin=false;
         public MyCars()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace MyCarManagmentProject.Forms
 
             var uc = new UC_MyCarsDetails();
             uc.FactoryFilter = Cars.CarModel.Benz;
+
 
             LoadUserControl(uc);
 

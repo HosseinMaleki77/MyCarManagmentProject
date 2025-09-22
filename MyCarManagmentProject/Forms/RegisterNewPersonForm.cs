@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,38 +14,28 @@ namespace MyCarManagmentProject
     public partial class frmRegisterNewPerson : Form
     {
        private List<Person> _NewPersons;
-        public frmRegisterNewPerson(List<Person> personList)
+        public frmRegisterNewPerson()
         {
             InitializeComponent();
             MinimizeBox = false;
             MaximizeBox = false;
-            _NewPersons = personList;
+           
 
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            foreach (var p in _NewPersons)
+
+            try
             {
-                if(p.UserName == txtRUserName.Text)
-                {
-                    MessageBox.Show("Your UserName Is Taken by Someone else! Please Try Again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                }
-                else
-                {
-                    Person person = new Person(txtFirstName.Text,txtLastName.Text,0,txtRUserName.Text,txtRPassword.Text);
-                   
-                    _NewPersons.Add(person);
-                    MessageBox.Show("Hello Welcome!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-
-                    this.Close();
-                    break;
-
-                }
-
+                InsertPerson();
             }
+            catch
+            {
+
+                MessageBox.Show("Username Has Already Been Taken By Someone Else", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         
           
         }
@@ -52,6 +43,38 @@ namespace MyCarManagmentProject
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void InsertPerson()
+        {
+           
+            string name = txtFirstName.Text;
+            string lastname = txtLastName.Text;
+            string username = txtRPassword.Text;
+            string password = txtRPassword.Text;
+
+
+
+
+            string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO CUSTOMERS (NAME, LASTNAME, USERNAME, [PASSWORD]) VALUES (@Name, @LASTNAME, @USERNAME, @PASSWORD)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NAME", name);
+                cmd.Parameters.AddWithValue("@LASTNAME", lastname);
+                cmd.Parameters.AddWithValue("@USERNAME", username);
+                cmd.Parameters.AddWithValue("@PASSWORD", password);
+
+
+
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+
         }
     }
 }

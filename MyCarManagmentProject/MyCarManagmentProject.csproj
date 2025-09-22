@@ -61,11 +61,19 @@
     <Compile Include="Controls\MyCarsDetailsPanel.Designer.cs">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="Customers.cs" />
     <Compile Include="Forms\AddNewCar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddNewCar.Designer.cs">
       <DependentUpon>AddNewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUserMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUserMainPage.Designer.cs">
+      <DependentUpon>frmUserMainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -94,12 +102,6 @@
     <Compile Include="Forms\RegisterNewPersonForm.Designer.cs">
       <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserMainPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserMainPage.Designer.cs">
-      <DependentUpon>UserMainPage.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Controls\CartCarDetail.resx">
       <DependentUpon>CartCarDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNewCar.resx">
       <DependentUpon>AddNewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUserMainPage.resx">
+      <DependentUpon>frmUserMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -125,9 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterNewPersonForm.resx">
       <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserMainPage.resx">
-      <DependentUpon>UserMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +223,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-wallet-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-account-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-account-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lease-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buy-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

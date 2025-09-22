@@ -9,40 +9,40 @@ namespace MyCarManagmentProject
     public class Person
     {
 
-        private static int _Counter = 0;
+        //private static int _Counter = 0;
       
-        public string Name { get; private set; }
+        public string Name { get;  set; }
        
-        public string Family { get; private set; }
+        public string LastName { get;  set; }
  
-        public int WalletBalance { get; private set; }
+        public decimal WalletBalance { get;  set; }
         public string UserName { get; set; }
-        public string Password { get; private set; }
-        public int Id { get; private set; }
+        public string Password { get;  set; }
+        public int Id { get; set; }
 
-        public Person(string name, string family, int walletBalance, string userName, string password)
-        {
+        //public Person(string name, string lastname, int walletBalance, string userName, string password)
+        //{
 
-            Id = ++_Counter;
+        //    Id = ++_Counter;
 
-            Name = name;
-            Family = family;
+        //    Name = name;
+        //    LastName = lastname;
 
-            WalletBalance = walletBalance;
-            UserName = userName;
-            Password = password;
+        //    WalletBalance = walletBalance;
+        //    UserName = userName;
+        //    Password = password;
 
-        }
-        
-        
+        //}
+
+
     }
-    public class Admin : Person
+    public class Admin
     {
 
         public string UserAdmin { get; private set; }
         public string PassAdmin { get; private set; }
 
-        public Admin(string userAdmin, string passAdmin, string name, string family, int walletBalance) : base(name, family, walletBalance, userName:"", password:"")
+        public Admin(string userAdmin, string passAdmin, string name, string lastname, int walletBalance)
         {
             
                 UserAdmin = userAdmin;
