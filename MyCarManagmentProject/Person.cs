@@ -15,10 +15,14 @@ namespace MyCarManagmentProject
        
         public string LastName { get;  set; }
  
-        public decimal WalletBalance { get;  set; }
+        public int WalletBalance { get;  set; }
         public string UserName { get; set; }
         public string Password { get;  set; }
         public int Id { get; set; }
+
+        public List<Cars> MyCars { get; set; } = new List<Cars>();  // اینجا new شد
+
+
 
         //public Person(string name, string lastname, int walletBalance, string userName, string password)
         //{
@@ -41,6 +45,7 @@ namespace MyCarManagmentProject
 
         public string UserAdmin { get; private set; }
         public string PassAdmin { get; private set; }
+        public int WalletBalance { get; set; }
 
         public Admin(string userAdmin, string passAdmin, string name, string lastname, int walletBalance)
         {

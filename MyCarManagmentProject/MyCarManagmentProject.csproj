@@ -62,7 +62,6 @@
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="CurrentUser.cs" />
-    <Compile Include="Customers.cs" />
     <Compile Include="Forms\AddNewCar.cs">
       <SubType>Form</SubType>
     </Compile>

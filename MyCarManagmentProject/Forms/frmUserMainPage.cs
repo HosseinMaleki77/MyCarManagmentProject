@@ -34,17 +34,16 @@ namespace MyCarManagmentProject
             }
         }
 
-        private void btnCustomerAndOrders_Click(object sender, EventArgs e)
+        private void btnBuyAndRent_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void BtnMyCars_Click(object sender, EventArgs e)
-        {
-           
             MyCars myCars = new MyCars();
             myCars.ShowDialog();
         }
 
+        private void btnMyCars_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

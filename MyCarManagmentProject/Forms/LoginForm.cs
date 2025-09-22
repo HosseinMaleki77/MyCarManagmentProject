@@ -15,7 +15,7 @@ namespace MyCarManagmentProject
 {
     public partial class frmSignin : Form
     {
-        public List<Person> personList = new List<Person>();
+        //public List<Person> personList = new List<Person>();
         public bool IsAdmin { get; set; }
 
         public List<Admin> adminList = new List<Admin>();
@@ -135,7 +135,7 @@ namespace MyCarManagmentProject
                             LastName = reader["LASTNAME"].ToString(),
                             UserName = reader["USERNAME"].ToString(),
                             Password = reader["PASSWORD"].ToString(),
-                            WalletBalance = reader["WalletBalance"] != DBNull.Value ? Convert.ToDecimal(reader["WalletBalance"]) : 0
+                            WalletBalance = reader["WalletBalance"] != DBNull.Value ? Convert.ToInt32(reader["WalletBalance"]) : 0
                         };
 
                         return customer; // فقط یک شخص

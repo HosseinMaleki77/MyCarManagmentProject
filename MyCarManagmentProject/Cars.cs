@@ -29,7 +29,7 @@ namespace MyCarManagmentProject
         public string Acceleration { get; set; }
         public string TopSpeed { get; set; }
         public string DoorCount { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
         public int CarCount { get; set; }
         public bool MustSave { get; set; }
         public CarModel Model { get; set; }

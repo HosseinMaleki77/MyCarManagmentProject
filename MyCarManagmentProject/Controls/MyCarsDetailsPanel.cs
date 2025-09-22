@@ -150,7 +150,7 @@ namespace MyCarManagmentProject.Controls
                             Transmission = reader["Transmission"].ToString(),
                             DoorCount = (reader["DoorsNumber"]).ToString(),
                             Engine_Details = reader["EngineDetails"].ToString(),
-                            Price = reader["Price"].ToString(),
+                            Price =Convert.ToInt32(reader["Price"]),
                             Fuel = reader["Fuel"].ToString(),
                             TopSpeed = reader["TopSpeed"].ToString(),
                             MaxTorque = reader["MaximumTorque"].ToString(),

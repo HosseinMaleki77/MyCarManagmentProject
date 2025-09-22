@@ -13,7 +13,7 @@ namespace MyCarManagmentProject
 {
     public partial class frmRegisterNewPerson : Form
     {
-       private List<Person> _NewPersons;
+     
         public frmRegisterNewPerson()
         {
             InitializeComponent();
