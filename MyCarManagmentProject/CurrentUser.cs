@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyCarManagmentProject
 {
-    public static class CustomerUser
+    public static class CurrentUser
     {
         public static Person User { get; set; }
     }

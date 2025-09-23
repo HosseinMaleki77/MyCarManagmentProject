@@ -74,11 +74,11 @@
     <Compile Include="Forms\frmUserMainPage.Designer.cs">
       <DependentUpon>frmUserMainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\frmSignin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Forms\frmSignin.Designer.cs">
+      <DependentUpon>frmSignin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdminMainPage.cs">
       <SubType>Form</SubType>
@@ -92,14 +92,20 @@
     <Compile Include="Forms\MyCars.Designer.cs">
       <DependentUpon>MyCars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserCars.Designer.cs">
+      <DependentUpon>UserCars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\RegisterNewPersonForm.cs">
+    <Compile Include="Forms\frmRegisterNewPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegisterNewPersonForm.Designer.cs">
-      <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
+    <Compile Include="Forms\frmRegisterNewPerson.Designer.cs">
+      <DependentUpon>frmRegisterNewPerson.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controls\CartCarDetail.resx">
       <DependentUpon>CartCarDetail.cs</DependentUpon>
@@ -113,8 +119,8 @@
     <EmbeddedResource Include="Forms\frmUserMainPage.resx">
       <DependentUpon>frmUserMainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmSignin.resx">
+      <DependentUpon>frmSignin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminMainPage.resx">
       <DependentUpon>AdminMainPage.cs</DependentUpon>
@@ -122,13 +128,16 @@
     <EmbeddedResource Include="Forms\MyCars.resx">
       <DependentUpon>MyCars.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserCars.resx">
+      <DependentUpon>UserCars.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegisterNewPersonForm.resx">
-      <DependentUpon>RegisterNewPersonForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmRegisterNewPerson.resx">
+      <DependentUpon>frmRegisterNewPerson.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

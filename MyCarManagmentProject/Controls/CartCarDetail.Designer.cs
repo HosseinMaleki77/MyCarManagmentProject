@@ -106,7 +106,7 @@
             this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuy.ImageIndex = 1;
             this.btnBuy.ImageList = this.imageList1;
-            this.btnBuy.Location = new System.Drawing.Point(365, 152);
+            this.btnBuy.Location = new System.Drawing.Point(335, 152);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(75, 31);
             this.btnBuy.TabIndex = 46;
@@ -129,7 +129,7 @@
             this.btnRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRent.ImageKey = "icons8-lease-40.png";
             this.btnRent.ImageList = this.imageList1;
-            this.btnRent.Location = new System.Drawing.Point(284, 152);
+            this.btnRent.Location = new System.Drawing.Point(254, 152);
             this.btnRent.Name = "btnRent";
             this.btnRent.Size = new System.Drawing.Size(75, 31);
             this.btnRent.TabIndex = 45;
@@ -152,7 +152,7 @@
             // 
             this.nmCarCount.Location = new System.Drawing.Point(13, 152);
             this.nmCarCount.Name = "nmCarCount";
-            this.nmCarCount.Size = new System.Drawing.Size(67, 26);
+            this.nmCarCount.Size = new System.Drawing.Size(67, 22);
             this.nmCarCount.TabIndex = 2;
             // 
             // lblName
@@ -162,7 +162,7 @@
             this.lblName.Location = new System.Drawing.Point(50, 18);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(42, 17);
+            this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 43;
             this.lblName.Text = "label2";
             // 
@@ -174,7 +174,7 @@
             this.label2.Location = new System.Drawing.Point(11, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 18);
+            this.label2.Size = new System.Drawing.Size(44, 14);
             this.label2.TabIndex = 42;
             this.label2.Text = "Name:";
             // 
@@ -185,7 +185,7 @@
             this.lblPrice.Location = new System.Drawing.Point(293, 126);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(50, 17);
+            this.lblPrice.Size = new System.Drawing.Size(41, 13);
             this.lblPrice.TabIndex = 41;
             this.lblPrice.Text = "label10";
             // 
@@ -196,7 +196,7 @@
             this.lblDoors.Location = new System.Drawing.Point(314, 66);
             this.lblDoors.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDoors.Name = "lblDoors";
-            this.lblDoors.Size = new System.Drawing.Size(42, 17);
+            this.lblDoors.Size = new System.Drawing.Size(35, 13);
             this.lblDoors.TabIndex = 40;
             this.lblDoors.Text = "label9";
             // 
@@ -207,7 +207,7 @@
             this.lblTopSpeed.Location = new System.Drawing.Point(345, 41);
             this.lblTopSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTopSpeed.Name = "lblTopSpeed";
-            this.lblTopSpeed.Size = new System.Drawing.Size(42, 17);
+            this.lblTopSpeed.Size = new System.Drawing.Size(35, 13);
             this.lblTopSpeed.TabIndex = 39;
             this.lblTopSpeed.Text = "label8";
             // 
@@ -218,7 +218,7 @@
             this.lblAcceleration.Location = new System.Drawing.Point(352, 18);
             this.lblAcceleration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcceleration.Name = "lblAcceleration";
-            this.lblAcceleration.Size = new System.Drawing.Size(42, 17);
+            this.lblAcceleration.Size = new System.Drawing.Size(35, 13);
             this.lblAcceleration.TabIndex = 38;
             this.lblAcceleration.Text = "label7";
             // 
@@ -229,7 +229,7 @@
             this.lblTransmission.Location = new System.Drawing.Point(94, 115);
             this.lblTransmission.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransmission.Name = "lblTransmission";
-            this.lblTransmission.Size = new System.Drawing.Size(42, 17);
+            this.lblTransmission.Size = new System.Drawing.Size(35, 13);
             this.lblTransmission.TabIndex = 37;
             this.lblTransmission.Text = "label6";
             // 
@@ -240,7 +240,7 @@
             this.lblMaxTorque.Location = new System.Drawing.Point(122, 91);
             this.lblMaxTorque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxTorque.Name = "lblMaxTorque";
-            this.lblMaxTorque.Size = new System.Drawing.Size(42, 17);
+            this.lblMaxTorque.Size = new System.Drawing.Size(35, 13);
             this.lblMaxTorque.TabIndex = 36;
             this.lblMaxTorque.Text = "label5";
             // 
@@ -251,7 +251,7 @@
             this.lblMaxPower.Location = new System.Drawing.Point(118, 66);
             this.lblMaxPower.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaxPower.Name = "lblMaxPower";
-            this.lblMaxPower.Size = new System.Drawing.Size(42, 17);
+            this.lblMaxPower.Size = new System.Drawing.Size(35, 13);
             this.lblMaxPower.TabIndex = 35;
             this.lblMaxPower.Text = "label4";
             // 
@@ -262,7 +262,7 @@
             this.lblEngineDetails.Location = new System.Drawing.Point(103, 43);
             this.lblEngineDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEngineDetails.Name = "lblEngineDetails";
-            this.lblEngineDetails.Size = new System.Drawing.Size(42, 17);
+            this.lblEngineDetails.Size = new System.Drawing.Size(35, 13);
             this.lblEngineDetails.TabIndex = 34;
             this.lblEngineDetails.Text = "label3";
             // 
@@ -273,7 +273,7 @@
             this.lblFuel.Location = new System.Drawing.Point(306, 89);
             this.lblFuel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFuel.Name = "lblFuel";
-            this.lblFuel.Size = new System.Drawing.Size(42, 17);
+            this.lblFuel.Size = new System.Drawing.Size(35, 13);
             this.lblFuel.TabIndex = 32;
             this.lblFuel.Text = "label1";
             // 
@@ -285,7 +285,7 @@
             this.lblED.Location = new System.Drawing.Point(10, 42);
             this.lblED.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblED.Name = "lblED";
-            this.lblED.Size = new System.Drawing.Size(120, 18);
+            this.lblED.Size = new System.Drawing.Size(97, 14);
             this.lblED.TabIndex = 31;
             this.lblED.Text = "Engine Details:";
             // 
@@ -297,7 +297,7 @@
             this.lblTo.Location = new System.Drawing.Point(271, 40);
             this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(90, 18);
+            this.lblTo.Size = new System.Drawing.Size(76, 14);
             this.lblTo.TabIndex = 28;
             this.lblTo.Text = "Top Speed:";
             // 
@@ -309,7 +309,7 @@
             this.lblA.Location = new System.Drawing.Point(271, 16);
             this.lblA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(107, 18);
+            this.lblA.Size = new System.Drawing.Size(86, 14);
             this.lblA.TabIndex = 27;
             this.lblA.Text = "Acceleration:";
             // 
@@ -321,7 +321,7 @@
             this.lblT.Location = new System.Drawing.Point(10, 114);
             this.lblT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblT.Name = "lblT";
-            this.lblT.Size = new System.Drawing.Size(112, 18);
+            this.lblT.Size = new System.Drawing.Size(89, 14);
             this.lblT.TabIndex = 26;
             this.lblT.Text = "Transmission:";
             // 
@@ -333,7 +333,7 @@
             this.lblMa.Location = new System.Drawing.Point(10, 90);
             this.lblMa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMa.Name = "lblMa";
-            this.lblMa.Size = new System.Drawing.Size(140, 18);
+            this.lblMa.Size = new System.Drawing.Size(116, 14);
             this.lblMa.TabIndex = 25;
             this.lblMa.Text = "Maximum Torque:";
             // 
@@ -345,7 +345,7 @@
             this.lblM.Location = new System.Drawing.Point(10, 65);
             this.lblM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(136, 18);
+            this.lblM.Size = new System.Drawing.Size(112, 14);
             this.lblM.TabIndex = 24;
             this.lblM.Text = "Maximum Power:";
             // 
@@ -357,7 +357,7 @@
             this.lblF.Location = new System.Drawing.Point(273, 88);
             this.lblF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblF.Name = "lblF";
-            this.lblF.Size = new System.Drawing.Size(45, 18);
+            this.lblF.Size = new System.Drawing.Size(35, 14);
             this.lblF.TabIndex = 22;
             this.lblF.Text = "Fuel:";
             // 
@@ -369,7 +369,7 @@
             this.lblP.Location = new System.Drawing.Point(258, 125);
             this.lblP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblP.Name = "lblP";
-            this.lblP.Size = new System.Drawing.Size(52, 18);
+            this.lblP.Size = new System.Drawing.Size(40, 14);
             this.lblP.TabIndex = 30;
             this.lblP.Text = "Price:";
             // 
@@ -381,7 +381,7 @@
             this.lblD.Location = new System.Drawing.Point(271, 64);
             this.lblD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(57, 18);
+            this.lblD.Size = new System.Drawing.Size(47, 14);
             this.lblD.TabIndex = 29;
             this.lblD.Text = "Doors:";
             // 
@@ -408,7 +408,7 @@
             // 
             // CartCarDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -416,6 +416,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CartCarDetail";
             this.Size = new System.Drawing.Size(832, 188);
+            this.Load += new System.EventHandler(this.CartCarDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).EndInit();

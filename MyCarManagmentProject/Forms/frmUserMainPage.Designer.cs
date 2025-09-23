@@ -105,19 +105,20 @@
             this.tsAccount.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsAccount.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsAccount.Name = "tsAccount";
-            this.tsAccount.Size = new System.Drawing.Size(62, 52);
+            this.tsAccount.Size = new System.Drawing.Size(61, 52);
             // 
             // myAccountToolStripMenuItem
             // 
             this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
-            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.myAccountToolStripMenuItem.Text = "My Account";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // tsWallet
             // 
@@ -128,17 +129,17 @@
             this.tsWallet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsWallet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsWallet.Name = "tsWallet";
-            this.tsWallet.Size = new System.Drawing.Size(49, 52);
+            this.tsWallet.Size = new System.Drawing.Size(46, 52);
             // 
             // goToWalletToolStripMenuItem
             // 
             this.goToWalletToolStripMenuItem.Name = "goToWalletToolStripMenuItem";
-            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.goToWalletToolStripMenuItem.Text = "Go To Wallet";
             // 
             // frmUserMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(814, 530);
@@ -152,6 +153,7 @@
             this.Name = "frmUserMainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Main Page";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserMainPage_FormClosed);
             this.Load += new System.EventHandler(this.frmUserMainPage_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

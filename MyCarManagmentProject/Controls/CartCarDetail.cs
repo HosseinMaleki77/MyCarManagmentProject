@@ -80,7 +80,8 @@ namespace MyCarManagmentProject.Controls
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            Person p = CustomerUser.User;
+
+            Person p = CurrentUser.User;
 
             if (p != null)
             {
@@ -96,7 +97,15 @@ namespace MyCarManagmentProject.Controls
                         p.MyCars.Add(SelectedCar);
                         AddMyCarToDataBase(p);
                         MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        nmCarCount.Refresh();
                     }
+
+                    else
+                    {
+                        MessageBox.Show("Your Money Isn't Enough!Please Charge Your Wallet.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+
 
 
                 }
@@ -155,7 +164,6 @@ namespace MyCarManagmentProject.Controls
 
 
                             updateCmd.ExecuteNonQuery();
-                            Console.WriteLine("Count updated!");
                         }
                     }
                     else
@@ -183,7 +191,7 @@ namespace MyCarManagmentProject.Controls
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE CUSTOMERS SET WalletBalance=@WalletBalance WHERE ID=@Id";
+                string query = "UPDATE USERS SET WalletBalance=@WalletBalance WHERE ID=@Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@WalletBalance", p.WalletBalance);
@@ -191,6 +199,15 @@ namespace MyCarManagmentProject.Controls
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void CartCarDetail_Load(object sender, EventArgs e)
+        {
+            if (CurrentUser.User != null && CurrentUser.User.IsAdmin == false)
+            {
+                btnSave.Visible = false;
+                nmCarCount.Visible = false;
             }
         }
     }

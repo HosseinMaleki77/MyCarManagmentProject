@@ -17,26 +17,47 @@ namespace MyCarManagmentProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            frmSignin login = new frmSignin();
-
-            if (login.ShowDialog() == DialogResult.OK)   // مثلا بعد از لاگین موفق
+            while (true)
             {
-                // حالا برنامه با فرم جدید ادامه پیدا می‌کنه
-                if (login.IsAdmin)
+                using (frmSignin login = new frmSignin())
                 {
-                    Application.Run(new frmAdminMainPage());
+                    var loginResult = login.ShowDialog();
+                    // اگر کاربر لاگین نکرد یا فرم رو با X بست → خروج از برنامه
+                    if (loginResult != DialogResult.OK)
+                        break;
+
+                    if (login.IsAdmin)
+                    {
+                        using (frmAdminMainPage admin = new frmAdminMainPage())
+                        {
+                            var adminResult = admin.ShowDialog();
+                            if (adminResult == DialogResult.Abort)
+                                continue; // برگرد به لاگین
+                            break;        // غیر از این → خروج
+                        }
+                    }
+                    else
+                    {
+                        using (frmUserMainPage user = new frmUserMainPage())
+                        {
+                            if (user.ShowDialog() == DialogResult.Abort)
+                                continue; // برگرد به لاگین
+                            break;
+                        }
+                    }
                 }
-                else
-                {
-                    Application.Run(new frmUserMainPage());
-
-                }
-
-
             }
-
-
         }
+
+
+
+
+
     }
+
+
 }
+    
+
+
 

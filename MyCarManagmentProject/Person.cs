@@ -21,7 +21,7 @@ namespace MyCarManagmentProject
         public int Id { get; set; }
 
         public List<Cars> MyCars { get; set; } = new List<Cars>();  // اینجا new شد
-
+        public bool IsAdmin { get; set; }
 
 
         //public Person(string name, string lastname, int walletBalance, string userName, string password)

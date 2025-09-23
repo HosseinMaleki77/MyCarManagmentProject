@@ -29,31 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMainPage));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnCustomerAndOrders = new System.Windows.Forms.Button();
             this.BtnMyCars = new System.Windows.Forms.Button();
             this.btnAddNewCar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsAccount = new System.Windows.Forms.ToolStripDropDownButton();
+            this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsWallet = new System.Windows.Forms.ToolStripSplitButton();
             this.goToWalletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(814, 50);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // btnCustomerAndOrders
             // 
@@ -101,14 +87,39 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsAccount,
             this.tsWallet});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 50);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(814, 36);
-            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Size = new System.Drawing.Size(814, 54);
+            this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsAccount
+            // 
+            this.tsAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.myAccountToolStripMenuItem,
+            this.logOutToolStripMenuItem});
+            this.tsAccount.Image = global::MyCarManagmentProject.Properties.Resources.icons8_test_account_48;
+            this.tsAccount.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsAccount.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsAccount.Name = "tsAccount";
+            this.tsAccount.Size = new System.Drawing.Size(61, 52);
+            // 
+            // myAccountToolStripMenuItem
+            // 
+            this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.myAccountToolStripMenuItem.Text = "My Account";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // tsWallet
             // 
@@ -119,31 +130,13 @@
             this.tsWallet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsWallet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsWallet.Name = "tsWallet";
-            this.tsWallet.Size = new System.Drawing.Size(46, 34);
+            this.tsWallet.Size = new System.Drawing.Size(46, 52);
             // 
             // goToWalletToolStripMenuItem
             // 
             this.goToWalletToolStripMenuItem.Name = "goToWalletToolStripMenuItem";
             this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.goToWalletToolStripMenuItem.Text = "Go To Wallet";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logOutToolStripMenuItem});
-            this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuToolStripMenuItem.Image = global::MyCarManagmentProject.Properties.Resources.menu_icon_244496;
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(52, 44);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOutToolStripMenuItem.Text = "LogOut";
             // 
             // frmAdminMainPage
             // 
@@ -152,20 +145,17 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(814, 530);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnAddNewCar);
             this.Controls.Add(this.BtnMyCars);
             this.Controls.Add(this.btnCustomerAndOrders);
             this.Font = new System.Drawing.Font("Segoe Print", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmAdminMainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage(Admin)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdminMainPage_FormClosing);
             this.Load += new System.EventHandler(this.frmAdminMainPage_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -174,14 +164,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.Button btnCustomerAndOrders;
         private System.Windows.Forms.Button BtnMyCars;
         private System.Windows.Forms.Button btnAddNewCar;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton tsAccount;
+        private System.Windows.Forms.ToolStripMenuItem myAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripSplitButton tsWallet;
         private System.Windows.Forms.ToolStripMenuItem goToWalletToolStripMenuItem;
     }
