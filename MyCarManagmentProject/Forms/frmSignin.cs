@@ -15,16 +15,9 @@ namespace MyCarManagmentProject
 {
     public partial class frmSignin : Form
     {
-        //public List<Person> personList = new List<Person>();
+
         public bool IsAdmin { get; set; }
 
-
-
-
-
-
-        //Person person1 = new Person("Mamad", "Maleki",0, "mamad", "1234");
-        //Person person2 = new Person("ali", "Maleki", 0, "ali", "12345");
 
 
 
@@ -35,10 +28,6 @@ namespace MyCarManagmentProject
             InitializeComponent();
 
 
-
-
-            //personList.Add(person1);
-            //personList.Add(person2);
 
         }
 

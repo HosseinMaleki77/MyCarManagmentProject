@@ -16,9 +16,8 @@ namespace MyCarManagmentProject.Controls
 {
     public partial class CartCarDetail : UserControl
     {
+      
 
-
-        // سازنده پیش‌فرض (ضروری برای Designer)
         public CartCarDetail()
         {
             InitializeComponent();
@@ -91,7 +90,7 @@ namespace MyCarManagmentProject.Controls
                     if (p.WalletBalance >= SelectedCar.Price)
                     {
 
-                        p.WalletBalance =p.WalletBalance - SelectedCar.Price;
+                        p.WalletBalance = p.WalletBalance - SelectedCar.Price;
                         UpdateWalletBalance(p);
                         DeleteCarFromDataBase();
                         p.MyCars.Add(SelectedCar);
@@ -208,9 +207,16 @@ namespace MyCarManagmentProject.Controls
             {
                 btnSave.Visible = false;
                 nmCarCount.Visible = false;
+
             }
+        }
+
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+
 
 

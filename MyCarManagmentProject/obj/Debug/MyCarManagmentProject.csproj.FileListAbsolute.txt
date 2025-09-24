@@ -60,4 +60,4 @@ E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe.config
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.AddNewCar.resources
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.AddNewCar.resources
-E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.UserCars.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.MyCartCar.resources

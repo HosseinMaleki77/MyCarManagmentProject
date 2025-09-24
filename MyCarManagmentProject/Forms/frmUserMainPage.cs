@@ -16,6 +16,8 @@ namespace MyCarManagmentProject
     {
         public frmUserMainPage()
         {
+
+
             InitializeComponent();
 
 
@@ -48,8 +50,7 @@ namespace MyCarManagmentProject
 
         private void btnMyCars_Click(object sender, EventArgs e)
         {
-            UserCars userCars = new UserCars();
-            userCars.ShowDialog();
+
         }
 
         private void UpdateWallet()
