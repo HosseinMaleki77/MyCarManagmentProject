@@ -61,6 +61,12 @@
     <Compile Include="Controls\MyCarsDetailsPanel.Designer.cs">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UC_MyCars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UC_MyCars.Designer.cs">
+      <DependentUpon>UC_MyCars.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentUser.cs" />
     <Compile Include="Forms\AddNewCar.cs">
       <SubType>Form</SubType>
@@ -92,6 +98,12 @@
     <Compile Include="Forms\MyCars.Designer.cs">
       <DependentUpon>MyCars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MyUserCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyUserCars.Designer.cs">
+      <DependentUpon>MyUserCars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +119,9 @@
     <EmbeddedResource Include="Controls\MyCarsDetailsPanel.resx">
       <DependentUpon>MyCarsDetailsPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UC_MyCars.resx">
+      <DependentUpon>UC_MyCars.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddNewCar.resx">
       <DependentUpon>AddNewCar.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MyCars.resx">
       <DependentUpon>MyCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyUserCars.resx">
+      <DependentUpon>MyUserCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
