@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMainPage));
             this.btnCustomerAndOrders = new System.Windows.Forms.Button();
             this.BtnMyCars = new System.Windows.Forms.Button();
-            this.btnAddNewCar = new System.Windows.Forms.Button();
+            this.btnWallet = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsAccount = new System.Windows.Forms.ToolStripDropDownButton();
             this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,19 +69,19 @@
             this.BtnMyCars.UseVisualStyleBackColor = false;
             this.BtnMyCars.Click += new System.EventHandler(this.BtnMyCars_Click);
             // 
-            // btnAddNewCar
+            // btnWallet
             // 
-            this.btnAddNewCar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddNewCar.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAddNewCar.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCar.Location = new System.Drawing.Point(246, 339);
-            this.btnAddNewCar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnAddNewCar.Name = "btnAddNewCar";
-            this.btnAddNewCar.Size = new System.Drawing.Size(350, 90);
-            this.btnAddNewCar.TabIndex = 3;
-            this.btnAddNewCar.Text = "Add New Car";
-            this.btnAddNewCar.UseVisualStyleBackColor = false;
-            this.btnAddNewCar.Click += new System.EventHandler(this.btnAddNewCar_Click);
+            this.btnWallet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnWallet.BackColor = System.Drawing.Color.IndianRed;
+            this.btnWallet.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWallet.Location = new System.Drawing.Point(246, 339);
+            this.btnWallet.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnWallet.Name = "btnWallet";
+            this.btnWallet.Size = new System.Drawing.Size(350, 90);
+            this.btnWallet.TabIndex = 3;
+            this.btnWallet.Text = "Wallet";
+            this.btnWallet.UseVisualStyleBackColor = false;
+            this.btnWallet.Click += new System.EventHandler(this.btnAddNewCar_Click);
             // 
             // statusStrip1
             // 
@@ -111,13 +111,13 @@
             // myAccountToolStripMenuItem
             // 
             this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
-            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.myAccountToolStripMenuItem.Text = "My Account";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -145,7 +145,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(814, 530);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnAddNewCar);
+            this.Controls.Add(this.btnWallet);
             this.Controls.Add(this.BtnMyCars);
             this.Controls.Add(this.btnCustomerAndOrders);
             this.Font = new System.Drawing.Font("Segoe Print", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -166,7 +166,7 @@
         #endregion
         private System.Windows.Forms.Button btnCustomerAndOrders;
         private System.Windows.Forms.Button BtnMyCars;
-        private System.Windows.Forms.Button btnAddNewCar;
+        private System.Windows.Forms.Button btnWallet;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripDropDownButton tsAccount;
         private System.Windows.Forms.ToolStripMenuItem myAccountToolStripMenuItem;

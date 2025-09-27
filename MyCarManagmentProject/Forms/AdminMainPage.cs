@@ -29,7 +29,7 @@ namespace MyCarManagmentProject
             {
 
                 tsAccount.Text = p.Name + " " + p.LastName;
-                tsWallet.Text = p.WalletBalance.ToString("N0");
+                tsWallet.Text = p.WalletBalance.ToString("N2");
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using MyCarManagmentProject.Forms;
+﻿using MyCarManagmentProject.Controls;
+using MyCarManagmentProject.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace MyCarManagmentProject
             {
 
                 tsAccount.Text = p.Name + " " + p.LastName;
-                tsWallet.Text = p.WalletBalance.ToString("N0");
+                tsWallet.Text = p.WalletBalance.ToString("N2");
             }
         }
 
@@ -50,7 +51,8 @@ namespace MyCarManagmentProject
 
         private void btnMyCars_Click(object sender, EventArgs e)
         {
-
+            MyUserCars myUserCars = new MyUserCars();
+            myUserCars.ShowDialog();
         }
 
         private void UpdateWallet()

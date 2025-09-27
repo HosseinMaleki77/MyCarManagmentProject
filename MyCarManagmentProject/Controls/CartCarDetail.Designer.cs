@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartCarDetail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.btnRent = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.nmCarCount = new System.Windows.Forms.NumericUpDown();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,10 +58,7 @@
             this.lblD = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSell = new System.Windows.Forms.Button();
-            this.btnBuy = new System.Windows.Forms.Button();
-            this.btnRent = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.lblSoldOut = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).BeginInit();
             this.panel4.SuspendLayout();
@@ -68,7 +68,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnSell);
+            this.panel1.Controls.Add(this.lblSoldOut);
             this.panel1.Controls.Add(this.btnBuy);
             this.panel1.Controls.Add(this.btnRent);
             this.panel1.Controls.Add(this.btnSave);
@@ -108,6 +108,49 @@
             this.imageList1.Images.SetKeyName(0, "icons8-lease-40.png");
             this.imageList1.Images.SetKeyName(1, "icons8-buy-48.png");
             this.imageList1.Images.SetKeyName(2, "icons8-car-sale-48.png");
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.White;
+            this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuy.ImageIndex = 1;
+            this.btnBuy.ImageList = this.imageList1;
+            this.btnBuy.Location = new System.Drawing.Point(335, 152);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(75, 31);
+            this.btnBuy.TabIndex = 46;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // btnRent
+            // 
+            this.btnRent.BackColor = System.Drawing.Color.White;
+            this.btnRent.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRent.ImageKey = "icons8-lease-40.png";
+            this.btnRent.ImageList = this.imageList1;
+            this.btnRent.Location = new System.Drawing.Point(254, 152);
+            this.btnRent.Name = "btnRent";
+            this.btnRent.Size = new System.Drawing.Size(75, 31);
+            this.btnRent.TabIndex = 45;
+            this.btnRent.Text = "Rent";
+            this.btnRent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRent.UseVisualStyleBackColor = false;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.Image = global::MyCarManagmentProject.Properties.Resources.icons8_save_48;
+            this.btnSave.Location = new System.Drawing.Point(97, 140);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(43, 43);
+            this.btnSave.TabIndex = 44;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // nmCarCount
             // 
@@ -367,63 +410,16 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSell
+            // lblSoldOut
             // 
-            this.btnSell.BackColor = System.Drawing.Color.White;
-            this.btnSell.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnSell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSell.ImageIndex = 2;
-            this.btnSell.ImageList = this.imageList1;
-            this.btnSell.Location = new System.Drawing.Point(173, 152);
-            this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(75, 31);
-            this.btnSell.TabIndex = 47;
-            this.btnSell.Text = "Sell";
-            this.btnSell.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSell.UseVisualStyleBackColor = false;
-            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
-            // 
-            // btnBuy
-            // 
-            this.btnBuy.BackColor = System.Drawing.Color.White;
-            this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuy.ImageIndex = 1;
-            this.btnBuy.ImageList = this.imageList1;
-            this.btnBuy.Location = new System.Drawing.Point(335, 152);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(75, 31);
-            this.btnBuy.TabIndex = 46;
-            this.btnBuy.Text = "Buy";
-            this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuy.UseVisualStyleBackColor = false;
-            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
-            // 
-            // btnRent
-            // 
-            this.btnRent.BackColor = System.Drawing.Color.White;
-            this.btnRent.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnRent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRent.ImageKey = "icons8-lease-40.png";
-            this.btnRent.ImageList = this.imageList1;
-            this.btnRent.Location = new System.Drawing.Point(254, 152);
-            this.btnRent.Name = "btnRent";
-            this.btnRent.Size = new System.Drawing.Size(75, 31);
-            this.btnRent.TabIndex = 45;
-            this.btnRent.Text = "Rent";
-            this.btnRent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRent.UseVisualStyleBackColor = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Image = global::MyCarManagmentProject.Properties.Resources.icons8_save_48;
-            this.btnSave.Location = new System.Drawing.Point(97, 140);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(43, 43);
-            this.btnSave.TabIndex = 44;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.lblSoldOut.AutoSize = true;
+            this.lblSoldOut.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoldOut.Location = new System.Drawing.Point(157, 160);
+            this.lblSoldOut.Name = "lblSoldOut";
+            this.lblSoldOut.Size = new System.Drawing.Size(57, 14);
+            this.lblSoldOut.TabIndex = 47;
+            this.lblSoldOut.Text = "SoldOut";
             // 
             // CartCarDetail
             // 
@@ -475,6 +471,6 @@
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.Button btnRent;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button btnSell;
+        private System.Windows.Forms.Label lblSoldOut;
     }
 }

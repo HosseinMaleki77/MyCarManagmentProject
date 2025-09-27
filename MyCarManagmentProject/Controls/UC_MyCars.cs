@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace MyCarManagmentProject.Controls
 {
+
     public partial class UC_MyCars : UserControl
     {
         public UC_MyCars()
@@ -35,6 +36,11 @@ namespace MyCarManagmentProject.Controls
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
+            lblCount.Text = SelectedCar.CarCount.ToString();
+
+            nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
+            nmSellCount.Maximum = SelectedCar.CarCount; // حداکثر برابر تعداد موجود
+            nmSellCount.Value = 1;   // مقدار پیش‌فرض
         }
 
         private void UpdateCount()
@@ -168,84 +174,37 @@ namespace MyCarManagmentProject.Controls
         {
 
 
-
         }
 
         private void btnSell_Click(object sender, EventArgs e)
         {
+            Person p = CurrentUser.User;
 
-        }
-
-        private List<Cars> LoadMyCarsFromDatabase(int customerId)
-        {
-            List<Cars> myCarsList = new List<Cars>();
-
-            string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (p != null)
             {
-                conn.Open();
-
-                string query = @"
-            SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
-                   c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel, 
-                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-                   m.CarCount
-            FROM CarInfo c
-            INNER JOIN MyCars m ON c.Name = m.CarName
-            WHERE m.CustomerId = @CustomerId";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                DialogResult result = MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    cmd.Parameters.AddWithValue("@CustomerId", customerId);
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
-                            string imageName = reader["IMAGEPATH"].ToString();
-                            string imagePath = Path.Combine(folderPath, imageName);
 
-                            Image carImage = null;
-                            if (File.Exists(imagePath))
-                            {
-                                using (var temp = Image.FromFile(imagePath))
-                                {
-                                    carImage = new Bitmap(temp);
-                                }
-                            }
-                            else
-                            {
-                                carImage = Properties.Resources.no_image_icon_4;
-                            }
+                    p.WalletBalance = p.WalletBalance + SelectedCar.Price;
+                    UpdateWalletBalance(p);
+                    DeleteCarFromDataBase(p);
+                    AddCarToDataBase();
+                    MessageBox.Show("Your Car Has Been Sell!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+              
 
-                            Cars car = new Cars
-                            {
-                                Id = Convert.ToInt32(reader["ID"]),
-                                Name = reader["Name"].ToString(),
-                                MaxPower = reader["MaximumPower"].ToString(),
-                                Acceleration = reader["Acceleration"].ToString(),
-                                Transmission = reader["Transmission"].ToString(),
-                                DoorCount = reader["DoorsNumber"].ToString(),
-                                Engine_Details = reader["EngineDetails"].ToString(),
-                                Price = Convert.ToInt32(reader["Price"]),
-                                Fuel = reader["Fuel"].ToString(),
-                                TopSpeed = reader["TopSpeed"].ToString(),
-                                MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount = Convert.ToInt32(reader["CarCount"]), // از جدول MyCars
-                                Model = (Cars.CarModel)reader["Factory"],
-                                CarImage = carImage
-                            };
 
-                            myCarsList.Add(car);
-                        }
-                    }
+
+
+
+
                 }
             }
 
-            return myCarsList;
-        }
 
+
+        }
     }
 }
+

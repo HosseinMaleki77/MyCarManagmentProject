@@ -43,25 +43,43 @@ namespace MyCarManagmentProject.Controls
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
-            nmCarCount.Value = (int)SelectedCar.CarCount;
+            if (SelectedCar.CarCount >= 0)
+            {
+                nmCarCount.Value = (int)SelectedCar.CarCount;
+
+            }
+            else
+            {
+                nmCarCount.Value = 0;
+
+            }
         }
 
         private void UpdateCount()
         {
             int carCount = (int)nmCarCount.Value;
-            string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if ((int)nmCarCount.Value == 0)
             {
-                string query = "UPDATE CarInfo SET COUNT=@Count WHERE ID=@Id";
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                cmd.Parameters.AddWithValue("@Count", carCount);
-                cmd.Parameters.AddWithValue("@Id", SelectedCar.Id);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                carCount = 0;
             }
+            else
+            {
+                string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "UPDATE CarInfo SET COUNT=@Count WHERE ID=@Id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@Count", carCount);
+                    cmd.Parameters.AddWithValue("@Id", SelectedCar.Id);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -85,27 +103,33 @@ namespace MyCarManagmentProject.Controls
             if (p != null)
             {
                 DialogResult result = MessageBox.Show("Are You Sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (SelectedCar.CarCount >= 0)
                 {
-                    if (p.WalletBalance >= SelectedCar.Price)
+                    if (result == DialogResult.Yes)
                     {
+                        if (p.WalletBalance >= SelectedCar.Price)
+                        {
 
-                        p.WalletBalance = p.WalletBalance - SelectedCar.Price;
-                        UpdateWalletBalance(p);
-                        DeleteCarFromDataBase();
-                        p.MyCars.Add(SelectedCar);
-                        AddMyCarToDataBase(p);
-                        MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        nmCarCount.Refresh();
+                            p.WalletBalance = p.WalletBalance - SelectedCar.Price;
+                            UpdateWalletBalance(p);
+                            AddMoneyToAdmin(SelectedCar.Price);
+                            DeleteCarFromDataBase();
+                            p.MyCars.Add(SelectedCar);
+                            AddMyCarToDataBase(p);
+                            MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            nmCarCount.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Your Money Isn't Enough!Please Charge Your Wallet.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
                     }
-
-                    else
-                    {
-                        MessageBox.Show("Your Money Isn't Enough!Please Charge Your Wallet.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-
-
+               
+                }
+                else
+                {
+                    MessageBox.Show("The Car Isn't Available!.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
 
@@ -140,12 +164,12 @@ namespace MyCarManagmentProject.Controls
                 conn.Open();
 
                 // 1) بررسی اینکه آیا مشتری این ماشین را دارد یا نه
-                string checkQuery = "SELECT CarCount FROM MyCars WHERE CustomerId=@CustomerId AND CarName=@CarName";
+                string checkQuery = "SELECT CarCount FROM MyCars WHERE CustomerId=@CustomerId AND CARID=@CARID";
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
                     checkCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                    checkCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
+                    checkCmd.Parameters.AddWithValue("@CARID",SelectedCar.Id);
 
                     object result = checkCmd.ExecuteScalar();
 
@@ -154,12 +178,12 @@ namespace MyCarManagmentProject.Controls
                         int currentCount = Convert.ToInt32(result);
 
                         // 2) آپدیت تعداد
-                        string updateQuery = "UPDATE MyCars SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarName=@CarName";
+                        string updateQuery = "UPDATE MyCars SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarId=@CARID";
                         using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                         {
                             updateCmd.Parameters.AddWithValue("@CarCount", currentCount + 1);
                             updateCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                            updateCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
+                            updateCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
 
 
                             updateCmd.ExecuteNonQuery();
@@ -168,11 +192,13 @@ namespace MyCarManagmentProject.Controls
                     else
                     {
                         // 3) اضافه کردن رکورد جدید
-                        string insertQuery = "INSERT INTO MyCars (CarName, CarCount, CustomerId, isRented) VALUES (@CarName, 1, @CustomerId,0)";
+                        string insertQuery = "INSERT INTO MyCars (CarName, CarCount, CustomerId, isRented,CarId) VALUES (@CarName, 1, @CustomerId,0,@CARID)";
                         using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                         {
                             insertCmd.Parameters.AddWithValue("@CustomerId", p.Id);
                             insertCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
+                            insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
+
 
                             insertCmd.ExecuteNonQuery();
                         }
@@ -203,19 +229,100 @@ namespace MyCarManagmentProject.Controls
 
         private void CartCarDetail_Load(object sender, EventArgs e)
         {
+            lblSoldOut.Visible=false;
+
             if (CurrentUser.User != null && CurrentUser.User.IsAdmin == false)
             {
                 btnSave.Visible = false;
                 nmCarCount.Visible = false;
 
             }
+            if (nmCarCount.Value==0)
+            {
+                btnBuy.Visible = false;
+                btnRent.Visible= false;
+                lblSoldOut.Visible = true;
+            }
         }
 
-        private void btnSell_Click(object sender, EventArgs e)
-        {
 
+        private void AddMoneyToAdmin(decimal amount)
+        {
+            string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // پیدا کردن ادمین
+                string selectQuery = "SELECT WalletBalance FROM USERS WHERE IsAdmin=1";
+                SqlCommand selectCmd = new SqlCommand(selectQuery, conn);
+                object result = selectCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    decimal adminBalance = Convert.ToDecimal(result);
+                    adminBalance += amount;
+
+                    string updateQuery = "UPDATE USERS SET WalletBalance=@WalletBalance WHERE IsAdmin=1";
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@WalletBalance", adminBalance);
+
+                    updateCmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void btnRent_Click(object sender, EventArgs e)
+        {
+            Person p = CurrentUser.User;
+
+            if (p != null)
+            {
+                if (SelectedCar.CarCount >= 0)
+                {
+                    decimal payAmount = SelectedCar.Price * 0.1m;
+                    {
+                        DialogResult result = MessageBox.Show($"Price of Car: {SelectedCar.Price:N0}\n" + $"You will pay 10%: {payAmount:N0}\n\n" + "Do you want to continue?", "Confirm Purchase", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            if (p.WalletBalance >= payAmount)
+                            {
+
+
+
+                                p.WalletBalance -= payAmount;
+
+                                UpdateWalletBalance(p);
+                                AddMoneyToAdmin(payAmount);
+                                DeleteCarFromDataBase();
+                                p.MyCars.Add(SelectedCar);
+                                AddMyCarToDataBase(p);
+                                MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                nmCarCount.Refresh();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Your Money Isn't Enough!Please Charge Your Wallet.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The Car Isn't Available!.", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+
+            }
         }
     }
+    
 }
 
 

@@ -28,116 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlCar = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.uC_MyCars1 = new MyCarManagmentProject.Controls.UC_MyCars();
-            this.uC_MyCars2 = new MyCarManagmentProject.Controls.UC_MyCars();
-            this.uC_MyCars3 = new MyCarManagmentProject.Controls.UC_MyCars();
-            this.pnlCar.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.flpCars = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlCar
+            // flpCars
             // 
-            this.pnlCar.AutoScroll = true;
-            this.pnlCar.Controls.Add(this.panel3);
-            this.pnlCar.Controls.Add(this.panel2);
-            this.pnlCar.Controls.Add(this.panel1);
-            this.pnlCar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCar.Location = new System.Drawing.Point(0, 0);
-            this.pnlCar.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlCar.Name = "pnlCar";
-            this.pnlCar.Size = new System.Drawing.Size(927, 613);
-            this.pnlCar.TabIndex = 2;
+            this.flpCars.AutoScroll = true;
+            this.flpCars.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpCars.Location = new System.Drawing.Point(0, 24);
+            this.flpCars.Name = "flpCars";
+            this.flpCars.Size = new System.Drawing.Size(997, 542);
+            this.flpCars.TabIndex = 0;
             // 
-            // panel3
+            // menuStrip1
             // 
-            this.panel3.Controls.Add(this.uC_MyCars2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 204);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(927, 205);
-            this.panel3.TabIndex = 2;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(997, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // panel2
+            // refreshToolStripMenuItem
             // 
-            this.panel2.Controls.Add(this.uC_MyCars3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 409);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(927, 204);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.uC_MyCars1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 204);
-            this.panel1.TabIndex = 0;
-            // 
-            // uC_MyCars1
-            // 
-            this.uC_MyCars1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_MyCars1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_MyCars1.Location = new System.Drawing.Point(0, 0);
-            this.uC_MyCars1.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_MyCars1.Name = "uC_MyCars1";
-            this.uC_MyCars1.SelectedCar = null;
-            this.uC_MyCars1.Size = new System.Drawing.Size(927, 204);
-            this.uC_MyCars1.TabIndex = 0;
-            // 
-            // uC_MyCars2
-            // 
-            this.uC_MyCars2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_MyCars2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_MyCars2.Location = new System.Drawing.Point(0, 0);
-            this.uC_MyCars2.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_MyCars2.Name = "uC_MyCars2";
-            this.uC_MyCars2.SelectedCar = null;
-            this.uC_MyCars2.Size = new System.Drawing.Size(927, 205);
-            this.uC_MyCars2.TabIndex = 1;
-            // 
-            // uC_MyCars3
-            // 
-            this.uC_MyCars3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_MyCars3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uC_MyCars3.Location = new System.Drawing.Point(0, 0);
-            this.uC_MyCars3.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_MyCars3.Name = "uC_MyCars3";
-            this.uC_MyCars3.SelectedCar = null;
-            this.uC_MyCars3.Size = new System.Drawing.Size(927, 204);
-            this.uC_MyCars3.TabIndex = 1;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // MyUserCars
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 613);
-            this.Controls.Add(this.pnlCar);
+            this.ClientSize = new System.Drawing.Size(997, 566);
+            this.Controls.Add(this.flpCars);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MyUserCars";
             this.Text = "MyUserCars";
-            this.pnlCar.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.MyUserCars_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
+
+
         #endregion
 
-        private System.Windows.Forms.Panel pnlCar;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private Controls.UC_MyCars uC_MyCars2;
-        private Controls.UC_MyCars uC_MyCars3;
-        private Controls.UC_MyCars uC_MyCars1;
+        private System.Windows.Forms.FlowLayoutPanel flpCars;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
