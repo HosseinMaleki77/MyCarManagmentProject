@@ -63,3 +63,4 @@ C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.pdb
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Controls.UC_MyCars.resources
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.MyUserCars.resources
+C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.exe.config

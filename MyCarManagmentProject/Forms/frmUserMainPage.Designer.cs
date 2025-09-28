@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserMainPage));
             this.btnMyCars = new System.Windows.Forms.Button();
             this.btnBuyAndRent = new System.Windows.Forms.Button();
-            this.btnAddNewCar = new System.Windows.Forms.Button();
+            this.btnWallet = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsAccount = new System.Windows.Forms.ToolStripDropDownButton();
             this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,18 +69,19 @@
             this.btnBuyAndRent.UseVisualStyleBackColor = false;
             this.btnBuyAndRent.Click += new System.EventHandler(this.btnBuyAndRent_Click);
             // 
-            // btnAddNewCar
+            // btnWallet
             // 
-            this.btnAddNewCar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddNewCar.BackColor = System.Drawing.Color.IndianRed;
-            this.btnAddNewCar.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCar.Location = new System.Drawing.Point(246, 339);
-            this.btnAddNewCar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnAddNewCar.Name = "btnAddNewCar";
-            this.btnAddNewCar.Size = new System.Drawing.Size(350, 90);
-            this.btnAddNewCar.TabIndex = 3;
-            this.btnAddNewCar.Text = "Add New Car";
-            this.btnAddNewCar.UseVisualStyleBackColor = false;
+            this.btnWallet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnWallet.BackColor = System.Drawing.Color.IndianRed;
+            this.btnWallet.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWallet.Location = new System.Drawing.Point(246, 339);
+            this.btnWallet.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnWallet.Name = "btnWallet";
+            this.btnWallet.Size = new System.Drawing.Size(350, 90);
+            this.btnWallet.TabIndex = 3;
+            this.btnWallet.Text = "Wallet";
+            this.btnWallet.UseVisualStyleBackColor = false;
+            this.btnWallet.Click += new System.EventHandler(this.btnWallet_Click);
             // 
             // statusStrip1
             // 
@@ -105,18 +106,18 @@
             this.tsAccount.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsAccount.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsAccount.Name = "tsAccount";
-            this.tsAccount.Size = new System.Drawing.Size(61, 52);
+            this.tsAccount.Size = new System.Drawing.Size(62, 52);
             // 
             // myAccountToolStripMenuItem
             // 
             this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
-            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.myAccountToolStripMenuItem.Text = "My Account";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -129,22 +130,22 @@
             this.tsWallet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsWallet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsWallet.Name = "tsWallet";
-            this.tsWallet.Size = new System.Drawing.Size(46, 52);
+            this.tsWallet.Size = new System.Drawing.Size(49, 52);
             // 
             // goToWalletToolStripMenuItem
             // 
             this.goToWalletToolStripMenuItem.Name = "goToWalletToolStripMenuItem";
-            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.goToWalletToolStripMenuItem.Text = "Go To Wallet";
             // 
             // frmUserMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(814, 530);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnAddNewCar);
+            this.Controls.Add(this.btnWallet);
             this.Controls.Add(this.btnBuyAndRent);
             this.Controls.Add(this.btnMyCars);
             this.Font = new System.Drawing.Font("Segoe Print", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -165,7 +166,7 @@
         #endregion
         private System.Windows.Forms.Button btnMyCars;
         private System.Windows.Forms.Button btnBuyAndRent;
-        private System.Windows.Forms.Button btnAddNewCar;
+        private System.Windows.Forms.Button btnWallet;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSplitButton tsWallet;
         private System.Windows.Forms.ToolStripMenuItem goToWalletToolStripMenuItem;

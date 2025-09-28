@@ -89,6 +89,28 @@ namespace MyCarManagmentProject
             }
 
         }
+
+        private void btnWallet_Click(object sender, EventArgs e)
+        {
+            Person p = CurrentUser.User;
+            DialogResult result = MessageBox.Show("Are You Sure?","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                p.WalletBalance = p.WalletBalance + 100000;
+                string connectionString = @"Server=.;Database=CarShop;Trusted_Connection=True;";
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE USERS SET walletbalance=@Balance WHERE ID=@ID", con);
+                    cmd.Parameters.AddWithValue("@Balance", p.WalletBalance);
+                    cmd.Parameters.AddWithValue("@ID", p.Id);
+                    cmd.ExecuteNonQuery();
+                }
+                UpdateWallet();
+
+            }
+
+        }
     }
 }
 
