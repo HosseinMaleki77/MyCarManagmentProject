@@ -10,10 +10,46 @@ namespace MyCarManagmentProject.Controls
 {
 
     public partial class UC_MyCars : UserControl
-    {
+    { //برای نشان دادن یا ندادن دکمه ها نوشتیم
+        private bool _showSellButton = true;
+        public bool ShowSellButton
+        {
+            get => _showSellButton;
+            set
+            {
+                _showSellButton = value;
+                btnSell.Visible = _showSellButton; // کنترل نمایش دکمه
+            }
+        }
+        private bool _showNumUpDw = true;
+        public bool ShowNumUpDw
+        {
+            get => _showNumUpDw;
+            set
+            {
+                _showNumUpDw = value;
+                nmSellCount.Visible = _showNumUpDw; // کنترل نمایش دکمه
+            }
+        }
+
+
+        private bool _showCancelBtn = true;
+        public bool ShowCancelBtn
+        {
+            get => _showCancelBtn;
+            set
+            {
+                _showCancelBtn = value;
+                btnCancel.Visible = _showCancelBtn; // کنترل نمایش دکمه
+            }
+        }
+
         public UC_MyCars()
         {
             InitializeComponent();
+            btnSell.Visible = _showSellButton;
+            nmSellCount.Visible= _showNumUpDw;
+            btnCancel.Visible= _showCancelBtn;
         }
 
         public Cars SelectedCar { get; set; }
@@ -38,9 +74,9 @@ namespace MyCarManagmentProject.Controls
             pictureBox1.Image = SelectedCar.CarImage;
             lblCount.Text = SelectedCar.CarCount.ToString();
 
-            nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
-            nmSellCount.Maximum = SelectedCar.CarCount; // حداکثر برابر تعداد موجود
-            nmSellCount.Value = 1;   // مقدار پیش‌فرض
+            //nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
+            //nmSellCount.Maximum = SelectedCar.CarCount; // حداکثر برابر تعداد موجود
+            //nmSellCount.Value = 1;   // مقدار پیش‌فرض
         }
 
         private void UpdateCount()
@@ -106,7 +142,7 @@ namespace MyCarManagmentProject.Controls
                 conn.Open();
 
                 // 1) بررسی اینکه آیا مشتری این ماشین را دارد یا نه
-                string checkQuery = "SELECT CarCount FROM MyCars WHERE CustomerId=@CustomerId AND CarName=@CarName";
+                string checkQuery = "SELECT CarCount FROM TX WHERE CustomerId=@CustomerId AND CarName=@CarName";
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
@@ -179,19 +215,23 @@ namespace MyCarManagmentProject.Controls
         private void btnSell_Click(object sender, EventArgs e)
         {
             Person p = CurrentUser.User;
-
-            if (p != null)
+            p.AdminOrderAccept = false;
+            if (p.AdminOrderAccept)
             {
-                DialogResult result = MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (p != null)
                 {
+                    DialogResult result = MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
 
 
-                    p.WalletBalance = p.WalletBalance + SelectedCar.Price;
-                    UpdateWalletBalance(p);
-                    DeleteCarFromDataBase(p);
-                    AddCarToDataBase();
-                    MessageBox.Show("Your Car Has Been Sell!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        p.WalletBalance = p.WalletBalance + SelectedCar.Price;
+                        UpdateWalletBalance(p);
+                        DeleteCarFromDataBase(p);
+                        AddCarToDataBase();
+                        MessageBox.Show("Your Car Has Been Sell!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+            
               
 
 

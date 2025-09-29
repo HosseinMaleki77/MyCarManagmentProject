@@ -93,7 +93,7 @@ namespace MyCarManagmentProject
         private void btnWallet_Click(object sender, EventArgs e)
         {
             Person p = CurrentUser.User;
-            DialogResult result = MessageBox.Show("Are You Sure?","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("You Will Add 100,000$ To Your Wallet,Are You Sure?", "Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 p.WalletBalance = p.WalletBalance + 100000;
@@ -110,6 +110,12 @@ namespace MyCarManagmentProject
 
             }
 
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            MyOrders myOrders = new MyOrders();
+            myOrders.ShowDialog();
         }
     }
 }

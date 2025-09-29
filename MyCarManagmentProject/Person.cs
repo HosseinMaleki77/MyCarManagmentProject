@@ -23,6 +23,7 @@ namespace MyCarManagmentProject
         public List<Cars> MyCars { get; set; } = new List<Cars>();  // اینجا new شد
         public bool IsAdmin { get; set; }
 
+        public bool AdminOrderAccept { get; set; }
 
         //public Person(string name, string lastname, int walletBalance, string userName, string password)
         //{
@@ -52,6 +53,7 @@ namespace MyCarManagmentProject
             
                 UserAdmin = userAdmin;
                 PassAdmin = passAdmin;
+            
             
    
         }

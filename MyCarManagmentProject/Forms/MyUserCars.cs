@@ -23,25 +23,36 @@ namespace MyCarManagmentProject.Forms
 
         private void MyUserCars_Load(object sender, EventArgs e)
         {
+          
+            
             Person user = CurrentUser.User;
-            var cars = LoadMyCarsFromDatabase(user.Id);
 
-            flpCars.Controls.Clear(); // خالی کردن قبل از پر کردن
-            flpCars.FlowDirection = FlowDirection.LeftToRight;
-            flpCars.WrapContents = true; // برای ردیف بعدی
+            user.AdminOrderAccept = false;
 
-
-            foreach (var car in cars)
+            if (user.AdminOrderAccept)
             {
-                UC_MyCars carControl = new UC_MyCars();
-                carControl.SelectedCar = car;
-                carControl.SetDesigner();
-                carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
-                carControl.Width = 832; // اندازه مناسب بده
-                carControl.Height = 188;
+                var cars = LoadMyCarsFromDatabase(user.Id);
 
-                flpCars.Controls.Add(carControl);
+                flpCars.Controls.Clear(); // خالی کردن قبل از پر کردن
+                flpCars.FlowDirection = FlowDirection.LeftToRight;
+                flpCars.WrapContents = true; // برای ردیف بعدی
+
+
+                foreach (var car in cars)
+                {
+                    UC_MyCars carControl = new UC_MyCars();
+                    carControl.ShowCancelBtn = false;
+                    this.Controls.Add(carControl);
+                    carControl.SelectedCar = car;
+                    carControl.SetDesigner();
+                    carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
+                    carControl.Width = 832; // اندازه مناسب بده
+                    carControl.Height = 188;
+
+                    flpCars.Controls.Add(carControl);
+                }
             }
+           
         }
         private List<Cars> LoadMyCarsFromDatabase(int customerId)
         {
@@ -70,7 +81,7 @@ namespace MyCarManagmentProject.Forms
                     {
                         while (reader.Read())
                         {
-                            string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
+                            string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
                             string imageName = reader["IMAGEPATH"].ToString();
                             string imagePath = Path.Combine(folderPath, imageName);
 

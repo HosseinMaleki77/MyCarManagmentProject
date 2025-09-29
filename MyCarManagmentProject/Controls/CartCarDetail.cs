@@ -110,13 +110,14 @@ namespace MyCarManagmentProject.Controls
                         if (p.WalletBalance >= SelectedCar.Price)
                         {
 
-                            p.WalletBalance = p.WalletBalance - SelectedCar.Price;
-                            UpdateWalletBalance(p);
-                            AddMoneyToAdmin(SelectedCar.Price);
+                            //p.WalletBalance = p.WalletBalance - SelectedCar.Price;
+                            //UpdateWalletBalance(p);
+                            //AddMoneyToAdmin(SelectedCar.Price);
+                        
                             DeleteCarFromDataBase();
                             p.MyCars.Add(SelectedCar);
-                            AddMyCarToDataBase(p);
-                            MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            AddMyCarToTX(p);
+                            MessageBox.Show("Your request To Purchase This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             nmCarCount.Refresh();
                         }
                         else
@@ -155,7 +156,7 @@ namespace MyCarManagmentProject.Controls
             }
         }
 
-        private void AddMyCarToDataBase(Person p)
+        private void AddMyCarToTX(Person p)
         {
             string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
@@ -163,13 +164,11 @@ namespace MyCarManagmentProject.Controls
             {
                 conn.Open();
 
-                // 1) بررسی اینکه آیا مشتری این ماشین را دارد یا نه
-                string checkQuery = "SELECT CarCount FROM MyCars WHERE CustomerId=@CustomerId AND CARID=@CARID";
-
+                string checkQuery = "SELECT CarCount FROM TX WHERE CustomerId=@CustomerId AND CarId=@CARID";
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
                     checkCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                    checkCmd.Parameters.AddWithValue("@CARID",SelectedCar.Id);
+                    checkCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
 
                     object result = checkCmd.ExecuteScalar();
 
@@ -178,13 +177,12 @@ namespace MyCarManagmentProject.Controls
                         int currentCount = Convert.ToInt32(result);
 
                         // 2) آپدیت تعداد
-                        string updateQuery = "UPDATE MyCars SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarId=@CARID";
+                        string updateQuery = "UPDATE TX SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarId=@CARID";
                         using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                         {
                             updateCmd.Parameters.AddWithValue("@CarCount", currentCount + 1);
                             updateCmd.Parameters.AddWithValue("@CustomerId", p.Id);
                             updateCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
-
 
                             updateCmd.ExecuteNonQuery();
                         }
@@ -192,21 +190,21 @@ namespace MyCarManagmentProject.Controls
                     else
                     {
                         // 3) اضافه کردن رکورد جدید
-                        string insertQuery = "INSERT INTO MyCars (CarName, CarCount, CustomerId, isRented,CarId) VALUES (@CarName, 1, @CustomerId,0,@CARID)";
+                        string insertQuery = "INSERT INTO TX (CarCount, CustomerId, isRented,CarId) VALUES (@CarCount, @CustomerId,0,@CARID)";
                         using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                         {
+                            insertCmd.Parameters.AddWithValue("@CarCount", 1);
                             insertCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                            insertCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
                             insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
-
+                            insertCmd.Parameters.AddWithValue("@Price", SelectedCar.Price);
 
                             insertCmd.ExecuteNonQuery();
                         }
                     }
+                    conn.Close();
                 }
-
-                conn.Close();
             }
+
         }
         private void UpdateWalletBalance(Person p)
         {
@@ -293,14 +291,15 @@ namespace MyCarManagmentProject.Controls
 
 
 
-                                p.WalletBalance -= payAmount;
+                                //p.WalletBalance -= payAmount;
 
-                                UpdateWalletBalance(p);
-                                AddMoneyToAdmin(payAmount);
-                                DeleteCarFromDataBase();
+                                //UpdateWalletBalance(p);
+                                //AddMoneyToAdmin(payAmount);
+                                //DeleteCarFromDataBase();
+                                UpdateCount();
                                 p.MyCars.Add(SelectedCar);
-                                AddMyCarToDataBase(p);
-                                MessageBox.Show("Your Purchase Has Been Completed Successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                AddMyCarToTX(p);
+                                MessageBox.Show("Your request To Rent This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 nmCarCount.Refresh();
                             }
                             else
