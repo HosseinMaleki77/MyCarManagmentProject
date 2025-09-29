@@ -70,7 +70,7 @@ namespace MyCarManagmentProject.Forms
                 foreach (char c in Path.GetInvalidFileNameChars())
                     userName = userName.Replace(c, '_');
 
-                string projectFolder = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
+                string projectFolder = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
                 // مسیر فولدر ذخیره‌سازی عکس
                 string folderPath = Path.Combine(projectFolder, "UserImages");
                 Directory.CreateDirectory(folderPath);

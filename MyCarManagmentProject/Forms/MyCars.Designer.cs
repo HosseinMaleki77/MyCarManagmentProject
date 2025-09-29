@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyCars));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pnlCar = new System.Windows.Forms.Panel();
             this.btnMercedesBenz = new System.Windows.Forms.Button();
             this.btnBMW = new System.Windows.Forms.Button();
             this.btnFERRARI = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.btnAUDI = new System.Windows.Forms.Button();
             this.btnFORD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flpCars = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,15 +54,6 @@
             this.imageList1.Images.SetKeyName(4, "16db7859313a90701b487cb5fdb09bb62a8.png");
             this.imageList1.Images.SetKeyName(5, "mzp140d438246dd4b8979b00dc4ac78ca97.png");
             this.imageList1.Images.SetKeyName(6, "34v1becdc35af257c3ad834485af096c2ba.png");
-            // 
-            // pnlCar
-            // 
-            this.pnlCar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCar.Location = new System.Drawing.Point(0, 0);
-            this.pnlCar.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlCar.Name = "pnlCar";
-            this.pnlCar.Size = new System.Drawing.Size(945, 613);
-            this.pnlCar.TabIndex = 1;
             // 
             // btnMercedesBenz
             // 
@@ -185,12 +176,21 @@
             this.panel1.Size = new System.Drawing.Size(255, 613);
             this.panel1.TabIndex = 0;
             // 
+            // flpCars
+            // 
+            this.flpCars.AutoScroll = true;
+            this.flpCars.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpCars.Location = new System.Drawing.Point(0, 0);
+            this.flpCars.Name = "flpCars";
+            this.flpCars.Size = new System.Drawing.Size(945, 613);
+            this.flpCars.TabIndex = 1;
+            // 
             // MyCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 613);
-            this.Controls.Add(this.pnlCar);
+            this.Controls.Add(this.flpCars);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -204,7 +204,6 @@
 
         #endregion
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel pnlCar;
         private System.Windows.Forms.Button btnMercedesBenz;
         private System.Windows.Forms.Button btnBMW;
         private System.Windows.Forms.Button btnFERRARI;
@@ -213,5 +212,6 @@
         private System.Windows.Forms.Button btnAUDI;
         private System.Windows.Forms.Button btnFORD;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flpCars;
     }
 }
