@@ -36,14 +36,14 @@ namespace MyCarManagmentProject.Forms
                 UC_MyCars carControl = new UC_MyCars();
                 carControl.ShowSellButton = false;
                 carControl.ShowNumUpDw = false;
-                carControl.ShowCancelBtn= false;
+                carControl.ShowCancelBtn = false;
                 this.Controls.Add(carControl);
                 carControl.SelectedCar = car;
                 carControl.SetDesigner();
                 carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
                 carControl.Width = 832; // اندازه مناسب بده
                 carControl.Height = 188;
-                
+
                 flpCars.Controls.Add(carControl);
             }
         }
@@ -56,12 +56,13 @@ namespace MyCarManagmentProject.Forms
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-            string query = @"SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
-           c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel,
-           c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-           m.CarCount, m.CustomerId
-             FROM CarInfo c
-             INNER JOIN TX m ON c.Id = m.CarId";
+                string query = @"SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
+       c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel,
+       c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
+       m.CarCount, m.CustomerId, m.IsRented
+        FROM CarInfo c
+        INNER JOIN TX m ON c.Id = m.CarId
+            ";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -103,9 +104,16 @@ namespace MyCarManagmentProject.Forms
                                 MaxTorque = reader["MaximumTorque"].ToString(),
                                 CarCount = Convert.ToInt32(reader["CarCount"]), // از جدول MyCars
                                 Model = (Cars.CarModel)reader["Factory"],
-                                CustomerId = Convert.ToInt32(reader["CustomerId"]),
                                 CarImage = carImage
                             };
+
+                            car.TxInfo = new TX
+                            {
+                                CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                                IsRented = (bool) reader["IsRented"],
+                                CarId = car.Id
+                            };
+
 
                             myCarsList.Add(car);
                         }
@@ -126,6 +134,9 @@ namespace MyCarManagmentProject.Forms
             Person user = CurrentUser.User;
             var cars = LoadMyCarsFromDatabase(user.Id);
 
+            //var TXs = LoadTXFromDataBase();
+
+            
             foreach (var car in cars)
             {
                 UC_MyCars carControl = new UC_MyCars();
@@ -134,10 +145,50 @@ namespace MyCarManagmentProject.Forms
                 carControl.Margin = new Padding(10);
                 carControl.Width = 832;  // مطابق اندازه دیزاینر
                 carControl.Height = 188;
-
+                //foreach (var T in TXs)
+                //{
+                //    if (T.CarId==car.Id)
+                //    {
+                //        carControl.SelectedTx = T;
+                //    }
+                //}
                 flpCars.Controls.Add(carControl);
+                
             }
         }
+
+        //private List<TX> LoadTXFromDataBase()
+        //{
+        //    List<TX> txList = new List<TX>();
+
+        //    string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
+
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        string query = @"SELECT CustomerId, IsRented, CarId FROM TX";
+
+        //        using (SqlCommand cmd = new SqlCommand(query, conn))
+        //        {
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    TX tx = new TX
+        //                    {
+        //                        CustomerId = Convert.ToInt32(reader["CustomerId"]),
+        //                        IsRented = Convert.ToBoolean(reader["IsRented"]),
+        //                        CarId = Convert.ToInt32(reader["CarId"])
+        //                    };
+
+        //                    txList.Add(tx);
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    return txList;
+        //}
     }
 }
 

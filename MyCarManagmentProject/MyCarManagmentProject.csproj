@@ -125,6 +125,7 @@
     <Compile Include="Forms\frmRegisterNewPerson.Designer.cs">
       <DependentUpon>frmRegisterNewPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="TX.cs" />
     <EmbeddedResource Include="Controls\CartCarDetail.resx">
       <DependentUpon>CartCarDetail.cs</DependentUpon>
     </EmbeddedResource>

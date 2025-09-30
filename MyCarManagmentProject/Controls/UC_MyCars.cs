@@ -83,6 +83,8 @@ namespace MyCarManagmentProject.Controls
         }
 
         public Cars SelectedCar { get; set; }
+        public TX SelectedTx { get; set; }
+
 
         // متد برای ست کردن نقش
 
@@ -103,7 +105,10 @@ namespace MyCarManagmentProject.Controls
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
             lblCount.Text = SelectedCar.CarCount.ToString();
-            lblCustomer.Text = "Customer ID: " + SelectedCar.CustomerId.ToString();
+            lblIsRented.Text="Is Rented: "+SelectedCar.TxInfo.IsRented.ToString();
+            lblCustomer.Text="Customer ID: " + SelectedCar.TxInfo.CustomerId.ToString();
+
+
 
 
             //nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش

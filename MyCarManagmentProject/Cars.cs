@@ -37,8 +37,9 @@ namespace MyCarManagmentProject
         //public string Factory { get; set; }
 
         public Image CarImage { get; set; }
+        public TX TxInfo { get; set; }
 
-        public int CustomerId { get; set; }
+
 
 
         //public Cars(int id,string fuel ,string engine_details,string maxpower, string maxtorque, string transmission, string accleration,string topspeed,string doorcount, string price, CarModel model, string factory,string name, Image image)

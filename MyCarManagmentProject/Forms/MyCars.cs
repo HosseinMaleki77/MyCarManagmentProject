@@ -144,8 +144,7 @@ namespace MyCarManagmentProject.Forms
 
         private List<Cars> LoadCarsFromDatabase(Cars.CarModel FactoryFilter)
         {
-           carsList.Clear();
-
+            carsList.Clear();
 
             string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
 
@@ -153,13 +152,18 @@ namespace MyCarManagmentProject.Forms
             {
                 conn.Open();
 
-                string query = "SELECT * FROM CarInfo WHERE Factory = @Factory";
+                string query = @"
+            SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
+                   c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel,
+                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
+                   tx.CarCount, tx.CustomerId, tx.IsRented
+            FROM CarInfo c
+            INNER JOIN TX tx ON c.Id = tx.CarId
+            WHERE c.Factory = @Factory";
+
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // اگر در دیتابیس Factory به صورت متن (BMW, Benz ...) ذخیره شده:
-                    
-
-                    // اگر در دیتابیس Factory به صورت عدد (0,1,2 ...) ذخیره شده:
+                    // اگر Factory در دیتابیس عدد ذخیره شده
                     cmd.Parameters.AddWithValue("@Factory", (int)FactoryFilter);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -167,13 +171,12 @@ namespace MyCarManagmentProject.Forms
                         while (reader.Read())
                         {
                             string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
-                            string imageName = reader["IMAGEPATH"].ToString(); // نام عکس از دیتابیس
+                            string imageName = reader["IMAGEPATH"].ToString();
                             string imagePath = Path.Combine(folderPath, imageName);
 
                             Image carImage = null;
                             if (File.Exists(imagePath))
                             {
-                                // کپی Bitmap → فایل باز نمی‌ماند
                                 using (var temp = Image.FromFile(imagePath))
                                 {
                                     carImage = new Bitmap(temp);
@@ -197,17 +200,25 @@ namespace MyCarManagmentProject.Forms
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount = Convert.ToInt32(reader["Count"]),
 
-                                // اگر Factory در دیتابیس متن است:
-                              
+                                // مقدار از جدول TX
+                                CarCount = Convert.ToInt32(reader["CarCount"]),
 
-                                // اگر Factory در دیتابیس عدد است:
-                                 Model = (Cars.CarModel)Convert.ToInt32(reader["Factory"]),
+                                // اگر Factory در دیتابیس عدد است
+                                Model = (Cars.CarModel)Convert.ToInt32(reader["Factory"]),
 
                                 CarImage = carImage
                             };
 
+                            // اگر می‌خواهی TX را هم نگه داری می‌توانی اینجا بسازی
+                            TX tx = new TX
+                            {
+                                CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                                IsRented = Convert.ToBoolean(reader["IsRented"]),
+                                CarId = Convert.ToInt32(reader["CarId"])
+                            };
+
+                            // می‌توانی tx را جایی ذخیره کنی یا حتی داخل کلاس Cars اضافه کنی
                             carsList.Add(car);
                         }
                     }

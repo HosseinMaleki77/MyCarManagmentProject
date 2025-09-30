@@ -113,10 +113,10 @@ namespace MyCarManagmentProject.Controls
                         if (p.WalletBalance >= SelectedCar.Price)
                         {
 
-                            //p.WalletBalance = p.WalletBalance - SelectedCar.Price;
-                            //UpdateWalletBalance(p);
+                            p.WalletBalance = p.WalletBalance - SelectedCar.Price;
+                            UpdateWalletBalance(p);
                             //AddMoneyToAdmin(SelectedCar.Price);
-                        
+
                             DeleteCarFromDataBase();
                             p.MyCars.Add(SelectedCar);
                             AddMyCarToTX(p);
