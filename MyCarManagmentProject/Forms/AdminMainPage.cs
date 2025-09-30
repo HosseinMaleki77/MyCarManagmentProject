@@ -35,7 +35,8 @@ namespace MyCarManagmentProject
 
         private void btnCustomerAndOrders_Click(object sender, EventArgs e)
         {
-
+            CustomersOrders customersOrders = new CustomersOrders();
+            customersOrders.ShowDialog();
         }
 
         private void BtnMyCars_Click(object sender, EventArgs e)

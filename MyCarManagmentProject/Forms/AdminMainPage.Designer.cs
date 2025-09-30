@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminMainPage));
-            this.btnCustomerAndOrders = new System.Windows.Forms.Button();
+            this.btnCustomerOrders = new System.Windows.Forms.Button();
             this.BtnMyCars = new System.Windows.Forms.Button();
             this.btnWallet = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -41,31 +41,31 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnCustomerAndOrders
+            // btnCustomerOrders
             // 
-            this.btnCustomerAndOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCustomerAndOrders.BackColor = System.Drawing.Color.IndianRed;
-            this.btnCustomerAndOrders.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomerAndOrders.Location = new System.Drawing.Point(246, 114);
-            this.btnCustomerAndOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnCustomerAndOrders.Name = "btnCustomerAndOrders";
-            this.btnCustomerAndOrders.Size = new System.Drawing.Size(350, 84);
-            this.btnCustomerAndOrders.TabIndex = 1;
-            this.btnCustomerAndOrders.Text = "Customers And Orders";
-            this.btnCustomerAndOrders.UseVisualStyleBackColor = false;
-            this.btnCustomerAndOrders.Click += new System.EventHandler(this.btnCustomerAndOrders_Click);
+            this.btnCustomerOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomerOrders.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCustomerOrders.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerOrders.Location = new System.Drawing.Point(246, 114);
+            this.btnCustomerOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnCustomerOrders.Name = "btnCustomerOrders";
+            this.btnCustomerOrders.Size = new System.Drawing.Size(350, 84);
+            this.btnCustomerOrders.TabIndex = 1;
+            this.btnCustomerOrders.Text = "Customer Orders";
+            this.btnCustomerOrders.UseVisualStyleBackColor = false;
+            this.btnCustomerOrders.Click += new System.EventHandler(this.btnCustomerAndOrders_Click);
             // 
             // BtnMyCars
             // 
             this.BtnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnMyCars.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnMyCars.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMyCars.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
             this.BtnMyCars.Location = new System.Drawing.Point(246, 224);
             this.BtnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnMyCars.Name = "BtnMyCars";
             this.BtnMyCars.Size = new System.Drawing.Size(350, 88);
             this.BtnMyCars.TabIndex = 2;
-            this.BtnMyCars.Text = "MyCars";
+            this.BtnMyCars.Text = "My Cars";
             this.BtnMyCars.UseVisualStyleBackColor = false;
             this.BtnMyCars.Click += new System.EventHandler(this.BtnMyCars_Click);
             // 
@@ -73,13 +73,13 @@
             // 
             this.btnWallet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnWallet.BackColor = System.Drawing.Color.IndianRed;
-            this.btnWallet.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWallet.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnWallet.Location = new System.Drawing.Point(246, 339);
             this.btnWallet.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnWallet.Name = "btnWallet";
             this.btnWallet.Size = new System.Drawing.Size(350, 90);
             this.btnWallet.TabIndex = 3;
-            this.btnWallet.Text = "Wallet";
+            this.btnWallet.Text = "Add New Car";
             this.btnWallet.UseVisualStyleBackColor = false;
             this.btnWallet.Click += new System.EventHandler(this.btnAddNewCar_Click);
             // 
@@ -130,12 +130,12 @@
             this.tsWallet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsWallet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsWallet.Name = "tsWallet";
-            this.tsWallet.Size = new System.Drawing.Size(46, 52);
+            this.tsWallet.Size = new System.Drawing.Size(46, 34);
             // 
             // goToWalletToolStripMenuItem
             // 
             this.goToWalletToolStripMenuItem.Name = "goToWalletToolStripMenuItem";
-            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.goToWalletToolStripMenuItem.Text = "Go To Wallet";
             // 
             // frmAdminMainPage
@@ -147,7 +147,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnWallet);
             this.Controls.Add(this.BtnMyCars);
-            this.Controls.Add(this.btnCustomerAndOrders);
+            this.Controls.Add(this.btnCustomerOrders);
             this.Font = new System.Drawing.Font("Segoe Print", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -164,7 +164,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCustomerAndOrders;
+        private System.Windows.Forms.Button btnCustomerOrders;
         private System.Windows.Forms.Button BtnMyCars;
         private System.Windows.Forms.Button btnWallet;
         private System.Windows.Forms.StatusStrip statusStrip1;

@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartCarDetail));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblSoldOut = new System.Windows.Forms.Label();
             this.btnBuy = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnRent = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.nmCarCount = new System.Windows.Forms.NumericUpDown();
@@ -58,7 +59,6 @@
             this.lblD = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblSoldOut = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCarCount)).BeginInit();
             this.panel4.SuspendLayout();
@@ -101,13 +101,16 @@
             this.panel1.Size = new System.Drawing.Size(538, 188);
             this.panel1.TabIndex = 0;
             // 
-            // imageList1
+            // lblSoldOut
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-lease-40.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-buy-48.png");
-            this.imageList1.Images.SetKeyName(2, "icons8-car-sale-48.png");
+            this.lblSoldOut.AutoSize = true;
+            this.lblSoldOut.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoldOut.Location = new System.Drawing.Point(157, 160);
+            this.lblSoldOut.Name = "lblSoldOut";
+            this.lblSoldOut.Size = new System.Drawing.Size(57, 14);
+            this.lblSoldOut.TabIndex = 47;
+            this.lblSoldOut.Text = "SoldOut";
             // 
             // btnBuy
             // 
@@ -124,6 +127,14 @@
             this.btnBuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-lease-40.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-buy-48.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-car-sale-48.png");
             // 
             // btnRent
             // 
@@ -402,24 +413,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MyCarManagmentProject.Properties.Resources.FirstCar;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -39);
+            this.pictureBox1.Location = new System.Drawing.Point(20, -6);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 228);
+            this.pictureBox1.Size = new System.Drawing.Size(233, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblSoldOut
-            // 
-            this.lblSoldOut.AutoSize = true;
-            this.lblSoldOut.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoldOut.Location = new System.Drawing.Point(157, 160);
-            this.lblSoldOut.Name = "lblSoldOut";
-            this.lblSoldOut.Size = new System.Drawing.Size(57, 14);
-            this.lblSoldOut.TabIndex = 47;
-            this.lblSoldOut.Text = "SoldOut";
             // 
             // CartCarDetail
             // 

@@ -166,7 +166,7 @@ namespace MyCarManagmentProject.Forms
                     {
                         while (reader.Read())
                         {
-                            string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
+                            string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
                             string imageName = reader["IMAGEPATH"].ToString(); // نام عکس از دیتابیس
                             string imagePath = Path.Combine(folderPath, imageName);
 
@@ -233,7 +233,7 @@ namespace MyCarManagmentProject.Forms
                     //ShowNumUpDw = false,
                     SelectedCar = car,
                     Margin = new Padding(20), // فاصله بین کنترل‌ها
-                    Width = 832,
+                    Width = 945, 
                     Height = 188
                 };
 

@@ -33,12 +33,12 @@
             this.btnBuyAndRent = new System.Windows.Forms.Button();
             this.btnWallet = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.btnOrders = new System.Windows.Forms.Button();
             this.tsAccount = new System.Windows.Forms.ToolStripDropDownButton();
             this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsWallet = new System.Windows.Forms.ToolStripSplitButton();
             this.goToWalletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnOrders = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.btnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMyCars.BackColor = System.Drawing.Color.IndianRed;
-            this.btnMyCars.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyCars.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnMyCars.Location = new System.Drawing.Point(246, 60);
             this.btnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnMyCars.Name = "btnMyCars";
@@ -60,7 +60,7 @@
             // 
             this.btnBuyAndRent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuyAndRent.BackColor = System.Drawing.Color.IndianRed;
-            this.btnBuyAndRent.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuyAndRent.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnBuyAndRent.Location = new System.Drawing.Point(246, 156);
             this.btnBuyAndRent.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnBuyAndRent.Name = "btnBuyAndRent";
@@ -74,7 +74,7 @@
             // 
             this.btnWallet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnWallet.BackColor = System.Drawing.Color.IndianRed;
-            this.btnWallet.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWallet.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnWallet.Location = new System.Drawing.Point(246, 356);
             this.btnWallet.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnWallet.Name = "btnWallet";
@@ -97,20 +97,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(814, 54);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // btnOrders
-            // 
-            this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOrders.BackColor = System.Drawing.Color.IndianRed;
-            this.btnOrders.Font = new System.Drawing.Font("Segoe Print", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrders.Location = new System.Drawing.Point(246, 256);
-            this.btnOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(350, 88);
-            this.btnOrders.TabIndex = 5;
-            this.btnOrders.Text = "MyOrders";
-            this.btnOrders.UseVisualStyleBackColor = false;
-            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // tsAccount
             // 
@@ -145,13 +131,27 @@
             this.tsWallet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsWallet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsWallet.Name = "tsWallet";
-            this.tsWallet.Size = new System.Drawing.Size(46, 34);
+            this.tsWallet.Size = new System.Drawing.Size(46, 52);
             // 
             // goToWalletToolStripMenuItem
             // 
             this.goToWalletToolStripMenuItem.Name = "goToWalletToolStripMenuItem";
             this.goToWalletToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.goToWalletToolStripMenuItem.Text = "Go To Wallet";
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOrders.BackColor = System.Drawing.Color.IndianRed;
+            this.btnOrders.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnOrders.Location = new System.Drawing.Point(246, 256);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(350, 88);
+            this.btnOrders.TabIndex = 5;
+            this.btnOrders.Text = "My Orders";
+            this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // frmUserMainPage
             // 

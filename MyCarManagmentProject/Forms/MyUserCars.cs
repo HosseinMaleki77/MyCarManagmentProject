@@ -81,7 +81,7 @@ namespace MyCarManagmentProject.Forms
                     {
                         while (reader.Read())
                         {
-                            string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
+                            string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
                             string imageName = reader["IMAGEPATH"].ToString();
                             string imagePath = Path.Combine(folderPath, imageName);
 

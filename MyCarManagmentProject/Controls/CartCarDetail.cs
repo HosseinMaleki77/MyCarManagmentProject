@@ -326,70 +326,7 @@ namespace MyCarManagmentProject.Controls
             }
         }
 
-        //private List<Cars> LoadCarsFromDatabase()
-        //{
-
-
-        //    string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
-
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT * FROM CarInfo";
-
-        //        using (SqlCommand cmd = new SqlCommand(query, conn))
-        //        using (SqlDataReader reader = cmd.ExecuteReader())
-
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
-        //                string imageName = reader["IMAGEPATH"].ToString(); // نام عکس از دیتابیس
-        //                string imagePath = Path.Combine(folderPath, imageName);
-
-
-        //                Image carImage = null;
-        //                if (File.Exists(imagePath))
-        //                {
-        //                    // اینطوری فایل آزاد می‌ماند و بعداً قابل جایگزینی است
-        //                    using (var temp = Image.FromFile(imagePath))
-        //                    {
-        //                        carImage = new Bitmap(temp);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    carImage = Properties.Resources.no_image_icon_4;
-        //                }
-
-        //                Cars car = new Cars
-        //                {
-        //                    Id = Convert.ToInt32(reader["ID"]),
-        //                    Name = reader["Name"].ToString(),
-        //                    MaxPower = reader["MaximumPower"].ToString(),
-        //                    Acceleration = reader["Acceleration"].ToString(),
-        //                    Transmission = reader["Transmission"].ToString(),
-        //                    DoorCount = (reader["DoorsNumber"]).ToString(),
-        //                    Engine_Details = reader["EngineDetails"].ToString(),
-        //                    Price = Convert.ToInt32(reader["Price"]),
-        //                    Fuel = reader["Fuel"].ToString(),
-        //                    TopSpeed = reader["TopSpeed"].ToString(),
-        //                    MaxTorque = reader["MaximumTorque"].ToString(),
-        //                    CarCount = Convert.ToInt32(reader["Count"]),
-        //                    Model = (Cars.CarModel)reader["Factory"],
-
-        //                    // اینجا عکس از فولدر دیسک بارگذاری می‌شود
-        //                    CarImage = carImage
-        //                };
-
-        //                carsList.Add(car);
-        //            }
-        //        }
-
-        //    }
-        //    return carsList;
-
-        //}
+       
     }
     
 }

@@ -35,8 +35,9 @@ namespace MyCarManagmentProject.Forms
             {
                 UC_MyCars carControl = new UC_MyCars();
                 carControl.ShowSellButton = false;
-                this.Controls.Add(carControl);
                 carControl.ShowNumUpDw = false;
+                carControl.ShowaAcceptBtn=false;
+                carControl.lblCus = false;
                 this.Controls.Add(carControl);
                 carControl.SelectedCar = car;
                 carControl.SetDesigner();
@@ -74,7 +75,7 @@ namespace MyCarManagmentProject.Forms
                     {
                         while (reader.Read())
                         {
-                            string folderPath = @"C:\C# TESTS\CarManagementProject\MyCarManagmentProject\UserImages";
+                            string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
                             string imageName = reader["IMAGEPATH"].ToString();
                             string imagePath = Path.Combine(folderPath, imageName);
 

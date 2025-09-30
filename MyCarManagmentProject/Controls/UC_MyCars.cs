@@ -8,9 +8,13 @@ using System.Windows.Forms;
 
 namespace MyCarManagmentProject.Controls
 {
-
+    
     public partial class UC_MyCars : UserControl
-    { //برای نشان دادن یا ندادن دکمه ها نوشتیم
+    { 
+      
+
+
+        //برای نشان دادن یا ندادن دکمه ها نوشتیم
         private bool _showSellButton = true;
         public bool ShowSellButton
         {
@@ -44,12 +48,38 @@ namespace MyCarManagmentProject.Controls
             }
         }
 
+        private bool _showAcceptBtn = true;
+        public bool ShowaAcceptBtn
+        {
+            get => _showAcceptBtn;
+            set
+            {
+                _showAcceptBtn = value;
+                btnAccept.Visible = _showAcceptBtn; // کنترل نمایش دکمه
+            }
+        }
+
+        private bool _lblCustomer = true;
+        public bool lblCus
+        {
+            get => _lblCustomer;
+            set
+            {
+                _lblCustomer = value;
+                lblCustomer.Visible = _lblCustomer; // کنترل نمایش دکمه
+            }
+        }
+
+
+
+
         public UC_MyCars()
         {
             InitializeComponent();
             btnSell.Visible = _showSellButton;
             nmSellCount.Visible= _showNumUpDw;
             btnCancel.Visible= _showCancelBtn;
+            
         }
 
         public Cars SelectedCar { get; set; }
@@ -73,6 +103,8 @@ namespace MyCarManagmentProject.Controls
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
             lblCount.Text = SelectedCar.CarCount.ToString();
+            lblCustomer.Text = "Customer ID: " + SelectedCar.CustomerId.ToString();
+
 
             //nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
             //nmSellCount.Maximum = SelectedCar.CarCount; // حداکثر برابر تعداد موجود
@@ -233,12 +265,6 @@ namespace MyCarManagmentProject.Controls
                     }
             
               
-
-
-
-
-
-
                 }
             }
 
