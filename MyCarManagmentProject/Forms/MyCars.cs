@@ -154,16 +154,14 @@ namespace MyCarManagmentProject.Forms
 
                 string query = @"
             SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
-                   c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel,
+                   c.DoorCount, c.EngineDetails, c.Price, c.Fuel,
                    c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-                   tx.CarCount, tx.CustomerId, tx.IsRented
+                   c.Count
             FROM CarInfo c
-            INNER JOIN TX tx ON c.Id = tx.CarId
             WHERE c.Factory = @Factory";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // اگر Factory در دیتابیس عدد ذخیره شده
                     cmd.Parameters.AddWithValue("@Factory", (int)FactoryFilter);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -194,31 +192,17 @@ namespace MyCarManagmentProject.Forms
                                 MaxPower = reader["MaximumPower"].ToString(),
                                 Acceleration = reader["Acceleration"].ToString(),
                                 Transmission = reader["Transmission"].ToString(),
-                                DoorCount = reader["DoorsNumber"].ToString(),
+                                DoorCount = reader["DoorCount"].ToString(),
                                 Engine_Details = reader["EngineDetails"].ToString(),
                                 Price = Convert.ToInt32(reader["Price"]),
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-
-                                // مقدار از جدول TX
-                                CarCount = Convert.ToInt32(reader["CarCount"]),
-
-                                // اگر Factory در دیتابیس عدد است
+                                CarCount = Convert.ToInt32(reader["Count"]), // اضافه شد
                                 Model = (Cars.CarModel)Convert.ToInt32(reader["Factory"]),
-
                                 CarImage = carImage
                             };
 
-                            // اگر می‌خواهی TX را هم نگه داری می‌توانی اینجا بسازی
-                            TX tx = new TX
-                            {
-                                CustomerId = Convert.ToInt32(reader["CustomerId"]),
-                                IsRented = Convert.ToBoolean(reader["IsRented"]),
-                                CarId = Convert.ToInt32(reader["CarId"])
-                            };
-
-                            // می‌توانی tx را جایی ذخیره کنی یا حتی داخل کلاس Cars اضافه کنی
                             carsList.Add(car);
                         }
                     }
@@ -227,6 +211,8 @@ namespace MyCarManagmentProject.Forms
 
             return carsList;
         }
+
+
 
 
         private void DisplayCars(List<Cars> carsList)

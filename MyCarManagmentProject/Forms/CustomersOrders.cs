@@ -37,6 +37,8 @@ namespace MyCarManagmentProject.Forms
                 carControl.ShowSellButton = false;
                 carControl.ShowNumUpDw = false;
                 carControl.ShowCancelBtn = false;
+                carControl.ShowRejectButton = false;
+                carControl.ShowUserDetailButton = false;
                 this.Controls.Add(carControl);
                 carControl.SelectedCar = car;
                 carControl.SetDesigner();
@@ -57,12 +59,11 @@ namespace MyCarManagmentProject.Forms
             {
                 conn.Open();
                 string query = @"SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
-       c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel,
+       c.DoorCount, c.EngineDetails, c.Price, c.Fuel,
        c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
        m.CarCount, m.CustomerId, m.IsRented
         FROM CarInfo c
-        INNER JOIN TX m ON c.Id = m.CarId
-            ";
+        INNER JOIN TX m ON c.Id = m.CarId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -96,7 +97,7 @@ namespace MyCarManagmentProject.Forms
                                 MaxPower = reader["MaximumPower"].ToString(),
                                 Acceleration = reader["Acceleration"].ToString(),
                                 Transmission = reader["Transmission"].ToString(),
-                                DoorCount = reader["DoorsNumber"].ToString(),
+                                DoorCount = reader["DoorCount"].ToString(),
                                 Engine_Details = reader["EngineDetails"].ToString(),
                                 Price = Convert.ToInt32(reader["Price"]),
                                 Fuel = reader["Fuel"].ToString(),

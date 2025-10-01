@@ -121,7 +121,7 @@ namespace MyCarManagmentProject.Controls
                             p.MyCars.Add(SelectedCar);
                             AddMyCarToTX(p);
                             MessageBox.Show("Your request To Purchase This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            nmCarCount.Refresh();
+                            nmCarCount.Value = SelectedCar.CarCount;
                         }
                         else
                         {
@@ -143,7 +143,6 @@ namespace MyCarManagmentProject.Controls
 
         private void DeleteCarFromDataBase()
         {
-            int carCount = (int)nmCarCount.Value;
             string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -151,13 +150,19 @@ namespace MyCarManagmentProject.Controls
                 string query = "UPDATE CarInfo SET COUNT=@Count WHERE ID=@Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@Count", carCount - 1);
+                // از مقدار واقعی ماشین استفاده می‌کنیم
+                int newCount = SelectedCar.CarCount - 1;
+                cmd.Parameters.AddWithValue("@Count", newCount);
                 cmd.Parameters.AddWithValue("@Id", SelectedCar.Id);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+
+            // مقدار موجودی کاربر را هم بروز کنیم
+            SelectedCar.CarCount -= 1;
         }
+
 
         private void AddMyCarToTX(Person p)
         {

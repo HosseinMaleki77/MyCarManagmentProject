@@ -38,7 +38,8 @@ namespace MyCarManagmentProject.Forms
                 carControl.ShowNumUpDw = false;
                 carControl.ShowaAcceptBtn=false;
                 carControl.lblCus = false;
-                this.Controls.Add(carControl);
+                carControl.ShowUserDetailButton = false;
+                carControl.ShowRejectButton = false;
                 carControl.SelectedCar = car;
                 carControl.SetDesigner();
                 carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
@@ -59,13 +60,14 @@ namespace MyCarManagmentProject.Forms
                 conn.Open();
 
                 string query = @"
-            SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
-                   c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel, 
-                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-                    m.CarCount
-            FROM CarInfo c
-            INNER JOIN TX m ON c.Id = m.CarId
-            WHERE m.CustomerId = @CustomerId";
+        SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
+               c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
+               c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
+               m.IsRented,
+               m.CarCount
+        FROM CarInfo c
+        INNER JOIN TX m ON c.Id = m.CarId
+        WHERE m.CustomerId = @CustomerId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -99,15 +101,20 @@ namespace MyCarManagmentProject.Forms
                                 MaxPower = reader["MaximumPower"].ToString(),
                                 Acceleration = reader["Acceleration"].ToString(),
                                 Transmission = reader["Transmission"].ToString(),
-                                DoorCount = reader["DoorsNumber"].ToString(),
+                                DoorCount = reader["DoorCount"].ToString(),
                                 Engine_Details = reader["EngineDetails"].ToString(),
                                 Price = Convert.ToInt32(reader["Price"]),
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount = Convert.ToInt32(reader["CarCount"]), // از جدول MyCars
+                                CarCount = Convert.ToInt32(reader["CarCount"]),
                                 Model = (Cars.CarModel)reader["Factory"],
                                 CarImage = carImage
+                            };
+                            car.TxInfo = new TX
+                            {
+                                IsRented = (bool)reader["IsRented"],
+                                CarId = car.Id
                             };
 
                             myCarsList.Add(car);
@@ -119,28 +126,92 @@ namespace MyCarManagmentProject.Forms
             return myCarsList;
         }
 
-        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshCars();
-        }
-        private void RefreshCars()
-        {
-            flpCars.Controls.Clear();
-            Person user = CurrentUser.User;
-            var cars = LoadMyCarsFromDatabase(user.Id);
 
-            foreach (var car in cars)
+        public void LoadMyOrders(int customerId)
+        {
+            flpCars.Controls.Clear(); // اول همه کارت‌ها رو پاک کن
+
+            string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                UC_MyCars carControl = new UC_MyCars();
-                carControl.SelectedCar = car;
-                carControl.SetDesigner();
-                carControl.Margin = new Padding(10);
-                carControl.Width = 832;  // مطابق اندازه دیزاینر
-                carControl.Height = 188;
+                conn.Open();
 
-                flpCars.Controls.Add(carControl);
+                string query = @"
+        SELECT C.Id, C.Name, C.Price, C.Acceleration, C.Transmission, 
+               C.DoorCount, C.EngineDetails, C.Fuel, C.TopSpeed, 
+               C.MaximumPower, C.MaximumTorque, T.IsRented,C.ImagePath,
+               T.CarCount
+        FROM TX T
+        JOIN CarInfo C ON T.CarId = C.Id
+        WHERE T.CustomerId=@CustomerId";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string folderPath = @"E:\test c#\MyCarManagmentProject\MyCarManagmentProject\UserImages";
+                    string imageName = reader["IMAGEPATH"].ToString();
+                    string imagePath = Path.Combine(folderPath, imageName);
+
+                    Image carImage = null;
+                    if (File.Exists(imagePath))
+                    {
+                        using (var temp = Image.FromFile(imagePath))
+                        {
+                            carImage = new Bitmap(temp);
+                        }
+                    }
+                    else
+                    {
+                        carImage = Properties.Resources.no_image_icon_4;
+                    }
+
+                    Cars car = new Cars
+                    {
+                        Id = Convert.ToInt32(reader["Id"]),
+                        Name = reader["Name"].ToString(),
+                        Price = Convert.ToInt32(reader["Price"]),
+                        Acceleration = reader["Acceleration"].ToString(),
+                        Transmission = reader["Transmission"].ToString(),
+                        DoorCount = reader["DoorCount"].ToString(),
+                        Engine_Details = reader["EngineDetails"].ToString(),
+                        Fuel = reader["Fuel"].ToString(),
+                        TopSpeed = reader["TopSpeed"].ToString(),
+                        MaxPower = reader["MaximumPower"].ToString(),
+                        MaxTorque = reader["MaximumTorque"].ToString(),
+                        CarCount = Convert.ToInt32(reader["CarCount"]),
+                        CarImage = carImage
+
+                    };
+                    car.TxInfo = new TX
+                    {
+                        IsRented = (bool)reader["IsRented"],
+                        CarId = car.Id
+                    };
+              
+
+                    UC_MyCars carControl = new UC_MyCars();
+                    carControl.ShowSellButton = false;
+                    carControl.ShowNumUpDw = false;
+                    carControl.ShowaAcceptBtn = false;
+                    carControl.lblCus = false;
+                    carControl.ShowUserDetailButton = false;
+                    carControl.ShowRejectButton = false;
+                    carControl.SelectedCar = car;
+                    carControl.SetDesigner();
+                    carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
+                    carControl.Width = 832; // اندازه مناسب بده
+                    carControl.Height = 188;
+
+                    flpCars.Controls.Add(carControl);
+                }
             }
         }
+
+
     }
 }
 

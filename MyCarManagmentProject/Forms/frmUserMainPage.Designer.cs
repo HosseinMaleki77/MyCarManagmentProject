@@ -47,7 +47,7 @@
             this.btnMyCars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMyCars.BackColor = System.Drawing.Color.IndianRed;
             this.btnMyCars.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnMyCars.Location = new System.Drawing.Point(246, 60);
+            this.btnMyCars.Location = new System.Drawing.Point(246, 160);
             this.btnMyCars.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnMyCars.Name = "btnMyCars";
             this.btnMyCars.Size = new System.Drawing.Size(350, 84);
@@ -61,7 +61,7 @@
             this.btnBuyAndRent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuyAndRent.BackColor = System.Drawing.Color.IndianRed;
             this.btnBuyAndRent.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnBuyAndRent.Location = new System.Drawing.Point(246, 156);
+            this.btnBuyAndRent.Location = new System.Drawing.Point(246, 60);
             this.btnBuyAndRent.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnBuyAndRent.Name = "btnBuyAndRent";
             this.btnBuyAndRent.Size = new System.Drawing.Size(350, 88);
@@ -112,13 +112,13 @@
             // myAccountToolStripMenuItem
             // 
             this.myAccountToolStripMenuItem.Name = "myAccountToolStripMenuItem";
-            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.myAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.myAccountToolStripMenuItem.Text = "My Account";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 

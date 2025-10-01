@@ -28,8 +28,10 @@ namespace MyCarManagmentProject.Forms
 
         private void AddNewCar_Load(object sender, EventArgs e)
         {
+           
             cbFactory.DataSource = Enum.GetValues(typeof(CarModel)); // نشان دادن اسم ها در کومبو بامس و هم مقادیر آن ها نه فقط استرینگ  
-
+            cbFactory.SelectedIndex = -1; // هیچ آیتمی انتخاب نشده
+            cbFactory.Text = "Choose something..."; // متن پیش‌فرض
         }
 
         private void picBoxNewCar_DragEnter(object sender, DragEventArgs e)
@@ -50,6 +52,7 @@ namespace MyCarManagmentProject.Forms
             }
             e.Effect = DragDropEffects.None; // در غیر این صورت اجازه نده
         }
+
         private void picBoxNewCar_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -93,10 +96,66 @@ namespace MyCarManagmentProject.Forms
 
         private void btnAddCar_Click(object sender, EventArgs e)
         {
-            InsertCount();
-            MessageBox.Show("New Car Added SuccessFully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            bool isValid = true;
+
+            isValid &= ValidateTextBox(txtCarName, lblCarNameError, "Please enter the car name!");
+            isValid &= ValidateTextBox(txtEngineDet, lblEngineDetError, "Please enter the engine details!");
+            isValid &= ValidateTextBox(txtMaxPower, lblMaxPowerError, "Please enter the maximum power!");
+            isValid &= ValidateTextBox(txtMaxTorq, lblMaxTorqueError, "Please enter the maximum torque!");
+            isValid &= ValidateTextBox(txtTopSpeed, lblTopSpeedError, "Please enter the top speed!");
+            isValid &= ValidateTextBox(txtTransmission, lblTransmissionError, "Please enter the transmission type!");
+            isValid &= ValidateTextBox(txtAcceler, lblAccelerError, "Please enter the acceleration!");
+            isValid &= ValidateTextBox(txtDoorsNum, lblDoorsNumError, "Please enter the number of doors!");
+            isValid &= ValidateTextBox(txtFuel, lblFuelError, "Please enter the fuel type!");
+            isValid &= ValidateTextBox(txtPrice, lblPriceError, "Please enter the car price!");
+
+            if (picBoxNewCar.Image == null)
+            {
+                lblImageError.Text = "Please add a car image!";
+                lblImageError.ForeColor = Color.Red;
+                isValid = false;
+            }
+            else
+            {
+                lblImageError.Text = "";
+            }
+            if (cbFactory.SelectedItem == null)
+            {
+                cbFactory.BackColor = Color.MistyRose;
+                lblFactoryError.Text = "Please select a factory!";
+                lblFactoryError.ForeColor = Color.Red;
+                isValid = false;
+            }
+            else
+            {
+                cbFactory.BackColor = Color.White;
+                lblFactoryError.Text = "";
+            }
+
+            // بررسی Count
+            if (nmCarCountAdd.Value <= 0)
+            {
+                nmCarCountAdd.BackColor = Color.MistyRose;
+                lblCountError.Text = "Count must be at least 1!";
+                lblCountError.ForeColor = Color.Red;
+                isValid = false;
+            }
+            else
+            {
+                nmCarCountAdd.BackColor = Color.White;
+                lblCountError.Text = "";
+            }
+
+            if (!isValid) return;
+
+            // اگر همه چیز درست بود
+            InsertCount();
+            MessageBox.Show("New car added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
+    
 
         private void InsertCount()
         {
@@ -120,7 +179,7 @@ namespace MyCarManagmentProject.Forms
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO CARINFO (Name, ENGINEDETAILS, MAXIMUMPOWER, MaximumTorque, Transmission,Acceleration, TopSpeed, DoorsNumber, Fuel, Price, Factory, Count) VALUES (@Name, @ENGINEDETAILS, @MAXIMUMPOWER, @MaximumTorque, @Transmission,@Acceleration, @TopSpeed, @DoorsNumber, @Fuel, @Price, @Factory, @Count)";
+                string query = "INSERT INTO CARINFO (Name, ENGINEDETAILS, MAXIMUMPOWER, MaximumTorque, Transmission,Acceleration, TopSpeed, DoorCount, Fuel, Price, Factory, Count) VALUES (@Name, @ENGINEDETAILS, @MAXIMUMPOWER, @MaximumTorque, @Transmission,@Acceleration, @TopSpeed, @DoorCount, @Fuel, @Price, @Factory, @Count)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Count", carCount);
                 cmd.Parameters.AddWithValue("@name", name);
@@ -130,7 +189,7 @@ namespace MyCarManagmentProject.Forms
                 cmd.Parameters.AddWithValue("@topspeed", topspeed);
                 cmd.Parameters.AddWithValue("@transmission", transmission);
                 cmd.Parameters.AddWithValue("@acceleration", acceleration);
-                cmd.Parameters.AddWithValue("@doorsnumber", doorsnumber);
+                cmd.Parameters.AddWithValue("@DoorCount", doorsnumber);
                 cmd.Parameters.AddWithValue("@fuel", fuel);
                 cmd.Parameters.AddWithValue("@factory", factory);
                 cmd.Parameters.AddWithValue("@price", price);
@@ -141,6 +200,11 @@ namespace MyCarManagmentProject.Forms
                 cmd.ExecuteNonQuery();
             }
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         //private void picBoxNewCar_DragDrop(object sender, DragEventArgs e)
@@ -166,7 +230,23 @@ namespace MyCarManagmentProject.Forms
 
         //    }
         //}
-
+        private bool ValidateTextBox(TextBox textBox, Label errorLabel, string errorMessage)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.BackColor = Color.MistyRose; // رنگ زمینه روشن قرمز
+                textBox.BorderStyle = BorderStyle.FixedSingle;
+                errorLabel.Text = errorMessage;
+                errorLabel.ForeColor = Color.Red;
+                return false;
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+                errorLabel.Text = "";
+                return true;
+            }
+        }
     }
 }
 
