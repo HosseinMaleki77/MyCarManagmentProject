@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MyCarManagmentProject.Controls
@@ -125,16 +126,17 @@ namespace MyCarManagmentProject.Controls
             lblMaxTorque.Text = SelectedCar.MaxTorque;
             pictureBox1.Image = SelectedCar.CarImage;
             lblCount.Text = SelectedCar.CarCount.ToString();
-            if (SelectedCar.TxInfo != null)
+            if (SelectedTx != null)
             {
-                lblIsRented.Text = "Is Rented: " + SelectedCar.TxInfo.IsRented.ToString();
-                lblCustomer.Text = "Customer ID: " + SelectedCar.TxInfo.CustomerId.ToString();
+                lblIsRented.Text = "Is Rented: " + SelectedTx.IsRented.ToString();
+                lblCustomer.Text = "Customer ID: " + SelectedTx.CustomerId.ToString();
             }
             else
             {
                 lblIsRented.Text = "Is Rented: -";
                 lblCustomer.Text = "Customer ID: -";
             }
+
 
 
             //nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
@@ -310,10 +312,11 @@ namespace MyCarManagmentProject.Controls
 
             DialogResult result = MessageBox.Show("Are You Sure to Cancel This Car?",
                 "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            int customerId = SelectedTx.CustomerId;
 
             if (result == DialogResult.Yes)
             {
-                DeleteCarFromMyOrders(p);   // حذف یا کم کردن از TX
+                DeleteCarFromMyOrders(p.Id);   // حذف یا کم کردن از TX
                 MessageBox.Show("Car cancelled and money refunded!",
                     "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -325,7 +328,7 @@ namespace MyCarManagmentProject.Controls
         }
 
 
-        private void DeleteCarFromMyOrders(Person p)
+        private void DeleteCarFromMyOrders(int customerId)
         {
             string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
@@ -338,7 +341,7 @@ namespace MyCarManagmentProject.Controls
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
-                    checkCmd.Parameters.AddWithValue("@CustomerId", p.Id);
+                    checkCmd.Parameters.AddWithValue("@CustomerId", customerId);
                     checkCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
 
                     using (SqlDataReader reader = checkCmd.ExecuteReader())
@@ -355,7 +358,7 @@ namespace MyCarManagmentProject.Controls
                                 string updateQuery = "UPDATE TX SET CarCount = CarCount - 1 WHERE CustomerId=@CustomerId AND CarId=@CarId";
                                 using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                                 {
-                                    updateCmd.Parameters.AddWithValue("@CustomerId", p.Id);
+                                    updateCmd.Parameters.AddWithValue("@CustomerId", customerId);
                                     updateCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
                                     updateCmd.ExecuteNonQuery();
                                 }
@@ -366,7 +369,7 @@ namespace MyCarManagmentProject.Controls
                                 string deleteQuery = "DELETE FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
                                 using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                                 {
-                                    deleteCmd.Parameters.AddWithValue("@CustomerId", p.Id);
+                                    deleteCmd.Parameters.AddWithValue("@CustomerId", customerId);
                                     deleteCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
                                     deleteCmd.ExecuteNonQuery();
                                 }
@@ -377,7 +380,7 @@ namespace MyCarManagmentProject.Controls
                             using (SqlCommand updateBalanceCmd = new SqlCommand(updateUserBalance, conn))
                             {
                                 updateBalanceCmd.Parameters.AddWithValue("@Refund", carPrice);
-                                updateBalanceCmd.Parameters.AddWithValue("@UserId", p.Id);
+                                updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
                                 updateBalanceCmd.ExecuteNonQuery();
                             }
 
@@ -396,6 +399,46 @@ namespace MyCarManagmentProject.Controls
             }
         }
 
+        private void btnReject_Click(object sender, EventArgs e)
+        {
+            if (SelectedCar == null || SelectedCar == null)
+            {
+                MessageBox.Show("No transaction info available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure to reject this car?",
+                "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result != DialogResult.Yes) return;
+
+            int customerId = SelectedTx.CustomerId;
+
+            DeleteCarFromMyOrders(customerId);
+
+            MessageBox.Show("Car cancelled and money refunded!",
+                "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 🔹 پیدا کردن فرم و به‌روزرسانی فوری
+            var frm = Application.OpenForms.OfType<MyCarManagmentProject.Forms.CustomersOrders>().FirstOrDefault();
+            if (frm != null)
+            {
+                // رفرش بر اساس شناسه‌ی مشتری مربوطه
+                frm.RefreshCars(customerId);
+            }
+        }
+        private void btnUserDetail_Click(object sender, EventArgs e)
+        {
+            if (SelectedTx == null)
+            {
+                MessageBox.Show("No transaction info available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // استفاده از CustomerId موجود در SelectedTx
+            UserDetails userDetails = new UserDetails(SelectedTx.CustomerId);
+            userDetails.ShowDialog();
+        }
     }
 }
 

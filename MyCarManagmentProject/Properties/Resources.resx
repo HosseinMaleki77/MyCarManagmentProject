@@ -118,89 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menu_icon_244496" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_icon_244496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FirstCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FirstCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MercedesSSaloon_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MercedesSSaloon_20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S450" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\S450.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Benz AMGS63" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\S63AMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2025_Mercedes_Benz_S_580" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2025-Mercedes-Benz-S-580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Benz S580" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\S580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Benz S400 d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mercedes S500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Benz E350" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AMG E 53 PHEV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BMW i5 xDrive40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BMW i5 xDrive40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BMW M440i Gran Coupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BMW M440i Gran Coupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BMW M5 (G90)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BMW M5 (G90).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BMW X5 M60i" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BMW X5 M60i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ferrari 296 Speciale Aperta Spec" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ferrari 296 Speciale Aperta Spec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ferrari 849 Testarossa Spec" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ferrari 849 Testarossa Spec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Audi Q5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Audi Q5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ferrari 296 Speciale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ferrari 296 Speciale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ford Mustang Dark Horse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ford Mustang Dark Horse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lexus LS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lexus LS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Toyota Land Cruiser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Toyota Land Cruiser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DefaultCarImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-car-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_save_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-save-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_wallet_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-wallet-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="no_image_icon_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\no-image-icon-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_coin_wallet_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-coin-wallet-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_wallet_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-wallet-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_test_account_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-test-account-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_test_account_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-test-account-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_buy_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-buy-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +127,91 @@
   <data name="icons8_lease_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-lease-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Benz E350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMG E 53 PHEV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_test_account_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-test-account-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_wallet_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-wallet-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MercedesSSaloon_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MercedesSSaloon_20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lexus LS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lexus LS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Benz AMGS63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S63AMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Benz S400 d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mercedes S500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Toyota Land Cruiser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Toyota Land Cruiser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultCarImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-car-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ford Mustang Dark Horse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ford Mustang Dark Horse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Audi Q5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Audi Q5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_save_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-save-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_wallet_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-wallet-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BMW i5 xDrive40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BMW i5 xDrive40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_coin_wallet_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-coin-wallet-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2025_Mercedes_Benz_S_580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2025-Mercedes-Benz-S-580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BMW X5 M60i" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BMW X5 M60i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Benz S580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ferrari 296 Speciale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ferrari 296 Speciale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="S450" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S450.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BMW M5 (G90)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BMW M5 (G90).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_car_sale_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-car-sale-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_test_account_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-test-account-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FirstCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FirstCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ferrari 296 Speciale Aperta Spec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ferrari 296 Speciale Aperta Spec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ferrari 849 Testarossa Spec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ferrari 849 Testarossa Spec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BMW M440i Gran Coupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BMW M440i Gran Coupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_icon_244496" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_icon_244496.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-client-management-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-client-management-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

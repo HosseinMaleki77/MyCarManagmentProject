@@ -70,6 +70,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MyUserCars";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MyUserCars";
             this.Load += new System.EventHandler(this.MyUserCars_Load);
             this.menuStrip1.ResumeLayout(false);

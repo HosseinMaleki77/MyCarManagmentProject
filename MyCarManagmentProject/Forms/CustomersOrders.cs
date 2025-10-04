@@ -24,32 +24,29 @@ namespace MyCarManagmentProject.Forms
         private void CustomersOrders_Load(object sender, EventArgs e)
         {
             Person user = CurrentUser.User;
-            var cars = LoadMyCarsFromDatabase(user.Id);
+            var cars = LoadCustomersOrders(user.Id);
 
             flpCars.Controls.Clear(); // خالی کردن قبل از پر کردن
             flpCars.FlowDirection = FlowDirection.LeftToRight;
             flpCars.WrapContents = true; // برای ردیف بعدی
 
 
-            foreach (var car in cars)
-            {
-                UC_MyCars carControl = new UC_MyCars();
-                carControl.ShowSellButton = false;
-                carControl.ShowNumUpDw = false;
-                carControl.ShowCancelBtn = false;
-                carControl.ShowRejectButton = false;
-                carControl.ShowUserDetailButton = false;
-                this.Controls.Add(carControl);
-                carControl.SelectedCar = car;
-                carControl.SetDesigner();
-                carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
-                carControl.Width = 832; // اندازه مناسب بده
-                carControl.Height = 188;
-
-                flpCars.Controls.Add(carControl);
-            }
+          foreach (var car in cars)
+{
+    UC_MyCars carControl = new UC_MyCars();
+    carControl.ShowSellButton = false;
+    carControl.ShowNumUpDw = false;
+    carControl.ShowCancelBtn = false;
+    carControl.SelectedCar = car;
+    carControl.SetDesigner();
+    carControl.Margin = new Padding(20);
+    carControl.Width = 832;
+    carControl.Height = 188;
+    flpCars.Controls.Add(carControl);
+}
         }
-        private List<Cars> LoadMyCarsFromDatabase(int customerId)
+
+        public List<Cars> LoadCustomersOrders(int customerId)
         {
             List<Cars> myCarsList = new List<Cars>();
 
@@ -62,12 +59,13 @@ namespace MyCarManagmentProject.Forms
        c.DoorCount, c.EngineDetails, c.Price, c.Fuel,
        c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
        m.CarCount, m.CustomerId, m.IsRented
-        FROM CarInfo c
-        INNER JOIN TX m ON c.Id = m.CarId";
+FROM CarInfo c
+INNER JOIN TX m ON c.Id = m.CarId";
+
+                MessageBox.Show(customerId.ToString());
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@CustomerId", customerId);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -108,11 +106,12 @@ namespace MyCarManagmentProject.Forms
                                 CarImage = carImage
                             };
 
-                            car.TxInfo = new TX
+                            TX Person = new TX
                             {
                                 CustomerId = Convert.ToInt32(reader["CustomerId"]),
-                                IsRented = (bool) reader["IsRented"],
-                                CarId = car.Id
+                                IsRented = Convert.ToBoolean(reader["IsRented"]),
+                                CarId = car.Id,
+                                SelectedCar = car
                             };
 
 
@@ -127,36 +126,38 @@ namespace MyCarManagmentProject.Forms
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RefreshCars();
+            Person user = CurrentUser.User;
+
+            RefreshCars(user.Id);
         }
-        private void RefreshCars()
+        public void RefreshCars(int customerId)
         {
             flpCars.Controls.Clear();
-            Person user = CurrentUser.User;
-            var cars = LoadMyCarsFromDatabase(user.Id);
 
-            //var TXs = LoadTXFromDataBase();
+            var cars = LoadCustomersOrders(customerId);
 
-            
             foreach (var car in cars)
             {
                 UC_MyCars carControl = new UC_MyCars();
+                carControl.ShowSellButton = false;
+                carControl.ShowNumUpDw = false;
+                carControl.ShowCancelBtn = false;
                 carControl.SelectedCar = car;
                 carControl.SetDesigner();
                 carControl.Margin = new Padding(10);
-                carControl.Width = 832;  // مطابق اندازه دیزاینر
+                carControl.Width = 832;
                 carControl.Height = 188;
-                //foreach (var T in TXs)
-                //{
-                //    if (T.CarId==car.Id)
-                //    {
-                //        carControl.SelectedTx = T;
-                //    }
-                //}
+
                 flpCars.Controls.Add(carControl);
-                
+                flpCars.Refresh(); // 🔹 فوراً UI آپدیت می‌شود
             }
+
+            flpCars.Invalidate();
+            flpCars.Update();
         }
+
+
+
 
         //private List<TX> LoadTXFromDataBase()
         //{

@@ -243,6 +243,16 @@ namespace MyCarManagmentProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_client_management_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-client-management-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_coin_wallet_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8_coin_wallet_48", resourceCulture);

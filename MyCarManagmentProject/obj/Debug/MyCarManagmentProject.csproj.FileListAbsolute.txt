@@ -68,3 +68,4 @@ E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.MyOrders.resources
 E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.CustomersOrders.resources
 C:\C# TESTS\CarManagementProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.CustomersOrders.resources
+E:\test c#\MyCarManagmentProject\MyCarManagmentProject\MyCarManagmentProject\obj\Debug\MyCarManagmentProject.Forms.UserDetails.resources

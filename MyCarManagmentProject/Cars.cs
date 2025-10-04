@@ -37,7 +37,6 @@ namespace MyCarManagmentProject
         //public string Factory { get; set; }
 
         public Image CarImage { get; set; }
-        public TX TxInfo { get; set; }
 
 
 

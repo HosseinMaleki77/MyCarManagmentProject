@@ -111,7 +111,7 @@ namespace MyCarManagmentProject.Forms
                                 Model = (Cars.CarModel)reader["Factory"],
                                 CarImage = carImage
                             };
-                            car.TxInfo = new TX
+                            TX Person = new TX
                             {
                                 IsRented = (bool)reader["IsRented"],
                                 CarId = car.Id
@@ -184,9 +184,10 @@ namespace MyCarManagmentProject.Forms
                         MaxTorque = reader["MaximumTorque"].ToString(),
                         CarCount = Convert.ToInt32(reader["CarCount"]),
                         CarImage = carImage
-
+                        
+                        
                     };
-                    car.TxInfo = new TX
+                   TX person = new TX
                     {
                         IsRented = (bool)reader["IsRented"],
                         CarId = car.Id
@@ -210,6 +211,7 @@ namespace MyCarManagmentProject.Forms
                 }
             }
         }
+
 
 
     }
