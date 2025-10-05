@@ -37,6 +37,7 @@ namespace MyCarManagmentProject
         //public string Factory { get; set; }
 
         public Image CarImage { get; set; }
+        public bool IsRented { get; set; }
 
 
 

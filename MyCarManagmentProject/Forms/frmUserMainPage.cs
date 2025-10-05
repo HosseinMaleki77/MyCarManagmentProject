@@ -52,6 +52,7 @@ namespace MyCarManagmentProject
         private void btnMyCars_Click(object sender, EventArgs e)
         {
             MyUserCars myUserCars = new MyUserCars();
+            myUserCars.FormClosed += (s, args) => UpdateWallet();
             myUserCars.ShowDialog();
         }
 
@@ -115,6 +116,7 @@ namespace MyCarManagmentProject
         private void btnOrders_Click(object sender, EventArgs e)
         {
             MyOrders myOrders = new MyOrders();
+            myOrders.FormClosed += (s, args) => UpdateWallet();
             myOrders.ShowDialog();
         }
     }

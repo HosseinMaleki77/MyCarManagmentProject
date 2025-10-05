@@ -24,34 +24,34 @@ namespace MyCarManagmentProject.Forms
         private void MyOrders_Load(object sender, EventArgs e)
         {
             Person user = CurrentUser.User;
-            var cars = LoadMyCarsFromDatabase(user.Id);
 
-            flpCars.Controls.Clear(); // خالی کردن قبل از پر کردن
-            flpCars.FlowDirection = FlowDirection.LeftToRight;
-            flpCars.WrapContents = true; // برای ردیف بعدی
+            var carsAndTx = LoadMyCarsFromDatabase(user.Id);
 
-
-            foreach (var car in cars)
+            foreach (var (car, tx) in carsAndTx)
             {
                 UC_MyCars carControl = new UC_MyCars();
                 carControl.ShowSellButton = false;
                 carControl.ShowNumUpDw = false;
-                carControl.ShowaAcceptBtn=false;
+                carControl.ShowaAcceptBtn = false;
                 carControl.lblCus = false;
                 carControl.ShowUserDetailButton = false;
                 carControl.ShowRejectButton = false;
+
                 carControl.SelectedCar = car;
+                carControl.SelectedTx = tx;
+
                 carControl.SetDesigner();
-                carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
-                carControl.Width = 832; // اندازه مناسب بده
+                carControl.Margin = new Padding(20);
+                carControl.Width = 832;
                 carControl.Height = 188;
 
                 flpCars.Controls.Add(carControl);
             }
         }
-        private List<Cars> LoadMyCarsFromDatabase(int customerId)
+
+        private List<(Cars car, TX tx)> LoadMyCarsFromDatabase(int customerId)
         {
-            List<Cars> myCarsList = new List<Cars>();
+            var myCarsList = new List<(Cars, TX)>();
 
             string connectionString = ConfigurationManager.ConnectionStrings["CarShop"].ConnectionString;
 
@@ -60,14 +60,14 @@ namespace MyCarManagmentProject.Forms
                 conn.Open();
 
                 string query = @"
-        SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
-               c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
-               c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-               m.IsRented,
-               m.CarCount
-        FROM CarInfo c
-        INNER JOIN TX m ON c.Id = m.CarId
-        WHERE m.CustomerId = @CustomerId";
+            SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
+                   c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
+                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
+                   t.IsRented,
+                   t.CarCount
+            FROM CarInfo c
+            INNER JOIN TX t ON c.Id = t.CarId
+            WHERE t.CustomerId = @CustomerId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -81,20 +81,11 @@ namespace MyCarManagmentProject.Forms
                             string imageName = reader["IMAGEPATH"].ToString();
                             string imagePath = Path.Combine(folderPath, imageName);
 
-                            Image carImage = null;
-                            if (File.Exists(imagePath))
-                            {
-                                using (var temp = Image.FromFile(imagePath))
-                                {
-                                    carImage = new Bitmap(temp);
-                                }
-                            }
-                            else
-                            {
-                                carImage = Properties.Resources.no_image_icon_4;
-                            }
+                            Image carImage = File.Exists(imagePath)
+                                ? new Bitmap(Image.FromFile(imagePath))
+                                : Properties.Resources.no_image_icon_4;
 
-                            Cars car = new Cars
+                            var car = new Cars
                             {
                                 Id = Convert.ToInt32(reader["ID"]),
                                 Name = reader["Name"].ToString(),
@@ -107,17 +98,21 @@ namespace MyCarManagmentProject.Forms
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount = Convert.ToInt32(reader["CarCount"]),
+                                CarCount =Convert.ToInt32 (reader["CarCount"]),
                                 Model = (Cars.CarModel)reader["Factory"],
                                 CarImage = carImage
                             };
-                            TX Person = new TX
+
+                            var tx = new TX
                             {
+                                CarId = car.Id,
+                                CustomerId = customerId,
                                 IsRented = (bool)reader["IsRented"],
-                                CarId = car.Id
+                                CarCount = (int)reader["CarCount"]
+
                             };
 
-                            myCarsList.Add(car);
+                            myCarsList.Add((car, tx));
                         }
                     }
                 }
@@ -125,6 +120,7 @@ namespace MyCarManagmentProject.Forms
 
             return myCarsList;
         }
+
 
 
         public void LoadMyOrders(int customerId)
@@ -187,12 +183,14 @@ namespace MyCarManagmentProject.Forms
                         
                         
                     };
-                   TX person = new TX
+                    TX tx = new TX
                     {
+                        CustomerId = customerId,
+                        CarId = car.Id,
                         IsRented = (bool)reader["IsRented"],
-                        CarId = car.Id
                     };
-              
+
+
 
                     UC_MyCars carControl = new UC_MyCars();
                     carControl.ShowSellButton = false;
@@ -202,6 +200,7 @@ namespace MyCarManagmentProject.Forms
                     carControl.ShowUserDetailButton = false;
                     carControl.ShowRejectButton = false;
                     carControl.SelectedCar = car;
+                    carControl.SelectedTx = tx;
                     carControl.SetDesigner();
                     carControl.Margin = new Padding(20); // فاصله بین کنترل‌ها
                     carControl.Width = 832; // اندازه مناسب بده

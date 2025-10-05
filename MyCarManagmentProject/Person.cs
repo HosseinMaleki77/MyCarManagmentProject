@@ -25,6 +25,8 @@ namespace MyCarManagmentProject
 
         public bool AdminOrderAccept { get; set; }
 
+       
+
         //public Person(string name, string lastname, int walletBalance, string userName, string password)
         //{
 

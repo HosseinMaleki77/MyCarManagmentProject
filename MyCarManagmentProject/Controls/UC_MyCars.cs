@@ -2,18 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace MyCarManagmentProject.Controls
 {
-    
+
     public partial class UC_MyCars : UserControl
-    { 
-      
+    {
+
 
 
         //برای نشان دادن یا ندادن دکمه ها نوشتیم
@@ -98,9 +100,9 @@ namespace MyCarManagmentProject.Controls
         {
             InitializeComponent();
             btnSell.Visible = _showSellButton;
-            nmSellCount.Visible= _showNumUpDw;
-            btnCancel.Visible= _showCancelBtn;
-            
+            nmSellCount.Visible = _showNumUpDw;
+            btnCancel.Visible = _showCancelBtn;
+
         }
 
         public Cars SelectedCar { get; set; }
@@ -296,8 +298,8 @@ namespace MyCarManagmentProject.Controls
                         AddCarToDataBase();
                         MessageBox.Show("Your Car Has Been Sell!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-            
-              
+
+
                 }
             }
 
@@ -307,25 +309,31 @@ namespace MyCarManagmentProject.Controls
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Person p = CurrentUser.User;
+            if (p == null)
+                return;
 
-            if (p == null) return;
+            if (SelectedTx == null)
+            {
+                MessageBox.Show("Transaction info not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             DialogResult result = MessageBox.Show("Are You Sure to Cancel This Car?",
                 "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            int customerId = SelectedTx.CustomerId;
 
             if (result == DialogResult.Yes)
             {
-                DeleteCarFromMyOrders(p.Id);   // حذف یا کم کردن از TX
+                int customerId = SelectedTx.CustomerId;
+                DeleteCarFromMyOrders(p.Id);
                 MessageBox.Show("Car cancelled and money refunded!",
                     "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // رفرش فرم اصلی و FlowLayoutPanel
                 MyOrders frm = (MyOrders)Application.OpenForms["MyOrders"];
                 if (frm != null)
                     frm.LoadMyOrders(p.Id);
             }
         }
+
 
 
         private void DeleteCarFromMyOrders(int customerId)
@@ -401,7 +409,7 @@ namespace MyCarManagmentProject.Controls
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            if (SelectedCar == null || SelectedCar == null)
+            if (SelectedCar == null)
             {
                 MessageBox.Show("No transaction info available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -438,6 +446,91 @@ namespace MyCarManagmentProject.Controls
             // استفاده از CustomerId موجود در SelectedTx
             UserDetails userDetails = new UserDetails(SelectedTx.CustomerId);
             userDetails.ShowDialog();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            if (SelectedCar == null)
+            {
+                MessageBox.Show("No transaction info available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure to Accept this car?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (result != DialogResult.Yes) return;
+
+            int customerId = SelectedTx.CustomerId;
+
+            AddCarFromTxToMycar(customerId);
+
+            MessageBox.Show("Car Accepted and money deposit!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            var frm = Application.OpenForms.OfType<MyCarManagmentProject.Forms.CustomersOrders>().FirstOrDefault();
+            if (frm != null)
+            {
+                // رفرش بر اساس شناسه‌ی مشتری مربوطه
+                frm.RefreshCars(customerId);
+            }
+        }
+
+        private void AddCarFromTxToMycar(int customerId)
+        {
+            string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string checkQuery = "SELECT Price FROM TX WHERE CustomerId=@CustomerId AND CarId=@CARID";
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@CustomerId", customerId);
+                    checkCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
+
+                    using (SqlDataReader reader = checkCmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            decimal carPrice = Convert.ToDecimal(reader["Price"]);
+                            reader.Close();
+
+
+                            // اضافه کردن پول به ادمین
+                            string updateAdminBalance = "UPDATE Users SET WalletBalance = WalletBalance + @Deposit WHERE Id=@UserId";
+                            using (SqlCommand updateBalanceCmd = new SqlCommand(updateAdminBalance, conn))
+                            {
+                                updateBalanceCmd.Parameters.AddWithValue("@Deposit", carPrice);
+                                updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
+                                updateBalanceCmd.ExecuteNonQuery();
+                            }
+
+                            object result = checkCmd.ExecuteScalar();
+
+                            if (result != null)  // یعنی ماشین پیدا شد
+                            {
+
+                                // ) اضافه کردن رکورد جدید
+                                string insertQuery = "INSERT INTO MyCars (CustomerId, isRented,CarId,Price) VALUES (@CustomerId,0,@CARID,@Price)";
+                                using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                                {
+                                    insertCmd.Parameters.AddWithValue("@CustomerId", customerId);
+                                    insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
+                                    insertCmd.Parameters.AddWithValue("@Price", SelectedCar.Price);
+                                    insertCmd.Parameters.AddWithValue("@IsRented", SelectedCar.IsRented);
+
+
+                                    insertCmd.ExecuteNonQuery();
+
+                                }
+                                conn.Close();
+                            }
+                        }
+                    }
+                }
+
+
+            }
         }
     }
 }
