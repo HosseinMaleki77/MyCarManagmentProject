@@ -126,8 +126,11 @@ namespace MyCarManagmentProject.Controls
             lblFuel.Text = SelectedCar.Fuel;
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
+            lblTime.Text = "Tx Time: " + SelectedTx.Time.ToString();
+            lblTime.ForeColor = Color.Red;
+
+
             pictureBox1.Image = SelectedCar.CarImage;
-            lblCount.Text = SelectedCar.CarCount.ToString();
             if (SelectedTx != null)
             {
                 lblIsRented.Text = "Is Rented: " + SelectedTx.IsRented.ToString();
@@ -345,7 +348,7 @@ namespace MyCarManagmentProject.Controls
                 conn.Open();
 
                 // گرفتن تعداد و قیمت
-                string checkQuery = "SELECT CarCount, Price FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
+                string checkQuery = "SELECT Price FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
@@ -360,31 +363,16 @@ namespace MyCarManagmentProject.Controls
                             decimal carPrice = Convert.ToDecimal(reader["Price"]);
                             reader.Close();
 
-                            if (currentCount > 1)
-                            {
-                                // کم کردن تعداد در TX
-                                string updateQuery = "UPDATE TX SET CarCount = CarCount - 1 WHERE CustomerId=@CustomerId AND CarId=@CarId";
-                                using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
-                                {
-                                    updateCmd.Parameters.AddWithValue("@CustomerId", customerId);
-                                    updateCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
-                                    updateCmd.ExecuteNonQuery();
-                                }
-                            }
-                            else
-                            {
-                                // حذف کامل
-                                string deleteQuery = "DELETE FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
-                                using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
-                                {
-                                    deleteCmd.Parameters.AddWithValue("@CustomerId", customerId);
-                                    deleteCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
-                                    deleteCmd.ExecuteNonQuery();
-                                }
-                            }
 
                             // برگرداندن پول به کاربر
                             string updateUserBalance = "UPDATE Users SET WalletBalance = WalletBalance + @Refund WHERE Id=@UserId";
+                            using (SqlCommand updateBalanceCmd = new SqlCommand(updateUserBalance, conn))
+                            {
+                                updateBalanceCmd.Parameters.AddWithValue("@Refund", carPrice);
+                                updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
+                                updateBalanceCmd.ExecuteNonQuery();
+                            }
+                            string updateIsDone = "UPDATE Users SET WalletBalance = WalletBalance + @Refund WHERE Id=@UserId";
                             using (SqlCommand updateBalanceCmd = new SqlCommand(updateUserBalance, conn))
                             {
                                 updateBalanceCmd.Parameters.AddWithValue("@Refund", carPrice);
@@ -495,14 +483,22 @@ namespace MyCarManagmentProject.Controls
                             decimal carPrice = Convert.ToDecimal(reader["Price"]);
                             reader.Close();
 
-
-                            // اضافه کردن پول به ادمین
-                            string updateAdminBalance = "UPDATE Users SET WalletBalance = WalletBalance + @Deposit WHERE Id=@UserId";
+                            // ✅ اضافه کردن پول به حساب ادمین
+                            int adminId = 3; // اگر ادمین Id مشخصی دارد
+                            string updateAdminBalance = "UPDATE Users SET WalletBalance = WalletBalance + @Deposit WHERE Id=@Id";
                             using (SqlCommand updateBalanceCmd = new SqlCommand(updateAdminBalance, conn))
                             {
                                 updateBalanceCmd.Parameters.AddWithValue("@Deposit", carPrice);
-                                updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
+                                updateBalanceCmd.Parameters.AddWithValue("@Id", adminId);
                                 updateBalanceCmd.ExecuteNonQuery();
+                            }
+
+                            string updateTxQuery = "UPDATE TX SET Rejected = 1 WHERE CustomerId=@CustomerId AND CarId=@CarId";
+                            using (SqlCommand updateTxCmd = new SqlCommand(updateTxQuery, conn))
+                            {
+                                updateTxCmd.Parameters.AddWithValue("@CustomerId", customerId);
+                                updateTxCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
+                                updateTxCmd.ExecuteNonQuery();
                             }
 
                             object result = checkCmd.ExecuteScalar();
@@ -520,9 +516,11 @@ namespace MyCarManagmentProject.Controls
                                     insertCmd.Parameters.AddWithValue("@IsRented", SelectedCar.IsRented);
 
 
+
                                     insertCmd.ExecuteNonQuery();
 
                                 }
+
                                 conn.Close();
                             }
                         }

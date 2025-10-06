@@ -12,7 +12,12 @@ namespace MyCarManagmentProject
         public bool IsRented { get; set; }
         public int CarId { get; set; }
         public int CarCount { get; set; }
+        public bool IsDone { get; set; }
+        public DateTime? Time { get; set; }
+
 
         public Cars SelectedCar { get; set; }
+
+        
     }
 }

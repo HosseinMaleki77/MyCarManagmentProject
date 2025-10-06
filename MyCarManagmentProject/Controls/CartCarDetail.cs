@@ -172,7 +172,7 @@ namespace MyCarManagmentProject.Controls
             {
                 conn.Open();
 
-                string checkQuery = "SELECT CarCount FROM TX WHERE CustomerId=@CustomerId AND CarId=@CARID";
+                string checkQuery = "SELECT Id FROM TX WHERE CustomerId=@CustomerId AND CarId=@CARID";
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
                     checkCmd.Parameters.AddWithValue("@CustomerId", p.Id);
@@ -180,35 +180,17 @@ namespace MyCarManagmentProject.Controls
 
                     object result = checkCmd.ExecuteScalar();
 
-                    if (result != null)  // یعنی ماشین پیدا شد
-                    {
-                        int currentCount = Convert.ToInt32(result);
-
-                        // 2) آپدیت تعداد
-                        string updateQuery = "UPDATE TX SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarId=@CARID";
-                        using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
-                        {
-                            updateCmd.Parameters.AddWithValue("@CarCount", currentCount + 1);
-                            updateCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                            updateCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
-
-                            updateCmd.ExecuteNonQuery();
-                        }
-                    }
-                    else
-                    {
                         // 3) اضافه کردن رکورد جدید
-                        string insertQuery = "INSERT INTO TX (CarCount, CustomerId, isRented,CarId,Price) VALUES (@CarCount, @CustomerId,0,@CARID,@Price)";
+                        string insertQuery = "INSERT INTO TX (CustomerId, isRented,CarId,Price,IsDone) VALUES (@CustomerId,0,@CARID,@Price,0)";
                         using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                         {
-                            insertCmd.Parameters.AddWithValue("@CarCount", 1);
                             insertCmd.Parameters.AddWithValue("@CustomerId", p.Id);
                             insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
                             insertCmd.Parameters.AddWithValue("@Price", SelectedCar.Price);
 
                             insertCmd.ExecuteNonQuery();
                         }
-                    }
+                   
                     conn.Close();
                 }
             }

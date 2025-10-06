@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MyCarManagmentProject.Forms
 {
@@ -66,8 +67,7 @@ namespace MyCarManagmentProject.Forms
                 conn.Open();
                 string query = @"SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission,
           c.DoorCount, c.EngineDetails, c.Price, c.Fuel,
-          c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-          m.CarCount, m.CustomerId, m.IsRented
+          c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,m.CustomerId, m.IsRented,m.Time
           FROM CarInfo c
           INNER JOIN TX m ON c.Id = m.CarId";
 
@@ -107,20 +107,22 @@ namespace MyCarManagmentProject.Forms
                                 Fuel = reader["Fuel"]?.ToString() ?? string.Empty,
                                 TopSpeed = reader["TopSpeed"]?.ToString() ?? string.Empty,
                                 MaxTorque = reader["MaximumTorque"]?.ToString() ?? string.Empty,
-                                CarCount = reader["CarCount"] != DBNull.Value ? Convert.ToInt32(reader["CarCount"]) : 0,
-                                CarImage = carImage
+
+                            CarImage = carImage
                             };
 
                             // نگه‌داشتن TX مرتبط با هر CarId در دیکشنری
                             int txCustomerId = reader["CustomerId"] != DBNull.Value ? Convert.ToInt32(reader["CustomerId"]) : 0;
                             bool txIsRented = reader["IsRented"] != DBNull.Value ? Convert.ToBoolean(reader["IsRented"]) : false;
+                            DateTime? txTime = reader["Time"] != DBNull.Value ? (DateTime?)reader["Time"] : null;
 
-                            TX tx = new TX
+                                TX tx = new TX
                             {
                                 CustomerId = txCustomerId,
                                 IsRented = txIsRented,
                                 CarId = car.Id,
-                                SelectedCar = car
+                                SelectedCar = car,
+                                Time = txTime
                             };
 
                             // نگهداری در دیکشنری برای دسترسی بعدی

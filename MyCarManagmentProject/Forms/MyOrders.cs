@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MyCarManagmentProject.Forms
 {
@@ -59,12 +60,10 @@ namespace MyCarManagmentProject.Forms
             {
                 conn.Open();
 
-                string query = @"
-            SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
+                string query = @"SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
                    c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
                    c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-                   t.IsRented,
-                   t.CarCount
+                   t.IsRented,t.IsDone,t.Time
             FROM CarInfo c
             INNER JOIN TX t ON c.Id = t.CarId
             WHERE t.CustomerId = @CustomerId";
@@ -98,17 +97,19 @@ namespace MyCarManagmentProject.Forms
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount =Convert.ToInt32 (reader["CarCount"]),
                                 Model = (Cars.CarModel)reader["Factory"],
                                 CarImage = carImage
                             };
+                            DateTime? txTime = reader["Time"] != DBNull.Value ? (DateTime?)reader["Time"] : null;
+
 
                             var tx = new TX
                             {
                                 CarId = car.Id,
                                 CustomerId = customerId,
                                 IsRented = (bool)reader["IsRented"],
-                                CarCount = (int)reader["CarCount"]
+                                Time = txTime
+
 
                             };
 
@@ -136,8 +137,7 @@ namespace MyCarManagmentProject.Forms
                 string query = @"
         SELECT C.Id, C.Name, C.Price, C.Acceleration, C.Transmission, 
                C.DoorCount, C.EngineDetails, C.Fuel, C.TopSpeed, 
-               C.MaximumPower, C.MaximumTorque, T.IsRented,C.ImagePath,
-               T.CarCount
+               C.MaximumPower, C.MaximumTorque, T.IsRented,C.ImagePath, t.IsDone,t.Time
         FROM TX T
         JOIN CarInfo C ON T.CarId = C.Id
         WHERE T.CustomerId=@CustomerId";
@@ -178,19 +178,24 @@ namespace MyCarManagmentProject.Forms
                         TopSpeed = reader["TopSpeed"].ToString(),
                         MaxPower = reader["MaximumPower"].ToString(),
                         MaxTorque = reader["MaximumTorque"].ToString(),
-                        CarCount = Convert.ToInt32(reader["CarCount"]),
                         CarImage = carImage
-                        
-                        
                     };
+
+
+                    DateTime? txTime = reader["Time"] != DBNull.Value ? (DateTime?)reader["Time"] : null;
+
+
+
                     TX tx = new TX
                     {
                         CustomerId = customerId,
                         CarId = car.Id,
                         IsRented = (bool)reader["IsRented"],
+                        Time = txTime
+
                     };
 
-
+                
 
                     UC_MyCars carControl = new UC_MyCars();
                     carControl.ShowSellButton = false;
