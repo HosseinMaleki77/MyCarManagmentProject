@@ -420,7 +420,7 @@ namespace MyCarManagmentProject.Controls
             if (frm != null)
             {
                 // رفرش بر اساس شناسه‌ی مشتری مربوطه
-                frm.RefreshCars(customerId);
+                frm.RefreshCars();
             }
         }
         private void btnUserDetail_Click(object sender, EventArgs e)
@@ -458,7 +458,7 @@ namespace MyCarManagmentProject.Controls
             if (frm != null)
             {
                 // رفرش بر اساس شناسه‌ی مشتری مربوطه
-                frm.RefreshCars(customerId);
+                frm.RefreshCars();
             }
         }
 
