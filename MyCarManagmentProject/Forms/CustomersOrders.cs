@@ -71,6 +71,7 @@ namespace MyCarManagmentProject.Forms
                                 t.ID AS TxId, t.CustomerId, t.CarId, t.Time, t.IsRented
                          FROM CarInfo c
                          INNER JOIN TX t ON c.Id = t.CarId
+                         WHERE t.IsDone = 0
                          ORDER BY t.Time ASC";
 
 

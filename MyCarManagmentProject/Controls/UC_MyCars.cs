@@ -493,7 +493,7 @@ namespace MyCarManagmentProject.Controls
                                 updateBalanceCmd.ExecuteNonQuery();
                             }
 
-                            string updateTxQuery = "UPDATE TX SET Rejected = 1 WHERE CustomerId=@CustomerId AND CarId=@CarId";
+                            string updateTxQuery = "UPDATE TX SET Rejected = 0, IsDone = 1 WHERE CustomerId=@CustomerId AND CarId=@CarId";
                             using (SqlCommand updateTxCmd = new SqlCommand(updateTxQuery, conn))
                             {
                                 updateTxCmd.Parameters.AddWithValue("@CustomerId", customerId);

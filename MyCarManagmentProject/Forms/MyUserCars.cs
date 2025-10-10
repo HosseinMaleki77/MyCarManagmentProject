@@ -23,6 +23,7 @@ namespace MyCarManagmentProject.Forms
 
         private void MyUserCars_Load(object sender, EventArgs e)
         {
+
           
             
             Person user = CurrentUser.User;
@@ -66,11 +67,11 @@ namespace MyCarManagmentProject.Forms
 
                 string query = @"
             SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
-                   c.DoorsNumber, c.EngineDetails, c.Price, c.Fuel, 
-                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH,
-                   m.CarCount
+                   c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
+                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH
+                   
             FROM CarInfo c
-            INNER JOIN MyCars m ON c.Name = m.CarName
+            INNER JOIN MyCars m ON c.Id = m.CarId
             WHERE m.CustomerId = @CustomerId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -105,16 +106,16 @@ namespace MyCarManagmentProject.Forms
                                 MaxPower = reader["MaximumPower"].ToString(),
                                 Acceleration = reader["Acceleration"].ToString(),
                                 Transmission = reader["Transmission"].ToString(),
-                                DoorCount = reader["DoorsNumber"].ToString(),
+                                DoorCount = reader["DoorCount"].ToString(),
                                 Engine_Details = reader["EngineDetails"].ToString(),
                                 Price = Convert.ToInt32(reader["Price"]),
                                 Fuel = reader["Fuel"].ToString(),
                                 TopSpeed = reader["TopSpeed"].ToString(),
                                 MaxTorque = reader["MaximumTorque"].ToString(),
-                                CarCount = Convert.ToInt32(reader["CarCount"]), // از جدول MyCars
                                 Model = (Cars.CarModel)reader["Factory"],
                                 CarImage = carImage
                             };
+                            
 
                             myCarsList.Add(car);
                         }
