@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_MyCars));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnUserDetail = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblIsRented = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.lblCustomer = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.nmSellCount = new System.Windows.Forms.NumericUpDown();
             this.btnSell = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,9 +62,7 @@
             this.lblD = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmSellCount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +77,6 @@
             this.panel1.Controls.Add(this.lblCustomer);
             this.panel1.Controls.Add(this.btnAccept);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.nmSellCount);
             this.panel1.Controls.Add(this.btnSell);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label2);
@@ -108,6 +105,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(538, 188);
             this.panel1.TabIndex = 0;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(10, 170);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(35, 13);
+            this.lblTime.TabIndex = 58;
+            this.lblTime.Text = "label6";
             // 
             // btnUserDetail
             // 
@@ -205,13 +213,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // nmSellCount
-            // 
-            this.nmSellCount.Location = new System.Drawing.Point(377, 157);
-            this.nmSellCount.Name = "nmSellCount";
-            this.nmSellCount.Size = new System.Drawing.Size(36, 22);
-            this.nmSellCount.TabIndex = 50;
-            // 
             // btnSell
             // 
             this.btnSell.BackColor = System.Drawing.Color.White;
@@ -219,7 +220,7 @@
             this.btnSell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSell.ImageIndex = 0;
             this.btnSell.ImageList = this.imageList1;
-            this.btnSell.Location = new System.Drawing.Point(289, 152);
+            this.btnSell.Location = new System.Drawing.Point(359, 151);
             this.btnSell.Name = "btnSell";
             this.btnSell.Size = new System.Drawing.Size(82, 34);
             this.btnSell.TabIndex = 47;
@@ -479,17 +480,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(10, 170);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(35, 13);
-            this.lblTime.TabIndex = 58;
-            this.lblTime.Text = "label6";
-            // 
             // UC_MyCars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -503,7 +493,6 @@
             this.Load += new System.EventHandler(this.UC_MyCars_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmSellCount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -536,7 +525,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSell;
-        private System.Windows.Forms.NumericUpDown nmSellCount;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;

@@ -36,6 +36,9 @@ namespace MyCarManagmentProject
         private void btnCustomerAndOrders_Click(object sender, EventArgs e)
         {
             CustomersOrders customersOrders = new CustomersOrders();
+
+            customersOrders.FormClosed += (s, args) => UpdateWallet();
+
             customersOrders.ShowDialog();
         }
 

@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MyCarManagmentProject.Forms
 {
@@ -66,7 +65,7 @@ namespace MyCarManagmentProject.Forms
                    t.IsRented,t.IsDone,t.Time
             FROM CarInfo c
             INNER JOIN TX t ON c.Id = t.CarId
-            WHERE t.CustomerId = @CustomerId";
+            WHERE t.CustomerId = @CustomerId AND t.IsDone = 0 AND t.Rejected = 0";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -137,10 +136,10 @@ namespace MyCarManagmentProject.Forms
                 string query = @"
         SELECT C.Id, C.Name, C.Price, C.Acceleration, C.Transmission, 
                C.DoorCount, C.EngineDetails, C.Fuel, C.TopSpeed, 
-               C.MaximumPower, C.MaximumTorque, T.IsRented,C.ImagePath, t.IsDone,t.Time
+               C.MaximumPower, C.MaximumTorque, t.IsRented,C.ImagePath, t.IsDone,t.Time,t.Rejected
         FROM TX T
         JOIN CarInfo C ON T.CarId = C.Id
-        WHERE T.CustomerId=@CustomerId";
+        WHERE T.CustomerId=@CustomerId AND t.IsDone = 0 AND t.Rejected = 0";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CustomerId", customerId);

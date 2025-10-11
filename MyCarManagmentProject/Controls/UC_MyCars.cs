@@ -36,7 +36,6 @@ namespace MyCarManagmentProject.Controls
             set
             {
                 _showNumUpDw = value;
-                nmSellCount.Visible = _showNumUpDw; // کنترل نمایش دکمه
             }
         }
 
@@ -100,7 +99,6 @@ namespace MyCarManagmentProject.Controls
         {
             InitializeComponent();
             btnSell.Visible = _showSellButton;
-            nmSellCount.Visible = _showNumUpDw;
             btnCancel.Visible = _showCancelBtn;
 
         }
@@ -126,27 +124,25 @@ namespace MyCarManagmentProject.Controls
             lblFuel.Text = SelectedCar.Fuel;
             lblTopSpeed.Text = SelectedCar.TopSpeed;
             lblMaxTorque.Text = SelectedCar.MaxTorque;
-            lblTime.Text = "Tx Time: " + SelectedTx.Time.ToString();
-            lblTime.ForeColor = Color.Red;
 
-
-            pictureBox1.Image = SelectedCar.CarImage;
             if (SelectedTx != null)
             {
-                lblIsRented.Text = "Is Rented: " + SelectedTx.IsRented.ToString();
+                lblIsRented.Text = "Is Rented: " + (SelectedTx.IsRented ? "Yes" : "No");
+                lblTime.Text = "Tx Time: " + SelectedTx.Time.ToString();
+                lblTime.ForeColor = Color.Red;
+
+              
                 lblCustomer.Text = "Customer ID: " + SelectedTx.CustomerId.ToString();
             }
             else
             {
-                lblIsRented.Text = "Is Rented: -";
+                lblTime.Text = "";
                 lblCustomer.Text = "Customer ID: -";
             }
+            lblTime.ForeColor = Color.Red;
 
-
-
-            //nmSellCount.Minimum = 1; // حداقل یک ماشین برای فروش
-            //nmSellCount.Maximum = SelectedCar.CarCount; // حداکثر برابر تعداد موجود
-            //nmSellCount.Value = 1;   // مقدار پیش‌فرض
+            pictureBox1.Image = SelectedCar.CarImage;
+ 
         }
 
         private void UpdateCount()
@@ -212,44 +208,28 @@ namespace MyCarManagmentProject.Controls
                 conn.Open();
 
                 // 1) بررسی اینکه آیا مشتری این ماشین را دارد یا نه
-                string checkQuery = "SELECT CarCount FROM TX WHERE CustomerId=@CustomerId AND CarName=@CarName";
+                string checkQuery = "SELECT Id FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
                     checkCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                    checkCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
+                    checkCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
 
                     object result = checkCmd.ExecuteScalar();
 
                     if (result != null)  // یعنی ماشین پیدا شد
                     {
-                        int currentCount = Convert.ToInt32(result);
 
-                        if (currentCount > 1)
-                        {
-                            // 2) کم کردن یک عدد از تعداد
-                            string updateQuery = "UPDATE MyCars SET CarCount = @CarCount WHERE CustomerId=@CustomerId AND CarName=@CarName";
-                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
-                            {
-                                updateCmd.Parameters.AddWithValue("@CarCount", currentCount - 1);
-                                updateCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                                updateCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
-
-                                updateCmd.ExecuteNonQuery();
-                            }
-                        }
-                        else
-                        {
-                            // 3) اگه تعداد 1 بود، کل ردیف حذف بشه
-                            string deleteQuery = "DELETE FROM MyCars WHERE CustomerId=@CustomerId AND CarName=@CarName";
+                      
+                            string deleteQuery = "DELETE FROM MyCars WHERE CustomerId=@CustomerId AND CarId=@CarId";
                             using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                             {
                                 deleteCmd.Parameters.AddWithValue("@CustomerId", p.Id);
-                                deleteCmd.Parameters.AddWithValue("@CarName", SelectedCar.Name);
+                                deleteCmd.Parameters.AddWithValue("@CarId", SelectedCar.Name);
 
                                 deleteCmd.ExecuteNonQuery();
                             }
-                        }
+                        
                     }
 
                 }
@@ -285,9 +265,7 @@ namespace MyCarManagmentProject.Controls
         private void btnSell_Click(object sender, EventArgs e)
         {
             Person p = CurrentUser.User;
-            p.AdminOrderAccept = false;
-            if (p.AdminOrderAccept)
-            {
+          
                 if (p != null)
                 {
                     DialogResult result = MessageBox.Show("Are You Sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -304,7 +282,7 @@ namespace MyCarManagmentProject.Controls
 
 
                 }
-            }
+            
 
         }
 
@@ -326,7 +304,6 @@ namespace MyCarManagmentProject.Controls
 
             if (result == DialogResult.Yes)
             {
-                int customerId = SelectedTx.CustomerId;
                 DeleteCarFromMyOrders(p.Id);
                 MessageBox.Show("Car cancelled and money refunded!",
                     "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -347,40 +324,44 @@ namespace MyCarManagmentProject.Controls
             {
                 conn.Open();
 
-                // گرفتن تعداد و قیمت
-                string checkQuery = "SELECT Price FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
+                // گرفتن قیمت و وضعیت اجاره‌ای بودن
+                string checkQuery = "SELECT Price, IsRented FROM TX WHERE CustomerId=@CustomerId AND CarId=@CarId";
 
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
                     checkCmd.Parameters.AddWithValue("@CustomerId", customerId);
-                    checkCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
+                    checkCmd.Parameters.AddWithValue("@CarId", SelectedTx.CarId);
 
                     using (SqlDataReader reader = checkCmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            int currentCount = Convert.ToInt32(reader["CarCount"]);
                             decimal carPrice = Convert.ToDecimal(reader["Price"]);
+                            bool isRented = Convert.ToBoolean(reader["IsRented"]);
                             reader.Close();
 
+                            // محاسبه مبلغ بازگشتی
+                            decimal refundAmount = isRented ? carPrice * 0.1m : carPrice;
 
                             // برگرداندن پول به کاربر
                             string updateUserBalance = "UPDATE Users SET WalletBalance = WalletBalance + @Refund WHERE Id=@UserId";
                             using (SqlCommand updateBalanceCmd = new SqlCommand(updateUserBalance, conn))
                             {
-                                updateBalanceCmd.Parameters.AddWithValue("@Refund", carPrice);
-                                updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
-                                updateBalanceCmd.ExecuteNonQuery();
-                            }
-                            string updateIsDone = "UPDATE Users SET WalletBalance = WalletBalance + @Refund WHERE Id=@UserId";
-                            using (SqlCommand updateBalanceCmd = new SqlCommand(updateUserBalance, conn))
-                            {
-                                updateBalanceCmd.Parameters.AddWithValue("@Refund", carPrice);
+                                updateBalanceCmd.Parameters.AddWithValue("@Refund", refundAmount);
                                 updateBalanceCmd.Parameters.AddWithValue("@UserId", customerId);
                                 updateBalanceCmd.ExecuteNonQuery();
                             }
 
-                            // اضافه کردن به Count جدول CarInfo
+                            // تغییر وضعیت TX
+                            string resetIsDone = "UPDATE TX SET IsDone = 0, Rejected = 1 WHERE CarId = @CarId AND CustomerId = @CustomerId";
+                            using (SqlCommand updateTxCmd = new SqlCommand(resetIsDone, conn))
+                            {
+                                updateTxCmd.Parameters.AddWithValue("@CarId", SelectedCar.Id);
+                                updateTxCmd.Parameters.AddWithValue("@CustomerId", customerId);
+                                updateTxCmd.ExecuteNonQuery();
+                            }
+
+                            // افزایش تعداد خودرو در انبار
                             string updateCarCount = "UPDATE CarInfo SET Count = Count + 1 WHERE ID=@Id";
                             using (SqlCommand updateCarCmd = new SqlCommand(updateCarCount, conn))
                             {
@@ -394,6 +375,7 @@ namespace MyCarManagmentProject.Controls
                 conn.Close();
             }
         }
+
 
         private void btnReject_Click(object sender, EventArgs e)
         {
@@ -507,13 +489,13 @@ namespace MyCarManagmentProject.Controls
                             {
 
                                 // ) اضافه کردن رکورد جدید
-                                string insertQuery = "INSERT INTO MyCars (CustomerId, isRented,CarId,Price) VALUES (@CustomerId,0,@CARID,@Price)";
+                                string insertQuery = "INSERT INTO MyCars (CustomerId, isRented,CarId,Price) VALUES (@CustomerId,@IsRented,@CARID,@Price)";
                                 using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                                 {
                                     insertCmd.Parameters.AddWithValue("@CustomerId", customerId);
                                     insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
                                     insertCmd.Parameters.AddWithValue("@Price", SelectedCar.Price);
-                                    insertCmd.Parameters.AddWithValue("@IsRented", SelectedCar.IsRented);
+                                    insertCmd.Parameters.AddWithValue("@IsRented", SelectedTx.IsRented);
 
 
 

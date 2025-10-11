@@ -28,10 +28,8 @@ namespace MyCarManagmentProject.Forms
             
             Person user = CurrentUser.User;
 
-            user.AdminOrderAccept = false;
 
-            if (user.AdminOrderAccept)
-            {
+          
                 var cars = LoadMyCarsFromDatabase(user.Id);
 
                 flpCars.Controls.Clear(); // خالی کردن قبل از پر کردن
@@ -43,6 +41,9 @@ namespace MyCarManagmentProject.Forms
                 {
                     UC_MyCars carControl = new UC_MyCars();
                     carControl.ShowCancelBtn = false;
+                    carControl.ShowaAcceptBtn = false;
+                    carControl.ShowRejectButton = false;
+                    carControl.ShowUserDetailButton = false;
                     this.Controls.Add(carControl);
                     carControl.SelectedCar = car;
                     carControl.SetDesigner();
@@ -52,7 +53,7 @@ namespace MyCarManagmentProject.Forms
 
                     flpCars.Controls.Add(carControl);
                 }
-            }
+            
            
         }
         private List<Cars> LoadMyCarsFromDatabase(int customerId)
@@ -68,7 +69,7 @@ namespace MyCarManagmentProject.Forms
                 string query = @"
             SELECT c.ID, c.Name, c.MaximumPower, c.Acceleration, c.Transmission, 
                    c.DoorCount, c.EngineDetails, c.Price, c.Fuel, 
-                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH
+                   c.TopSpeed, c.MaximumTorque, c.Factory, c.IMAGEPATH, m.isRented
                    
             FROM CarInfo c
             INNER JOIN MyCars m ON c.Id = m.CarId

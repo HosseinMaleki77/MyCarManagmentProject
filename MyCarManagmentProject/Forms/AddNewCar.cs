@@ -207,29 +207,7 @@ namespace MyCarManagmentProject.Forms
             this.Close();
         }
 
-        //private void picBoxNewCar_DragDrop(object sender, DragEventArgs e)
-        //{
-        //    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-        //if (files != null && files.Length > 0)
-        //{
-
-        //    string ext = System.IO.Path.GetExtension(files[0]).ToLower();
-        //    if (ext == ".png")
-        //    {
-        //        // عکس قبلی رو آزاد کن
-        //        if (picBoxNewCar.Image != null)
-        //            picBoxNewCar.Image.Dispose();
-
-        //        // عکس جدید رو لود کن
-        //        picBoxNewCar.Image = Image.FromFile(files[0]);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("فقط فایل عکس مجاز است ( png )");
-
-        //    }
-        //}
+       
         private bool ValidateTextBox(TextBox textBox, Label errorLabel, string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))

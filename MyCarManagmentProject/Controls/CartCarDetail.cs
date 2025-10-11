@@ -119,7 +119,7 @@ namespace MyCarManagmentProject.Controls
 
                             DeleteCarFromDataBase();
                             p.MyCars.Add(SelectedCar);
-                            AddMyCarToTX(p);
+                            AddMyCarToTX(p, false);
                             MessageBox.Show("Your request To Purchase This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             nmCarCount.Value = SelectedCar.CarCount;
                         }
@@ -164,7 +164,7 @@ namespace MyCarManagmentProject.Controls
         }
 
 
-        private void AddMyCarToTX(Person p)
+        private void AddMyCarToTX(Person p, bool isRented)
         {
             string connectionString = "Data Source=.;Initial Catalog=CarShop;Integrated Security=True;";
 
@@ -180,15 +180,17 @@ namespace MyCarManagmentProject.Controls
 
                     object result = checkCmd.ExecuteScalar();
 
-                        // 3) اضافه کردن رکورد جدید
-                        string insertQuery = "INSERT INTO TX (CustomerId, isRented,CarId,Price,IsDone) VALUES (@CustomerId,0,@CARID,@Price,0)";
+                        //  اضافه کردن رکورد جدید
+                        string insertQuery = "INSERT INTO TX (CustomerId, isRented,CarId,Price,IsDone,Rejected) VALUES (@CustomerId,@IsRented,@CARID,@Price,0,0)";
                         using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                         {
                             insertCmd.Parameters.AddWithValue("@CustomerId", p.Id);
                             insertCmd.Parameters.AddWithValue("@CARID", SelectedCar.Id);
                             insertCmd.Parameters.AddWithValue("@Price", SelectedCar.Price);
+                            insertCmd.Parameters.AddWithValue("@IsRented", isRented ? 1 : 0);
 
-                            insertCmd.ExecuteNonQuery();
+
+                        insertCmd.ExecuteNonQuery();
                         }
                    
                     conn.Close();
@@ -283,16 +285,15 @@ namespace MyCarManagmentProject.Controls
 
 
 
-                                //p.WalletBalance -= payAmount;
+                                p.WalletBalance -= payAmount;
 
-                                //UpdateWalletBalance(p);
-                                //AddMoneyToAdmin(payAmount);
-                                //DeleteCarFromDataBase();
                                 UpdateCount();
+                                UpdateWalletBalance(p);
+                                DeleteCarFromDataBase();
                                 p.MyCars.Add(SelectedCar);
-                                AddMyCarToTX(p);
-                                MessageBox.Show("Your request To Rent This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                nmCarCount.Refresh();
+                                AddMyCarToTX(p, true);
+                                MessageBox.Show("Your request To Purchase This Car Has Been Sent TO Admins.\n Wait For Admin Approval. !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                nmCarCount.Value = SelectedCar.CarCount;
                             }
                             else
                             {

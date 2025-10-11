@@ -11,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace MyCarManagmentProject.Forms
 {
@@ -71,7 +70,7 @@ namespace MyCarManagmentProject.Forms
                                 t.ID AS TxId, t.CustomerId, t.CarId, t.Time, t.IsRented
                          FROM CarInfo c
                          INNER JOIN TX t ON c.Id = t.CarId
-                         WHERE t.IsDone = 0
+                         WHERE t.IsDone = 0 AND t.Rejected = 0
                          ORDER BY t.Time ASC";
 
 
